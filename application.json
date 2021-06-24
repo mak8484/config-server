@@ -1,0 +1,52 @@
+{
+  "headerConfig": {
+    "id": "header1",
+    "label": "label 1",
+    "logo": "./assets/logos/AZ_Logo_positive_RGB.png",
+    "logoUrl": "",
+
+    "needHelpConfig": {
+      "title": "need-help.title",
+      "subtitle": "need-help.subtitle",
+      "callUsConfig": {
+        "domestic": {
+          "title":"need-help.call-us.domestic.title",
+          "number":"need-help.call-us.domestic.number"
+        },
+        "international": {
+          "title":"need-help.call-us.international.title",
+          "number":"need-help.call-us.international.number"
+        }
+      },
+      "footer":"need-help.footer"
+    }
+  },
+  "footerConfig": {
+    "links": [
+      {
+        "url": "footer.url",
+        "text": "footer.privacy.title"
+      }
+    ]
+  },
+  "enableTwilioChat": false,
+  "pfeConfig": {
+    "disableAutomaticScrolling": false,
+    "enableStateCleaning": false,
+    "autoCleanStaleState": false,
+	"nextButtonLabel": "next_button",
+    "backButtonLabel": "back_button"
+  },
+  "languages":{
+    "de": "languages.de",
+    "de-ch":"languages.de-ch",
+    "en-gb":"languages.en-gb",
+    "en": "languages.en",
+    "fr-ch":"languages.fr-ch",
+    "fr":"languages.fr",
+    "it":"languages.it",
+    "it-ch":"languages.it-ch",
+    "nl":"languages.nl",
+    "es":"languages.es"
+  }
+}

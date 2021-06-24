@@ -1,0 +1,1135 @@
+{
+  "errorPageID": "error-page",
+  "pages": [
+    {
+      "pageId": "welcome",
+      "nextOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "what-happened-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+      ]
+    },
+    {
+      "pageId": "what-happened",
+      "nextOptionList": [
+        {
+          "nextPageId": "vehicle-collision",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'VEHICLE_COLLISION')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'COLLISION_OBJECT')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repair-glass-damage",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'UNATTENDED_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'ANIMAL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'HAIL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-req",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'OTHER_INCIDENT')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "what-happened-opponent",
+      "nextOptionList": [
+        {
+          "nextPageId": "vehicle-collision-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'VEHICLE_COLLISION')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'COLLISION_OBJECT')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'UNATTENDED_DAMAGE')]"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "welcome",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision",
+      "nextOptionList": [
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "what-happened-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-opponent",
+      "nextOptionList": [
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.VC_BUTTONS..[?(@ == 'VC_HIT_IN_REAR')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.VC_BUTTONS..[?(@ == 'VC_REVERSING')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.VC_BUTTONS..[?(@ == 'VC_FAILURE_TO_GIVE_WAY')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "$.VC_BUTTONS..[?(@ == 'VC_CHANGING_LANES')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-req",
+          "conditions": [
+            {
+              "value1Expression": "$.VC_BUTTONS..[?(@ == 'VC_OTHER')]"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "what-happened-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "how-it-happened-req",
+      "nextOptionList": [
+        {
+          "nextPageId": "upload",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'VEHICLE_COLLISION')]"
+            },
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "how-it-happened-opt",
+      "nextOptionList": [
+        {
+          "nextPageId": "upload",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "vehicle-collision",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'VEHICLE_COLLISION')]"
+            },
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'VEHICLE_COLLISION')]"
+            },
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repair-glass-damage",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "what-happened",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "what-happened-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "upload",
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "file/requestid",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "stateKeyExpression": "$.validationErrorData",
+              "responseDataExpression": "$.message"
+            },
+            {
+              "stateKeyExpression": "$.uploadId",
+              "responseDataExpression": "$['Upload-Id']"
+            }
+          ],
+          "conditions": [
+            {
+              "value1Expression": "$['uploadId']",
+              "operator": "==",
+              "value2Expression": "undefined"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "when-and-where-hail",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'HAIL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'ANIMAL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where-unattended-damage",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'UNATTENDED_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where"
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "how-it-happened-req",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'OTHER_INCIDENT')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "flatfrog",
+      "nextOptionList": [
+        {
+          "nextPageId": "when-and-where-hail",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'HAIL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where-unattended-damage",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'UNATTENDED_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "upload",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "when-and-where",
+      "nextOptionList": [
+        {
+          "nextPageId": "about-you-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        },
+        {
+          "nextPageId": "about-you-no-multiplate",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "upload",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "when-and-where-hail",
+      "nextOptionList": [
+        {
+          "nextPageId": "about-you-no-multiplate",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "upload",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "when-and-where-unattended-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "about-you-no-multiplate",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "about-you-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "upload",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "about-you-no-multiplate",
+      "nextOptionList": [
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "$.isContractWithCooperation",
+              "operator": "==",
+              "value2Expression": "true"
+            }
+          ]
+        },
+       {
+          "nextPageId": "car-selection",
+          "conditions": [
+            {
+              "value1Expression": "$.insuredVehicles",
+              "operator": ">",
+              "value2Expression": "1"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'ANIMAL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'HAIL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "third-parties",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "allianz-customer",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "when-and-where-hail",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'HAIL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where-unattended-damage",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'UNATTENDED_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "when-and-where",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorID": "claims/findinsuredcar",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "stateKeyExpression": "$.validationErrorData",
+              "responseDataExpression": "$.message"
+            },
+            {
+              "stateKeyExpression": "$.policyId",
+              "responseDataExpression": "$.policyId"
+            },
+            {
+              "stateKeyExpression": "$.policyNumber",
+              "responseDataExpression": "$.policyNumber"
+            },
+            {
+              "stateKeyExpression": "$.insuredVehicles",
+              "responseDataExpression": "$.insuredVehicles"
+            },
+            {
+              "stateKeyExpression": "$.isContractWithCooperation",
+              "responseDataExpression": "$.isContractWithCooperation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "about-you-no-platenumber",
+      "nextOptionList": [
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'ANIMAL_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "third-parties",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_CUSTOMER"
+            }
+          ]
+        },
+        {
+          "nextPageId": "allianz-customer-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "about-you-opponent",
+      "nextOptionList": [
+        {
+          "nextPageId": "allianz-customer-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "third-parties",
+      "nextOptionList": [
+        {
+          "nextPageId": "settlement-steering-no-cash",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "allianz-customer",
+      "nextOptionList": [
+        {
+          "nextPageId": "settlement-steering-no-cash",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "allianz-customer-opponent",
+      "nextOptionList": [
+        {
+          "nextPageId": "settlement-steering-no-cash",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorID": "claims/findinsuredcar",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "stateKeyExpression": "$.validationErrorData",
+              "responseDataExpression": "$.message"
+            },
+            {
+              "stateKeyExpression": "$.policyId",
+              "responseDataExpression": "$.policyId"
+            },
+            {
+              "stateKeyExpression": "$.policyNumber",
+              "responseDataExpression": "$.policyNumber"
+            },
+            {
+              "stateKeyExpression": "$.insuredVehicles",
+              "responseDataExpression": "$.insuredVehicles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "settlement-steering",
+      "nextOptionList": [
+        {
+          "nextPageId": "poi-repair-shop",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "repairAtPartnerGarage"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "cashSettlement"
+            }
+          ]
+        },
+        {
+          "nextPageId": "location-of-car",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "sendClaim"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "settlement-steering-no-cash",
+      "nextOptionList": [
+        {
+          "nextPageId": "poi-repair-shop",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "repairAtPartnerGarage"
+            }
+          ]
+        },
+        {
+          "nextPageId": "location-of-car",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "sendClaim"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "poi-repair-shop",
+      "nextOptionList": [
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "settlement-steering-no-cash",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "cash-settlement-information",
+      "nextOptionList": [
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "settlement-steering-no-cash",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "location-of-car",
+      "nextOptionList": [
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "settlement-steering-no-cash",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "submit",
+      "nextOptionList": [
+        {
+          "nextPageId": "all-done-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            },
+            {
+              "value1Expression": "$.validationErrorData",
+              "operator": "==",
+              "value2Expression": "undefined"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-opponent",
+          "conditions": [
+            {
+              "value1Expression": "$['welcome.buttonClicked']",
+              "operator": "==",
+              "value2Expression": "W_OPPONENT"
+            },
+            {
+              "value1Expression": "$.submit",
+              "operator": "==",
+              "value2Expression": "true"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done",
+          "conditions": [
+            {
+              "value1Expression": "$.validationErrorData",
+              "operator": "==",
+              "value2Expression": "undefined"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done",
+          "conditions": [
+            {
+              "value1Expression": "$.submit",
+              "operator": "==",
+              "value2Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "about-you-no-multiplate",
+          "conditions": [
+            {
+              "value1Expression": "$.isContractWithCooperation",
+              "operator": "==",
+              "value2Expression": "true"
+            }
+          ]
+        },
+        {
+          "nextPageId": "poi-repair-shop",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "repairAtPartnerGarage"
+            }
+          ]
+        },
+        {
+          "nextPageId": "settlement-steering",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "cashSettlement"
+            }
+          ]
+        },
+        {
+          "nextPageId": "location-of-car",
+          "conditions": [
+            {
+              "value1Expression": "$.settlementOption",
+              "operator": "==",
+              "value2Expression": "sendClaim"
+            }
+          ]
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorID": "claims/createclaim",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "stateKeyExpression": "$.validationErrorData",
+              "responseDataExpression": "$.message"
+            },
+            {
+              "stateKeyExpression": "$.claimNumber",
+              "responseDataExpression": "$.claimNumber"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "all-done",
+      "nextOptionList": [
+      ],
+      "backOptionList": [
+      ]
+    },
+    {
+      "pageId": "all-done-opponent",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "repair-glass-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "how-it-happened-opt",
+          "conditions": [
+            {
+              "value1Expression": "true"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "conditions": [
+            {
+              "value1Expression": "$.damageTypeButtons..[?(@ == 'WINDSCREEN_DAMAGE')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "generic-text",
+      "nextOptionList": [
+      ],
+      "backOptionList": [
+      ]
+    },
+    {
+      "pageId": "welcome",
+      "nextOptionList": [
+        {
+          "nextPageId": "welcome"
+        }
+      ]
+    },
+    {
+      "pageId": "error-page",
+      "nextOptionList": [
+        {
+          "nextPageId": "welcome"
+        }
+      ]
+    },
+    {
+      "pageId": "car-selection",
+      "nextOptionList": [
+        {
+          "nextPageId": "third-parties"
+        }
+      ]
+    },
+    {
+      "pageId": "car-selection-new",
+      "nextOptionList": [
+        {
+          "nextPageId": "third-parties"
+        }
+      ]
+    }
+  ]
+}
