@@ -1,0 +1,86 @@
+{
+  "pageId": "allianz-customer-opponent",
+  "stepperConfig": {
+    "totalSteps": 5,
+    "currentStepIndex": 2,
+    "currentProgress": 0.5,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "hideBackButton": false,
+  "hideNextButton": false,
+  "aboutPageConfig": {
+    "titleConfig": {
+      "titleText": "allianz-customer.titleLabel"
+    },
+    "loginConfig": {
+      "policyDataConfig": {
+        "policyHolderNameExpression": "",
+        "policyListExpression": "",
+        "label": "",
+        "onePlateLabel": "",
+        "required": false,
+        "policyOtherRequired": false,
+        "policyOtherLabel": ""
+      }
+    },
+    "notLoginConfig": {
+      "userFormConfig": {
+        "id": "ac_userform",
+        "fields": [
+          {
+            "label": "allianz-customer.userFormConfig.ac_firstName",
+            "name": "ac_firstName",
+            "type": "text",
+            "required": true
+          },
+          {
+            "label": "allianz-customer.userFormConfig.ac_lastName",
+            "name": "ac_lastName",
+            "type": "text",
+            "required": true
+          },
+          {
+            "label": "allianz-customer.userFormConfig.ac_plateNumber",
+            "name": "ac_plateNumber",
+            "type": "text",
+            "required": true,
+            "pattern":"^(AG|AI|AR|BE|BL|BS|FL|FR|GE|GL|GR|JU|LU|NE|NW|OW|SG|SH|SO|SZ|TG|TI|UR|VD|VS|ZG|ZH){1}\\s[0-9]{1,6}[a-zA-Z]?$",
+            "hint": "about-you.userFormConfig.ay_plateNumber.hint"
+          }
+        ]
+      }
+    },
+    "pesonalDataTitle": "",
+    "policyInfoId": "",
+    "preferredOptionConfig": {
+      "id": "ac_prefferedOptions",
+      "options": [
+        {
+          "label": "allianz-customer.userFormConfig.ac_email",
+          "type": "email",
+          "value": "email",
+          "name": "email",
+          "required": false,
+          "pattern":"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        },
+        {
+          "label": "allianz-customer.userFormConfig.ac_phoneNumber",
+          "type": "text",
+          "value": "phone",
+          "name": "phone",
+          "required": false,
+          "pattern": "^(\\+?)(\\d{2,4})(\\s?)((\\(0\\))?)(\\s?)(\\d{1})(\\s?)(\\d{3})(\\s?)(\\d{2})(\\s?)(\\d{2})$"
+        }
+      ],
+      "enabled": false,
+      "required": false,
+      "radiosLabel": "about-you.preferredOptionConfig.radiosLabel"
+    }
+  }
+}

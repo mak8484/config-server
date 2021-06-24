@@ -1,0 +1,84 @@
+{
+  "pageId": "what-happened-hail",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "stepperConfig": {  
+    "totalSteps": 5,
+    "currentStepIndex": 1,
+    "currentProgress": 0,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "navigationOptionsPageConfig": {
+    "titleConfig": {
+      "titleText": "what-happened.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "what-happened.subtitleText"
+    },
+    "textareaConfig": {
+      "id": "WH_COMMENT",
+      "label": "",
+      "placeholder": "",
+      "maxLength": 255,
+      "hidden": true
+    },
+    "circleButtonContainerConfig": {
+      "id": "damageTypeButtons",
+      "rows": [
+        [
+          {
+            "id": "VEHICLE_COLLISION",
+            "label": "what-happened.VEHICLE_COLLISION",
+            "icon": "",
+            "svg": "./assets/images/cat-a-collision.svg",
+            "svgChecked": "./assets/images/cat-a-collision_active.svg"
+          },
+          {
+            "id": "COLLISION_OBJECT",
+            "label": "what-happened.COLLISION_OBJECT",
+            "icon": "",
+            "svg": "./assets/images/cat-b-crash.svg",
+            "svgChecked": "./assets/images/cat-b-crash_active.svg"
+          },
+          {
+            "id": "WINDSCREEN_DAMAGE",
+            "label": "what-happened.WINDSCREEN_DAMAGE",
+            "icon": "",
+            "svg": "./assets/images/cat-c-windscreen.svg",
+            "svgChecked": "./assets/images/cat-c-windscreen_active.svg"
+          }
+        ],
+        [
+          {
+            "id": "UNATTENDED_DAMAGE",
+            "label": "what-happened.UNATTENDED_DAMAGE",
+            "icon": "",
+            "svg": "./assets/images/cat-e-unattended.svg",
+            "svgChecked": "./assets/images/cat-e-unattended_active.svg"
+          },
+          {
+            "id": "HAIL_DAMAGE",
+            "label": "what-happened.HAIL",
+            "icon": "",
+            "svg": "./assets/images/cat-d-weather.svg",
+            "svgChecked": "./assets/images/cat-d-weather_active.svg"
+          },
+          {
+            "id": "OTHER_INCIDENT",
+            "label": "what-happened.OTHER_INCIDENT",
+            "icon": "",
+            "svg": "./assets/images/other.svg",
+            "svgChecked": "./assets/images/other_active.svg"
+          }
+        ]
+      ],
+      "multiSelection": false
+    }
+  }
+}

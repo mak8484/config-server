@@ -1,0 +1,26 @@
+{
+    "pageId": "when-and-where",
+    "stepperConfig": {  
+        "totalSteps": 1,
+        "currentStepIndex": 1,
+        "currentProgress": 0.75,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "genericAboutPageConfig": {
+        "titleConfig": {
+            "titleText": "when-and-where.titleText"
+        },
+        "dateAndTimeLabel": "when-and-where.dateAndTimeLabel",
+        "datePickerConfig": {
+            "id": "waw_date",
+            "label": "when-and-where.datePickerConfig.label",
+            "required": true
+        }
+    }
+}

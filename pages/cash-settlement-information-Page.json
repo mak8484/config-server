@@ -1,0 +1,37 @@
+{
+    "pageId": "cash-settlement-information",
+    "stepperConfig": {  
+        "totalSteps": 5,
+        "currentStepIndex": 3,
+         "currentProgress": 0,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "hideBackButton": false,
+    "hideNextButton": false,
+    "errorPageConfig": {
+        "titleConfig": {
+            "titleText": "cash-settlement-information.titleText"
+        },
+        "subtitleConfig": {
+            "subtitleText": ""
+        },
+        "text": "cash-settlement-information.text",
+        "callUs": {
+            "callUsQuestion": "cash-settlement-information.callUs.callUsQuestion",
+            "callUsConfig": {
+              "label": "cash-settlement-information.callUs.label",
+              "popUpTitle": "cash-settlement-information.callUs.popUpTitle",
+              "popUpText": "cash-settlement-information.callUs.popUpText",
+              "popUpCallIcon": "./assets/images/phone.svg",
+              "popUpdPhoneNumber": "cash-settlement-information.callUs.popUpdPhoneNumber",
+              "popUpCallText": "cash-settlement-information.callUs.popUpCallText"
+            }
+        }
+    }
+}

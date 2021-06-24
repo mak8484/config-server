@@ -1,0 +1,32 @@
+	{
+    "pageId": "how-it-happened-req",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+       "currentProgress": 0.5,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "textAreaPageConfig": {
+      "titleConfig": {
+        "titleText": "how-it-happened.titleText"
+      },
+      "subtitleConfig": {
+        "subtitleText": "how-it-happened.subtitleText"
+      },
+      "textareaConfig": {
+        "id": "HIH_COMMENT",
+        "label": "how-it-happened.HIH_COMMENT.label",
+        "placeholder": "how-it-happened-req.HIH_COMMENT.placeholder",
+        "maxLength": 1500,
+        "required": true
+      }      
+    }
+	}

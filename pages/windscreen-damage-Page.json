@@ -1,0 +1,57 @@
+	{
+    "pageId": "windscreen-damage",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+      "currentProgress": 0.25,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "additionalInformationPageConfig": {
+      "titleConfig": {
+        "titleText": "Glass damage"
+      },
+      "questionContainerConfig": {
+        "id": "WSD_questionContainer",
+        "questions": [
+          {
+            "id": "WSD_SCREEN_DAMAGE",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Was it a screen damage?",
+              "headertype": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "WSD_SCREEN_DAMAGE_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg"
+            },
+            "rightOptionConfig": {
+              "id": "WSD_SCREEN_DAMAGE_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg"
+            }
+          }
+        ]
+      },
+      "textareaConfig": {
+        "id": "WSD_COMMENT",
+        "label": "Please describe the incident",
+        "placeholder": "Comment here",
+        "maxLength": 500,
+        "hidden": true
+      }
+    }
+	}

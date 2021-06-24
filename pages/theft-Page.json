@@ -1,0 +1,48 @@
+{
+    "pageId": "theft",
+    "stepperConfig": {  
+        "totalSteps": 1,
+        "currentStepIndex": 1,
+        "currentProgress": 0.25,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "navigationOptionsPageConfig": {
+        "titleConfig": {
+            "titleText": "Theft Details"
+        },
+        "circleButtonContainerConfig": {
+          "id": "theftTypeButtons",
+          "multiSelection": false,
+          "rows": [
+              [
+                  {
+                      "id": "THEFT_OF_VEHICLE",
+                      "label": "Theft of vehicle",
+                      "svg": "./assets/images/cat-f-theft.svg",
+                      "svgChecked": "./assets/images/cat-f-theft_active.svg"
+                  },
+                  {
+                    "id": "THEFT_FROM_VEHICLE",
+                    "label": "Theft from vehicle",
+                    "svg": "./assets/images/cat-e-3.svg",
+                    "svgChecked": "./assets/images/cat-e-3_active.svg"
+                }
+              ]
+          ]  
+        },
+        "textareaConfig": {
+            "id": "theft_comment",
+            "hidden": false,
+            "required": true,
+            "maxLength": 500,
+            "label": "Please describe the incident",
+            "placeholder": "Comment here*"
+        }
+    }
+}

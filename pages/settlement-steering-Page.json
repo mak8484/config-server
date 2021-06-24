@@ -1,0 +1,53 @@
+{
+  "pageId": "settlement-steering",
+  "hideNextButton": true,
+  "hideBackButton": false,
+  "linkBackButton": true,
+  "stepperConfig": {
+    "totalSteps": 5,
+    "currentStepIndex": 3,
+    "currentProgress": 0,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "navigationOptionsLargePageConfig": {
+    "titleConfig": {
+      "titleText": "settlement-steering.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "settlement-steering.subtitleText"
+    },
+    "navigationOptions": {
+      "id": "settlementOption",
+      "options": [
+        {
+          "icon": "./assets/images/man_in_car.png",
+          "hideHeader": false,
+          "hasBorder": true,
+          "headerText": "settlement-steering.repairAtPartnerGarage.suggestion",
+          "title": "settlement-steering.repairAtPartnerGarage.title",
+          "description": "settlement-steering.repairAtPartnerGarage.description",
+          "nxNextType": "primary",
+          "nxNextLabel": "settlement-steering.repairAtPartnerGarage.nxNextLabel",
+          "nxNextAction": "repairAtPartnerGarage",
+          "hasWhiteBackground": true
+        }
+      ]
+    },
+    "navigationOptionButtons": [
+      {
+        "nxNextLabel": "settlement-steering.cashSettlement.nxNextLabel",
+        "nxNextAction": "cashSettlement"
+      },
+      {
+        "nxNextLabel": "settlement-steering.sendClaim.nxNextLabel",
+        "nxNextAction": "sendClaim"
+      }
+    ]
+  }
+}

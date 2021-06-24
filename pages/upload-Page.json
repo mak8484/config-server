@@ -1,0 +1,38 @@
+{
+  "pageId": "upload",
+  "stepperConfig": {
+    "totalSteps": 1,
+    "currentStepIndex": 1,
+    "currentProgress": 0.5,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "fileUploadPageConfig": {
+    "titleConfig": {
+      "titleText": "upload.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "upload.subtitleText"
+    },
+    "fileUploadLibraryConfig": {
+      "file_document_size_max": 4.98,
+      "file_identifying_field": "filename",
+      "file_dropzone_hidden": false,
+      "file_hide_thumbnails": false,
+      "file_retrieve_thumbnails_on_init": true,
+      "file_allowed_file_types": [
+        "jpg",
+        "jpeg",
+        "png",
+        "pdf"
+      ],
+      "file_image_after_compression_max_size": 0.98,
+      "file_max_number_of_files_allowed": 5
+    }
+  }
+}

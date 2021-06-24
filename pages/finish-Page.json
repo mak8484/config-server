@@ -1,0 +1,44 @@
+{
+    "pageId": "finish",
+    "stepperConfig": {  
+        "totalSteps": 1,
+        "currentStepIndex": 1,
+         "currentProgress": 0.25,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "allDonePageConfig": {
+        "callUs": {
+            "callUsConfig": {
+                "label": "Call us",
+                "popUpCallIcon": "./assets/images/phone.svg",
+                "popUpCallText": "Call",
+                "popUpdPhoneNumber": "+49 89 000000",
+                "popUpText": "Available Mo-Fr 8 AM - 8 PM, Sa 9 AM - 4 PM",
+                "popUpTitle": "Any questions? We're here to help."
+            },
+            "callUsQuestion": "Any questions?"
+        },
+        "claimReferenceText": "Your claim reference is",
+        "confirmIcon": "./assets/images/icon_checked.svg",
+        "contactFieldId": "aboutPage.PreferredContact",
+        "ovalIcon": "./assets/images/finish_car-with-flags.svg",
+        "sentText": "sentText",
+        "subtitleConfig": {
+            "subtitleText": "Thank you for letting us know about your claim."
+        },
+        "titleConfig": {
+            "titleText": "All done!"
+        },
+        "whatsNext": {
+            "hidden": false,
+            "text": "A repairer will be in touch to discuss the repairs to your vehicle. We may also need to contact you for further information.",
+            "title": "What's next?"
+        }
+    }
+}

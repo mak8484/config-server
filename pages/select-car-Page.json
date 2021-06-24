@@ -1,0 +1,25 @@
+{
+    "pageId": "select-car",
+    "stepperConfig": {  
+        "totalSteps": 1,
+        "currentStepIndex": 1,
+         "currentProgress": 0.25,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "genericAboutPageConfig": {
+        "titleConfig": {
+            "titleText": "Select car"
+        },
+        "radioListConfig": {
+            "id": "sc_car",
+            "label": "Select a car for the affected plate number"
+        },
+        "aboutList": ""
+    }
+}

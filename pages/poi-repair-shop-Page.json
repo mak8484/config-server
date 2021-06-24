@@ -1,0 +1,54 @@
+{
+  "pageId": "poi-repair-shop",
+  "stepperConfig": {
+    "totalSteps": 5,
+    "currentStepIndex": 3,
+    "currentProgress": 0.5,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "hideBackButton": false,
+  "hideNextButton": true,
+  "poiSearchPageConfig": {
+    "titleConfig": {
+      "titleText": "poi-repair-shop.titleText"
+    },
+    "poiObject": {
+      "id": "poiRepairShop"
+    },
+    "poiSearchComponentConfig": {
+      "useSearchTermAutocomplete": true,
+      "backgroundColor": "#f5f5f5",
+      "mapCenter": {
+        "lat": 46.701655,
+        "lng": 7.5737069
+      },
+      "mapZoom": 8,
+      "searchTermAutocompleteMinChars": 1,
+      "searchLocationAutocompleteRestriction": {
+        "country": [
+          "CH"
+        ]
+      }
+    },
+    "poiPromotedText": "poi.list.promotedTagText",
+    "poiSelectThisPlaceListNextButton":  {
+      "id": "selectThisPlaceNextButton",
+      "label": "poi.listSelectedPoi.confirm"
+    },
+    "poiSelectThisPlaceListBackButton":   {
+      "id": "selectThisPlaceBackButton",
+      "label": "poi.listSelectedPoi.cancel"
+    },
+    "poiSelectThisPlaceMapButton":   {
+      "id": "selectThisPlaceNextMapButton",
+      "label": "poi.mapSelectedPoi.confirm"
+    },
+    "poiShowPhoneOnSelectedPoi": false
+  }
+}

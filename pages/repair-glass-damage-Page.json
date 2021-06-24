@@ -1,0 +1,52 @@
+{
+  "pageId": "repair-glass-damage",
+  "stepperConfig": {  
+    "totalSteps": 1,
+    "currentStepIndex": 1,
+     "currentProgress": 0.25,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "hideNextButton": true,
+  "hideBackButton": false,
+  "linkBackButton": true,
+  "navigationOptionsLargePageConfig": {
+    "titleConfig": {
+      "titleText": "repair-glass-damage.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "repair-glass-damage.subtitleText"
+    },
+    "navigationOptions": {
+      "id": "settlementOption",
+      "options": [
+        {
+          "icon": "",
+          "hideHeader": true,
+          "hasBorder": true,
+          "preferred": true,
+          "title": "",
+          "nxLinkLabel": "repair-glass-damage.linkLabel.goToCarglass",
+          "nxLinkDestination": "repair-glass-damage.linkUrl.goToCarglass",
+          "nxNextAction": "",
+          "hasWhiteBackground": false
+        },
+        {
+          "icon": "",
+          "hideHeader": true,
+          "hasBorder": true,
+          "title": "",
+          "nxLinkLabel": "repair-glass-damage.linkLabel.proceedWithoutCarglass",
+          "nxLinkDestination": "repair-glass-damage.linkUrl.proceedWithoutCarglass",
+          "nxNextAction": "how-it-happened-opt",
+          "hasWhiteBackground": true            
+        }
+      ]
+    }
+  }
+  }

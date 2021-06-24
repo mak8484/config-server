@@ -1,0 +1,47 @@
+{
+    "pageId": "all-done-opponent",
+    "stepperConfig": {
+      "totalSteps": 5,
+      "currentStepIndex": 5,
+      "currentProgress": 1,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+    "hideBackButton": true,
+    "hideNextButton": true,
+    "allDonePageConfig": {
+      "titleConfig": {
+        "titleText": "all-done.titleText"
+      },
+      "subtitleConfig": {
+        "subtitleText": "all-done.subtitleText"
+      },
+      "contactFieldExpression": "$['aboutPage.preferredContact'].email",
+      "confirmIcon": "./assets/images/icon_checked.svg",
+      "sentText": "all-done.sentText",
+      "claimReferenceText": "all-done.claimReferenceText",
+      "claimReferenceExpression": "$.claimNumber",
+      "claimErrorMessage": "all-done.claimError",
+      "whatsNext": {
+        "title": "all-done.whatsNext.title",
+        "text": "all-done.whatsNext.opponent",
+        "hidden": false
+      },
+      "callUs": {
+        "callUsQuestion": "all-done.callUs.callUsQuestion",
+        "callUsConfig": {
+          "label": "all-done.callUs.label",
+          "popUpTitle": "all-done.callUs.popUpTitle",
+          "popUpText": "all-done.callUs.popUpText",
+          "popUpCallIcon": "./assets/images/phone.svg",
+          "popUpdPhoneNumber": "all-done.callUs.popUpdPhoneNumber",
+          "popUpCallText": "all-done.callUs.popUpCallText"
+        }
+      }
+    }
+  }

@@ -1,0 +1,29 @@
+{
+    "pageId": "submit",
+    "stepperConfig": {  
+        "totalSteps": 5,
+        "currentStepIndex": 5,
+        "currentProgress": 0,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "nxNextText": "submit.nxNextText",
+    "submitPageConfig": {
+        "titleConfig": {
+            "titleText": "submit.titleText"
+        },
+        "content": "submit.content",
+        "simpleCheckboxConfig": {
+            "id": "submit_confirmTermsOfUse",
+            "required": true,
+            "text": "submit.simpleCheckboxConfig.text",
+            "link": "submit.simpleCheckboxConfig.link",
+            "linkContent": "submit.simpleCheckboxConfig.linkContent"
+        }
+    }
+}

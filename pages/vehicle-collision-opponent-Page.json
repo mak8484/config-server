@@ -1,0 +1,75 @@
+  {
+    "pageId": "vehicle-collision-opponent",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+      "currentProgress": 0.5,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "navigationOptionsPageConfig": {
+      "titleConfig": {
+        "titleText": "vehicle-collision.titleText"
+      },
+      "textareaConfig": {
+        "id": "CV_COMMENT",
+        "label": "",
+        "placeholder": "",
+        "maxLength": 255,
+        "hidden": true,
+        "required": false
+      },
+      "circleButtonContainerConfig": {
+        "id": "VC_BUTTONS",
+        "rows": [
+          [
+            {
+              "id": "VC_HIT_IN_REAR",
+              "label": "vehicle-collision.VC_HIT_IN_REAR",
+              "icon": "",
+              "svg": "./assets/images/cat-a-collision.svg",
+              "svgChecked": "./assets/images/cat-a-collision_active.svg"
+            },
+            {
+              "id": "VC_REVERSING",
+              "label": "vehicle-collision.VC_REVERSING",
+              "icon": "",
+              "svg": "./assets/images/cat-a-1.svg",
+              "svgChecked": "./assets/images/cat-a-1_active.svg"
+            },
+            {
+              "id": "VC_FAILURE_TO_GIVE_WAY",
+              "label": "vehicle-collision.VC_FAILURE_TO_GIVE_WAY",
+              "icon": "",
+              "svg": "./assets/images/cat-a-3.svg",
+              "svgChecked": "./assets/images/cat-a-3_active.svg"
+            }
+          ],
+          [
+            {
+              "id": "VC_CHANGING_LANES",
+              "label": "vehicle-collision.VC_CHANGING_LANES",
+              "icon": "",
+              "svg": "./assets/images/cat-a-4.svg",
+              "svgChecked": "./assets/images/cat-a-4_active.svg"
+            },
+            {
+              "id": "VC_OTHER",
+              "label": "vehicle-collision.VC_OTHER",
+              "icon": "",
+              "svg": "./assets/images/other.svg",
+              "svgChecked": "./assets/images/other_active.svg"
+            }
+          ]
+        ],
+        "multiSelection": false
+      }
+    }
+	}

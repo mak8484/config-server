@@ -1,0 +1,134 @@
+{
+  "pageId": "driver-details",
+  "stepperConfig": {
+    "totalSteps": 1,
+    "currentStepIndex": 1,
+    "currentProgress": 0.25,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "driverDetailsPageConfig": {
+    "titleConfig": {
+      "titleText": "Provide the driver details"
+    },
+    "subtitleConfig": {
+      "subtitleText": ""
+    },
+    "loggedInConfig": {
+    },
+    "loggedInStateExpression": "",
+    "firstQuestionConfig": {
+      "id": "dd_driver_details",
+      "questions": [
+        {
+          "id": "dd_were_you_the_driver",
+          "questionRequired": true,
+          "questionHidden": false,
+          "questionText": "Were you the person driving the car?",
+          "iconsUrl": "./assets/misc/",
+          "leftOptionConfig": {
+            "id": "dd_were_you_the_driver_yes",
+            "icon": "/icon_yes-default.svg",
+            "iconChecked": "/icon_yes-selected.svg"
+          },
+          "rightOptionConfig": {
+            "id": "dd_were_you_the_driver_no",
+            "icon": "/icon_no-default.svg",
+            "iconChecked": "/icon_no-selected.svg"
+          },
+          "advancedQuestionConf": {
+            "lang": "EN",
+            "triggerOnButtonID": "dd_were_you_the_driver_no",
+            "additionalFieldType": "FORM",
+            "inputLabel": ""
+          }
+        }
+      ]
+    },
+    "firstQuestionFormConfig": {
+      "id": "dd_driver_form",
+      "fields": [
+        {
+          "name": "dd_driver_firstname",
+          "label": "First name*",
+          "validators": [
+            {
+              "type": "REQUIRED"
+            }
+          ],
+          "type": "text"
+        },
+        {
+          "name": "dd_driver_lastname",
+          "label": "Last name*",
+          "validators": [
+            {
+              "type": "REQUIRED"
+            }
+          ],
+          "type": "text"
+        }
+      ]
+    },
+    "firstQuestionRadioListConfig": {
+      "id": ""
+    },
+    "secondQuestionConfig": {
+      "id": "dd_who_is_responsible",
+      "label": "Who is responsible for the damage in your opinion?",
+      "multiSelection": false,
+      "rows": [
+        [
+          {
+            "id": "dd_responsible_me",
+            "label": "Me",
+            "icon": "",
+            "svg": "./assets/images/guilt-1.svg",
+            "svgChecked": "./assets/images/guilt-1_active.svg"
+          },
+          {
+            "id": "dd_responsible_opponent",
+            "label": "Accident Opponent",
+            "icon": "",
+            "svg": "./assets/images/guilt-2.svg",
+            "svgChecked": "./assets/images/guilt-2_active.svg"
+          },
+          {
+            "id": "dd_responsible_both",
+            "label": "Both",
+            "icon": "",
+            "svg": "./assets/images/guilt-3.svg",
+            "svgChecked": "./assets/images/guilt-3_active.svg"
+          }
+        ]
+      ]
+    },
+    "thirdQuestionConfig": {
+      "id": "dd_injury",
+      "questions": [
+        {
+          "id": "dd_injured_passenger",
+          "questionRequired": true,
+          "questionHidden": false,
+          "questionText": "Were any passenger in your vehicle injured?",
+          "iconsUrl": "./assets/misc/",
+          "leftOptionConfig": {
+            "id": "dd_injured_passenger_yes",
+            "icon": "/icon_yes-default.svg",
+            "iconChecked": "/icon_yes-selected.svg"
+          },
+          "rightOptionConfig": {
+            "id": "dd_injured_passenger_no",
+            "icon": "/icon_no-default.svg",
+            "iconChecked": "/icon_no-selected.svg"
+          }
+        }
+      ]
+    }
+  }
+}

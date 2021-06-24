@@ -1,0 +1,95 @@
+{
+  "pageId": "about-you-no-multiplate",
+  "stepperConfig": {  
+    "totalSteps": 5,
+    "currentStepIndex": 2,
+     "currentProgress": 0,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "aboutPageConfig": {
+    "titleConfig": {
+      "titleText": "about-you.titleText"
+    },
+    "pesonalDataTitle": "about-you.pesonalDataTitle",
+    "policyInfoId": "aboutPlateNumberInfo",
+    "loginConfig": {
+      "policyDataConfig": {
+        "policyHolderNameExpression": "",
+        "policyListExpression": "",
+        "label": "about-you.policyDataConfig.label",
+        "onePlateLabel": "about-you.policyDataConfig.onePlateLabel",
+        "required": true,
+        "policyOtherRequired": true,
+        "policyOtherLabel": "about-you.policyDataConfig.policyOtherLabel"
+      }
+    },
+    "notLoginConfig": {
+      "userFormConfig": {
+        "id": "ay_userform",
+        "fields": [
+          {
+            "label": "about-you.userFormConfig.ay_firstName",
+            "name": "ay_firstName",
+            "type": "text",
+            "required": true
+          },
+          {
+            "label": "about-you.userFormConfig.ay_lastName",
+            "name": "ay_lastName",
+            "type": "text",
+            "required": true
+          },
+          {
+            "label": "about-you.userFormConfig.ay_plateNumber",
+            "name": "ay_plateNumber",
+            "type": "text",
+            "pattern":"^(AG|AI|AR|BE|BL|BS|FL|FR|GE|GL|GR|JU|LU|NE|NW|OW|SG|SH|SO|SZ|TG|TI|UR|VD|VS|ZG|ZH){1}\\s[0-9]{1,6}[a-zA-Z]?$",
+            "hint": "about-you.userFormConfig.ay_plateNumber.hint",
+            "errorMsg":"about-you.userFormConfig.ay_plateNumber.errorMessage",
+            "required": true
+          }
+        ]
+      },
+      "policyFormConfig": {
+        "id": "ay_aboutPolicyData",
+        "fields": [
+
+        ]
+      }
+    },
+    "preferredOptionConfig": {
+      "id": "aboutPage.preferredContact",
+      "default": "email",
+      "options": [
+        {
+          "label": "about-you.preferredOptionConfig.email",
+          "type": "email",
+          "value": "email",
+          "name": "email",
+          "required": true,
+          "errorMsg":"about-you.preferredOptionConfig.email.errorMessage",
+          "pattern":"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        },
+        {
+          "label": "about-you.preferredOptionConfig.phone",
+          "type": "text",
+          "value": "phone",
+          "name": "phone",
+          "required": true,
+          "errorMsg":"about-you.preferredOptionConfig.phone.errorMessage",
+          "pattern": "^(\\+?)(\\d{2,4})(\\s?)((\\(0\\))?)(\\s?)(\\d{1})(\\s?)(\\d{3})(\\s?)(\\d{2})(\\s?)(\\d{2})$"
+        }
+      ],
+      "required": true,
+      "enabled": false,
+      "label": "about-you.preferredOptionConfig.label",
+      "radiosLabel": "about-you.preferredOptionConfig.radiosLabel"
+    }
+  }
+}

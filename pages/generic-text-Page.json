@@ -1,0 +1,43 @@
+{
+  "pageId": "generic-text",
+  "stepperConfig": {
+    "totalSteps": 5,
+    "currentStepIndex": 3,
+    "currentProgress": 0.5,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "hideBackButton": true,
+  "hideNextButton": true,
+  "genericTextPageConfig": {
+    "titleConfig": {
+      "titleText": "generic-text.title"
+    },
+    "subtitleConfig": {
+      "subtitleText": "generic-text.subtitle"
+    },
+    "sections": [
+      "generic-text.section1",
+      "generic-text.section2",
+      "generic-text.section3"
+    ],
+    "callUsSection": {
+      "callUsQuestion": "generic-text.callUs.question",
+      "callUsConfig": {
+        "domestic": {
+          "title": "need-help.call-us.domestic.title",
+          "number": "need-help.call-us.domestic.number"
+        },
+        "international": {
+          "title": "need-help.call-us.international.title",
+          "number": "need-help.call-us.international.number"
+        }
+      }
+    }
+  }
+}

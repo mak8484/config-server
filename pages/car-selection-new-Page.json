@@ -1,0 +1,55 @@
+{
+    "pageId": "car-selection-new",
+    "stepperConfig": {
+        "totalSteps": 5,
+        "currentStepIndex": 2,
+        "currentProgress": 0.25,
+        "stepsLabels": [
+            "progress-stepper.stepLabel.1",
+            "progress-stepper.stepLabel.2",
+            "progress-stepper.stepLabel.3",
+            "progress-stepper.stepLabel.4",
+            "progress-stepper.stepLabel.5"            
+        ]
+    },
+    "whenAndWherePageConfig": {
+        "titleConfig": {
+            "titleText": "car-selection.title"
+        },
+        "subtitleConfig": {
+            "subtitleText": "car-selection.subtitle"
+        },
+        "id": "carSelectionBase",
+        "companyDataConfig": {
+            "id": "carSelection",
+            "fields": [
+                {
+                    "id": "carBrand",
+                    "type": "INPUT",
+                    "label": "car-selection.car-brand.label",
+                    "validators": [
+                        {
+                            "type": "REQUIRED"
+                        }
+                    ],
+                    "value": ""
+                },
+                {
+                    "id": "carRegistrationDate",
+                    "type": "DATE",
+                    "label": "car-selection.registration-date.label",
+                    "validators": [
+                        {
+                            "type": "DAYS_FROM_TODAY_LOWER_LIMIT",
+                            "errorMessage": "car-selection.registration-date.error.date-in-future"
+                        },
+                        {
+                            "type": "REQUIRED"
+                        }
+                    ],
+                    "value": ""
+                }
+            ]
+        }
+    }
+}

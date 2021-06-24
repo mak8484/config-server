@@ -1,0 +1,80 @@
+	{
+    "pageId": "theft-of-vehicle",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+      "currentProgress": 0.25,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "additionalInformationPageConfig": {
+      "titleConfig": {
+        "titleText": "additionalInfo.title"
+      },
+      "questionContainerConfig": {
+        "id": "questionContainerTOV",
+        "questions": [
+          {
+            "id": "TOV_FOUND_CAR",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Has the vehicle been found?",
+              "headertype": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "TOV_FOUND_CAR_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg"
+            },
+            "rightOptionConfig": {
+              "id": "TOV_FOUND_CAR_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg"
+            }
+          },
+          {
+            "id": "TOV_STOLEN_WITH_KEY",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Was the car stolen with the keys?",
+              "headertype": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "TOV_STOLEN_WITH_KEY_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg"
+            },
+            "rightOptionConfig": {
+              "id": "TOV_STOLEN_WITH_KEY_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg"
+            }
+          }
+        ]
+      },
+      "textareaConfig": {
+        "id": "TOV_Comment",
+        "label": "Please describe the incident",
+        "placeholder": "Comment here*",
+        "maxLength": 500,
+        "hidden": false
+      }
+    }
+	}

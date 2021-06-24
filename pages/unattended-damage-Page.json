@@ -1,0 +1,69 @@
+	{
+    "pageId": "unattended-damage",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+      "currentProgress": 0.5,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "navigationOptionsPageConfig": {
+      "titleConfig": {
+        "titleText": "Please describe how it happened"
+      },
+      "subtitleConfig": {
+        "subtitleText": ""
+      },
+      "textareaConfig": {
+        "id": "UD_LIST_DAMAGED_ITEMS",
+        "label": "Please list all damaged items",
+        "placeholder": "Start listing*",
+        "maxLength": 500
+      },
+      "circleButtonContainerConfig": {
+        "id": "UD_BUTTONS",
+        "rows": [
+          [
+            {
+              "id": "UD_HIT_WHILE_PARKED",
+              "label": "Hit while parked",
+              "icon": "",
+              "svg": "./assets/images/cat-e-1.svg",
+              "svgChecked": "./assets/images/cat-e-1_active.svg"
+            },
+            {
+              "id": "UD_MALICIOUS_VANDALISM",
+              "label": "Malicious damage / vandalism",
+              "icon": "",
+              "svg": "./assets/images/cat-e-2.svg",
+              "svgChecked": "./assets/images/cat-e-2_active.svg"
+            },
+            {
+              "id": "UD_ARSON_FIRE",
+              "label": "Arson/Fire",
+              "icon": "",
+              "svg": "./assets/images/cat-e-4.svg",
+              "svgChecked": "./assets/images/cat-e-4_active.svg"
+            }
+          ],
+          [
+            {
+              "id": "UD_OTHER",
+              "label": "Other",
+              "icon": "",
+              "svg": "./assets/images/other.svg",
+              "svgChecked": "./assets/images/other_active.svg"
+            }
+          ]
+        ],
+        "multiSelection": false
+      }
+    }
+	}

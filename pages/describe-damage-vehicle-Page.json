@@ -1,0 +1,116 @@
+	{
+    "pageId": "describe-damage-vehicle",
+    "stepperConfig": {  
+      "totalSteps": 5,
+      "currentStepIndex": 1,
+       "currentProgress": 0.75,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "additionalInformationPageConfig": {
+      "titleConfig": {
+        "titleText": "Describe the damage to your vehicle"
+      },
+      "questionContainerConfig": {
+        "id": "questions_DDV",
+        "questions": [
+          {
+            "id": "DDV_CLAIM_TO_MY_VEHICLE",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Are you claiming for damage to your vehicle?",
+              "headerType": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "DDV_CLAIM_TO_MY_VEHICLE_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg",
+              "questionIdToActivate": "DDV_CAR_DRIVEABLE"
+            },
+            "rightOptionConfig": {
+              "id": "DDV_CLAIM_TO_MY_VEHICLE_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg",
+              "questionIdToActivate": "DDV_CAR_DRIVEABLE"
+            }
+          },
+          {
+            "id": "DDV_CAR_DRIVEABLE",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Is the car still driveable?",
+              "headerType": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "DDV_CAR_DRIVEABLE_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg",
+              "questionIdToActivate": "DDV_POLICE_REPORT"
+            },
+            "rightOptionConfig": {
+              "id": "DDV_CAR_DRIVEABLE_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg",
+              "questionIdToActivate": "DDV_POLICE_REPORT"
+            }
+          },
+          {
+            "id": "DDV_POLICE_REPORT",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Did you report the damage to the police?",
+              "headertype": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "DDV_POLICE_REPORT_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg"
+            },
+            "rightOptionConfig": {
+              "id": "DDV_POLICE_REPORT_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg"
+            },
+            "advancedQuestionConf": {
+              "additionalFieldType": "SHORT_TEXT",
+              "inputLabel": "Police record number*",
+              "triggerOnButtonID": "DDV_POLICE_REPORT_YES",
+              "additionalFieldIsRequired": true,
+              "hidden": false,
+              "currencyLabel": "",
+              "lang": "DE"
+            }
+          }
+        ]
+      },
+      "textareaConfig": {
+        "id": "DDV_Comment",
+        "label": "Please describe the incident",
+        "placeholder": "Comment here",
+        "maxLength": 500,
+        "hidden": true
+      }
+    }
+	}

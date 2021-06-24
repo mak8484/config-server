@@ -1,0 +1,41 @@
+{
+    "pageId": "when-and-where-hail",
+    "stepperConfig": {  
+        "totalSteps": 1,
+        "currentStepIndex": 1,
+        "currentProgress": 0.75,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "genericAboutPageConfig": {
+        "titleConfig": {
+            "titleText": "when-and-wheree-hail.titleText"
+        },
+        "dateAndTimeLabel": "when-and-wheree-hail.dateAndTimeLabel",
+        "datePickerConfig": {
+            "id": "waw_date",
+            "label": "when-and-wheree-hail.datePickerConfig.label",
+            "required": true
+        },
+        "timePickerConfig": {
+            "id": "waw_time",
+            "label": "when-and-wheree-hail.timePickerConfig.label",
+            "required": true
+        },
+        "locationLabel": "when-and-wheree-hail.locationLabel",
+        "addressAutocompleteFieldConfig": {
+            "id": "waw_location",
+            "fieldIsRequired": true,
+            "types":["(regions)"],
+            "countryCodes": [
+                "DE", "CH"
+            ],
+            "label": "when-and-where.addressAutocompleteFieldConfig.label"
+        }
+    }
+}

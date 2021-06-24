@@ -1,0 +1,70 @@
+	{
+    "pageId": "weather-damage",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+      "currentProgress": 0.5,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "navigationOptionsPageConfig": {
+      "titleConfig": {
+        "titleText": "Please describe how it happened"
+      },
+      "subtitleConfig": {
+        "subtitleText": ""
+      },
+      "textareaConfig": {
+        "id": "WD_COMMENT",
+        "label": "Please describe the incident",
+        "placeholder": "Comment here*",
+        "maxLength": 500,
+        "required": true
+      },
+      "circleButtonContainerConfig": {
+        "id": "weatherDamageTypeButtons",
+        "rows": [
+          [
+            {
+              "id": "WD_HAIL",
+              "label": "Hail",
+              "icon": "",
+              "svg": "./assets/images/cat-d-1.svg",
+              "svgChecked": "./assets/images/cat-d-1_active.svg"
+            },
+            {
+              "id": "WD_ROOF_AVALANCHE",
+              "label": "Roof Avalanche Icicle",
+              "icon": "",
+              "svg": "./assets/images/cat-d-2.svg",
+              "svgChecked": "./assets/images/cat-d-2_active.svg"
+            },
+            {
+              "id": "WD_FLOOD",
+              "label": "Flood",
+              "icon": "",
+              "svg": "./assets/images/cat-d-3.svg",
+              "svgChecked": "./assets/images/cat-d-3_active.svg"
+            }
+          ],
+          [
+            {
+              "id": "WD_OTHER_NATURAL_DISASTER",
+              "label": "Other natural disaster",
+              "icon": "",
+              "svg": "./assets/images/cat-d-3.svg",
+              "svgChecked": "./assets/images/cat-d-3_active.svg"
+            }            
+          ]
+        ],
+        "multiSelection": false
+      }
+    }
+	}

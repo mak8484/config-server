@@ -1,0 +1,26 @@
+{
+    "pageId": "when-and-where-unattended-damage",
+    "stepperConfig": {  
+        "totalSteps": 1,
+        "currentStepIndex": 1,
+        "currentProgress": 0.75,
+        "stepsLabels": [
+          "progress-stepper.stepLabel.1",
+          "progress-stepper.stepLabel.2",
+          "progress-stepper.stepLabel.3",
+          "progress-stepper.stepLabel.4",
+          "progress-stepper.stepLabel.5"
+        ]
+      },
+    "genericAboutPageConfig": {
+        "titleConfig": {
+            "titleText": "when-and-where-unattended-damage.titleText"
+        },
+        "dateAndTimeLabel": "when-and-where-unattended-damage.dateAndTimeLabel",
+        "datePickerConfig": {
+            "id": "waw_date",
+            "label": "when-and-where-unattended-damage.datePickerConfig.label",
+            "required": true
+        }
+    }
+}

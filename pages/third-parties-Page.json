@@ -1,0 +1,190 @@
+{
+  "pageId": "third-parties",
+  "stepperConfig": {  
+    "totalSteps": 5,
+    "currentStepIndex": 2,
+    "currentProgress": 0.5,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "nextBtnOptionalLabel": "third-parties.nextBtnOptionalLabel",
+  "nextBtnOptionalLabelCondition": [
+    {
+      "value1Expression": "$.tp_container",
+      "operator": "==",
+      "value2Expression": "undefined"
+    }
+  ],
+  "thirdPartiesPageConfig": {
+    "id": "tp_container",
+    "titleConfig": {
+      "titleText": "third-parties.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "third-parties.subtitleText"
+    },
+    "thirdPartyTypes": {
+      "label": "third-parties.thirdPartyTypes.label",
+      "icon": "product-plus",
+      "links": [
+        {
+          "id": "tp_addPerson",
+          "linkLabel": "third-parties.thirdPartyTypes.tp_addPerson.linkLabel",
+          "linkValue": "person",
+          "damagedPersonConfig": {
+            "cardDisplayFields": {
+              "title": "third-parties.thirdPartyTypes.tp_addPerson.card.shortTitle",
+              "subtitle": "firstName , lastName",
+              "info": "phone"
+            },
+            "circleButtonContainerTitle": "",
+            "radioButtonConfig": {
+              "id": "dp_salutation",
+              "options": [
+                {
+                  "label": "third-parties.thirdPartyTypes.dp_salutation.mrsms",
+                  "value": "Mrs/Ms"
+                },
+                {
+                  "label": "third-parties.thirdPartyTypes.dp_salutation.mr",
+                  "value": "Mr"
+                }
+              ],
+              "required": true
+            },
+            "titleLabel": "third-parties.thirdPartyTypes.tp_addPerson.titleLabel",
+            "shortTitleLabel": "",
+            "buttonLabel": "third-parties.thirdPartyTypes.tp_addPerson.buttonLabel",
+            "personForm":[
+              {
+                "id": "dp_salutation",
+                "label": "",
+                "type": "RADIO",
+                "options": [
+                  {
+                    "label": "third-parties.thirdPartyTypes.dp_salutation.mrsms",
+                    "value": "Mrs/Ms"
+                  },
+                  {
+                    "label": "third-parties.thirdPartyTypes.dp_salutation.mr",
+                    "value": "Mr"
+                  }
+                ],
+                "validators": [
+                  {
+                    "type": "REQUIRED"
+                  }
+                ]
+              },
+              {
+                "id": "firstName",
+                "type": "INPUT",
+                "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.firstName",
+                "validators": [
+                  {
+                    "type": "REQUIRED"
+                  }
+                ]
+              },
+              {
+                "id": "lastName",
+                "type": "INPUT",
+                "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.lastName",
+                "validators": [
+                  {
+                    "type": "REQUIRED"
+                  }
+                ]
+              },   
+              {
+                "id": "phone",
+                "type": "INPUT",
+                "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.phone",
+                "validators":[
+                  {
+                  "type": "PATTERN",
+                  "value": "^(\\+?)(\\d{2,4})(\\s?)((\\(0\\))?)(\\s?)(\\d{1})(\\s?)(\\d{3})(\\s?)(\\d{2})(\\s?)(\\d{2})$",
+                  "errorMessage": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.phone.errorMessage"
+                  },
+                  {
+                    "type": "REQUIRED"
+                  }
+                ]
+              },    
+              {
+                "id": "additionalInformation",
+                "type": "INPUT",
+                "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.additionalInformation"
+              },
+              {
+                "id": "licenseplate",
+                "type": "INPUT",
+                "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.licenseplate"
+              }             
+            ],
+            "formConfig": [
+              {
+                "id": "individualDetailsPersonData",
+                "fields": [
+                  {
+                    "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.firstName",
+                    "name": "firstName",
+                    "type": "text",
+                    "validators": [
+                      {
+                        "type": "REQUIRED"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.lastName",
+                    "name": "lastName",
+                    "type": "text",
+                    "validators": [
+                      {
+                        "type": "REQUIRED"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.phone",
+                    "name": "phone",
+                    "type": "text",
+                    "validators": [
+                      {
+                        "type": "REQUIRED"
+                      }
+                    ],
+                    "pattern": "^(\\+?)(\\d{2,4})(\\s?)((\\(0\\))?)(\\s?)(\\d{1})(\\s?)(\\d{3})(\\s?)(\\d{2})(\\s?)(\\d{2})$"
+                  },
+                  {
+                    "label": "third-parties.thirdPartyTypes.tp_addPerson.formConfig.additionalInformation",
+                    "name": "additionalInformation",
+                    "validators": [
+                      {
+                        "type": "REQUIRED"
+                      }
+                    ],
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "deleteConfirmationModal": {
+      "title": "third-parties.deleteConfirmationModal.title",
+      "btnAccept": "third-parties.deleteConfirmationModal.btnAccept",
+      "btnCancel": "third-parties.deleteConfirmationModal.btnCancel"
+    }
+  }
+}

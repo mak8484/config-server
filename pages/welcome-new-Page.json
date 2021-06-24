@@ -1,0 +1,38 @@
+{
+  "pageId": "welcome",
+  "hideNextButton": true,
+  "hideBackButton": true,
+  "welcomePageConfig": {
+    "title": "welcome.titleText",
+    "introductionText": "welcome.subtitleText",
+    "textLine0":"welcome.textLine0",
+    "textLine1":"welcome.titleText",
+    "textLine2":"welcome.subtitleText",
+    "imagePathDesktop": "./assets/images/welcome_screen_desktop.jpg",
+    "imagePathMobile":"./assets/images/welcome_screen_mobile_3x.jpg",
+    "disclaimer": {
+      "imagePath": "./assets/images/partner-handshake.svg",
+      "consentText": "welcome.consentText",
+      "agreeText": "welcome.agreeText",
+      "denyText": "welcome.denyText"
+    },
+    "optionsArray" : [
+    ],
+    "buttonsArray": [
+      {
+        "id": "W_CUSTOMER",
+        "label": "welcome.buttonCustomer",
+        "type": "primary",
+        "size": "medium",
+        "value": "W_CUSTOMER"
+      },
+      {
+        "id": "W_OPPONENT",
+        "label": "welcome.buttonOpponent",
+        "type": "primary negative",
+        "size": "medium",
+        "value": "W_OPPONENT"
+      }
+    ]
+  }
+}

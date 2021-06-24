@@ -1,0 +1,64 @@
+	{
+    "pageId": "replacement-vehicle",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+       "currentProgress": 0.25,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "additionalInformationPageConfig": {
+      "titleConfig": {
+        "titleText": "Replacement vehicle"
+      },
+      "questionContainerConfig": {
+        "id": "questionContainer_rv",
+        "questions": [
+          {
+            "id": "RV_NEED_HIRE_CAR",
+            "questionText": {
+              "id": "1",
+              "type": "HEADLINE",
+              "label": "Do you need a hire car?",
+              "headertype": "h4",
+              "headerOption": "subsection-xsmall"
+            },
+            "questionHidden": false,
+            "questionRequired": true,
+            "iconsUrl": "./assets/misc/",
+            "leftOptionConfig": {
+              "id": "RV_NEED_HIRE_CAR_YES",
+              "icon": "/icon_yes-default.svg",
+              "iconChecked": "/icon_yes-selected.svg"
+            },
+            "rightOptionConfig": {
+              "id": "RV_NEED_HIRE_CAR_NO",
+              "icon": "/icon_no-default.svg",
+              "iconChecked": "/icon_no-selected.svg"
+            },
+            "advancedQuestionConf": {
+              "additionalFieldType": "COPY_TEXT",
+              "inputLabel": "Our service provider will contact you in the next four business hours to assist you with the hire car.",
+              "additionalFieldIsMandatory": false,
+              "triggerOnButtonID": "RV_NEED_HIRE_CAR_YES",
+              "lang": "EN"
+            }
+          }
+        ]
+      },
+      "textareaConfig": {
+        "id": "RV_Comment",
+        "label": "",
+        "placeholder": "",
+        "maxLength": 500,
+        "hidden": true
+      }
+    }
+	}

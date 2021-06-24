@@ -1,0 +1,31 @@
+{
+  "pageId": "error-page",
+  "hideNextButton": false,
+  "hideBackButton": true,
+  "nxNextText": "errorPage.nextButton",
+  "errorPageConfig": {
+    "phone": "errorPage.callUs.phoneNumber",
+    "phoneSubtitle": "errorPage.phoneSubtitle",
+    "subtitleConfig": {
+      "subtitleText": "errorPage.subtitle"
+    },
+    "text": "errorPage.text",
+    "titleConfig": {
+      "titleText": "errorPage.title"
+    },
+    "callUs": {
+      "callUsQuestion": "errorPage.callUs.question",
+      "callUsConfig": {
+        "domestic": {
+        "title":"need-help.call-us.domestic.title",
+        "number":"need-help.call-us.domestic.number"
+      },
+      "international": {
+        "title":"need-help.call-us.international.title",
+        "number":"need-help.call-us.international.number"
+      }
+    },
+    "hidden": false
+    }
+  }
+}

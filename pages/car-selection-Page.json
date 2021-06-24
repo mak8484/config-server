@@ -1,0 +1,63 @@
+{
+    "pageId": "car-selection",
+    "stepperConfig": {
+        "totalSteps": 5,
+        "currentStepIndex": 2,
+        "currentProgress": 0.25,
+        "stepsLabels": [
+            "progress-stepper.stepLabel.1",
+            "progress-stepper.stepLabel.2",
+            "progress-stepper.stepLabel.3",
+            "progress-stepper.stepLabel.4",
+            "progress-stepper.stepLabel.5"            
+        ]
+    },
+    "aboutPageConfig": {
+        "titleConfig": {
+            "titleText": "car-selection.title"
+        },
+        "subtitleConfig": {
+            "subtitleText": "car-selection.subtitle"
+        },
+        "pesonalDataTitle": "",
+        "policyInfoId": "",
+        "loginConfig": {
+            "policyDataConfig": {
+                "policyHolderNameExpression": "",
+                "policyListExpression": "",
+                "policyOtherLabel": "",
+                "policyOtherRequired": false,
+                "onePlateLabel": "",
+                "label": "",
+                "required": false
+            }
+        },
+        "notLoginConfig": {
+            "userFormConfig": {
+                "id": "carSelection",
+                "fields": [
+                    {
+                        "label": "car-selection.car-brand.label",
+                        "hint": "car-selection.car-brand.hint",
+                        "name": "car-brand",
+                        "type": "text",
+                        "required": true
+                    },
+                    {
+                        "label": "car-selection.registration-date.label",
+                        "hint": "car-selection.registration-date.hint",
+                        "name": "car-registration-date",
+                        "type": "date",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        "preferredOptionConfig": {
+            "enabled": false,
+            "id": "",
+            "options": []
+        }
+
+    }
+}

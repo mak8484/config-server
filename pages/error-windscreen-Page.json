@@ -1,0 +1,28 @@
+  {
+    "pageId": "error-page",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+       "currentProgress": 0.25,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "errorPageConfig": {
+      "phone": "Call +49 89 000000",
+      "phoneSubtitle": "Their lines are open 24 hours a day, 7 days a week.",
+      "subtitleConfig": {
+        "subtitleText": "To repair or replace your windscreen please contact our approved repairer, Autoglass, using one of the methods below."
+      },
+      "text": "You don’t have to pay any excess if they can repair it for you.",
+      "titleConfig": {
+        "titleText": "Oops! Something went wrong"
+      }
+    }
+  }

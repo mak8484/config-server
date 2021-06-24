@@ -1,0 +1,188 @@
+  {
+    "pageId": "vehicle-collision",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+      "currentProgress": 0.5,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "navigationOptionsPageConfig": {
+      "titleConfig": {
+        "titleText": "vehicle-collision.titleText"
+      },
+      "textareaConfig": {
+        "id": "CV_COMMENT",
+        "label": "",
+        "placeholder": "",
+        "maxLength": 255,
+        "hidden": true,
+        "required": false
+      },
+      "circleButtonContainerConfig": {
+        "id": "VC_BUTTONS",
+        "rows": [
+          [
+            {
+              "id": "VC_HIT_IN_REAR",
+              "label": "vehicle-collision.VC_HIT_IN_REAR",
+              "icon": "",
+              "svg": "./assets/images/cat-a-collision.svg",
+              "svgChecked": "./assets/images/cat-a-collision_active.svg",
+              "activatesComponentId": "VC_RadioBtn_HIR"
+            },
+            {
+              "id": "VC_REVERSING",
+              "label": "vehicle-collision.VC_REVERSING",
+              "icon": "",
+              "svg": "./assets/images/cat-a-1.svg",
+              "svgChecked": "./assets/images/cat-a-1_active.svg",
+              "activatesComponentId": "VC_RadioBtn_RD"
+            },
+            {
+              "id": "VC_FAILURE_TO_GIVE_WAY",
+              "label": "vehicle-collision.VC_FAILURE_TO_GIVE_WAY",
+              "icon": "",
+              "svg": "./assets/images/cat-a-3.svg",
+              "svgChecked": "./assets/images/cat-a-3_active.svg",
+              "activatesComponentId": "VC_RadioBtn_FGW"
+            }
+          ],
+          [
+            {
+              "id": "VC_CHANGING_LANES",
+              "label": "vehicle-collision.VC_CHANGING_LANES",
+              "icon": "",
+              "svg": "./assets/images/cat-a-4.svg",
+              "svgChecked": "./assets/images/cat-a-4_active.svg",
+              "activatesComponentId": "VC_RadioBtn_CL"
+            },
+            {
+              "id": "VC_OTHER",
+              "label": "vehicle-collision.VC_OTHER",
+              "icon": "",
+              "svg": "./assets/images/other.svg",
+              "svgChecked": "./assets/images/other_active.svg"
+            }
+          ]
+        ],
+        "multiSelection": false
+      },
+      "radioListGroupsConfig": {
+        "id": "VC_ADDITIONAL_QUESTIONS",
+        "radioGroupsConfig": [
+          {
+            "id": "VC_RadioBtn_HIR",           
+            "radioListGroups": [
+              {
+                "id": "VC_RadioBtn_HIR_WHO_HIT_WHOM",
+                "label": "vehicle-collision.VC_RadioBtn_HIR_WHO_HIT_WHOM",
+                "options": [
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_HIR_WHO_HIT_WHOM.I_HIT",
+                    "value": "I_HIT"
+                  },
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_HIR_WHO_HIT_WHOM.I_WAS_HIT",
+                    "value": "I_WAS_HIT"
+                  }
+                ],
+                "required": true
+              }
+            ]
+          },
+          {
+            "id": "VC_RadioBtn_RD",           
+            "radioListGroups": [
+              {
+                "id": "VC_RadioBtn_RD_WHO_WAS_REVERSING",
+                "label": "vehicle-collision.VC_RadioBtn_RD_WHO_WAS_REVERSING",
+                "options": [
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_RD_WHO_WAS_REVERSING.MYSELF",
+                    "value": "MYSELF"
+                  },
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_RD_WHO_WAS_REVERSING.OTHER",
+                    "value": "OTHER"
+                  },
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_RD_WHO_WAS_REVERSING.BOTH",
+                    "value": "BOTH"
+                  }
+                ],
+                "required": true
+              }
+            ]
+          },
+          {
+            "id": "VC_RadioBtn_CL",           
+            "radioListGroups": [
+              {
+                "id": "VC_RadioBtn_CL_WHO_CHANGED_LANES",
+                "label": "vehicle-collision.VC_RadioBtn_CL_WHO_CHANGED_LANES",
+                "options": [
+                 {
+                    "label": "vehicle-collision.VC_RadioBtn_CL_WHO_CHANGED_LANES.MYSELF",
+                    "value": "MYSELF"
+                  },
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_CL_WHO_CHANGED_LANES.OTHER",
+                    "value": "OTHER"
+                  }
+                ],
+                "required": true
+              }
+            ]
+          },
+          {
+            "id": "VC_RadioBtn_FGW",           
+            "radioListGroups": [
+              {
+                "id": "VC_RadioBtn_FGW_WHOS_FAILURE",
+                "label": "vehicle-collision.VC_RadioBtn_FGW_WHOS_FAILURE",
+                "options": [
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_FGW_WHOS_FAILURE.MYSELF",
+                    "value": "MYSELF"
+                  },
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_FGW_WHOS_FAILURE.OTHER",
+                    "value": "OTHER"
+                  }
+               ],
+                "required": true
+              }
+            ]
+          },
+          {
+            "id": "VC_RadioBtn_OD",           
+            "radioListGroups": [
+              {
+                "id": "VC_RadioBtn_OD_DOOR",
+                "label": "vehicle-collision.VC_RadioBtn_OD_DOOR",
+                "options": [
+                  {
+                    "label": "vehicle-collision.VC_RadioBtn_OD_DOOR.MYSELF",
+                    "value": "MYSELF"
+                  },
+                  {
+                    "label": "The other",
+                    "value": "OTHER"
+                  }
+                ],
+                "required": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+	}

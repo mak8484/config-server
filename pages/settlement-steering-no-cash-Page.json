@@ -1,0 +1,54 @@
+	{
+    "pageId": "settlement-steering-no-cash",
+    "stepperConfig": {  
+      "totalSteps": 5,
+      "currentStepIndex": 3,
+       "currentProgress": 0,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": true,
+    "hideBackButton": false,
+    "linkBackButton": true,
+    "navigationOptionsLargePageConfig": {
+      "titleConfig": {
+        "titleText": "settlement-steering.titleText"
+      },
+      "subtitleConfig": {
+        "subtitleText": "settlement-steering.subtitleText"
+      },
+      "navigationOptions": {
+        "id": "settlementOption",
+        "options": [
+          {
+            "icon": "",
+            "hideHeader": true,
+            "hasBorder": true,
+            "preferred": true,
+            "title": "settlement-steering.repairAtPartnerGarage.title",
+            "description": "settlement-steering.repairAtPartnerGarage.description",
+            "nxNextType": "primary",
+            "nxNextLabel": "settlement-steering.repairAtPartnerGarage.nxNextLabel",
+            "nxNextAction": "repairAtPartnerGarage",
+            "hasWhiteBackground": true
+          },
+          {
+            "icon": "",
+            "hideHeader": true,
+            "hasBorder": true,
+            "title": "settlement-steering.sendClaim.title",
+            "description": "settlement-steering.sendClaim.description",
+            "nxNextType": "secondary",
+            "nxNextLabel": "settlement-steering.sendClaim.nxNextLabel",
+            "nxNextAction": "sendClaim",
+            "hasWhiteBackground": true            
+          }
+        ]
+      }
+    }
+  }

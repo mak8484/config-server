@@ -1,0 +1,38 @@
+{
+  "pageId": "welcome-old",
+  "hideBackButton": true,
+  "hideNextButton": false,
+  "navigationOptionsPageConfig": {
+    "titleConfig": {
+      "titleText": "welcome.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "welcome.subtitleText"
+    },
+    "circleButtonContainerConfig": {
+      "id": "welcomeStartAs",
+      "multiSelection": false,
+      "rows": [
+        [
+          {
+            "id": "W_CUSTOMER",
+            "label": "welcome.buttonCustomer",
+            "icon": "product-injury-plaster"
+          },
+          {
+            "id": "W_OPPONENT",
+            "label": "welcome.buttonOpponent",
+            "icon": "product-person-heart-people-love"
+          }
+        ]
+      ]
+    },
+    "textareaConfig": {
+      "id": "W_COMMENT",
+      "label": "",
+      "placeholder": "",
+      "maxLength": 255,
+      "hidden": true
+    }
+  }
+}

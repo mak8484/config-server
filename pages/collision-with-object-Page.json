@@ -1,0 +1,69 @@
+	{
+    "pageId": "collision-with-object",
+    "stepperConfig": {  
+      "totalSteps": 5,
+      "currentStepIndex": 1,
+       "currentProgress": 0.25,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+		"hideNextButton": false,
+    "hideBackButton": false,
+    "navigationOptionsPageConfig": {
+      "titleConfig": {
+        "titleText": "Please describe how it happened"
+      },
+      "subtitleConfig": {
+        "subtitleText": ""
+      },
+      "textareaConfig": {
+        "id": "CWO_COMMENT",
+        "label": "Please describe the event in more detail",
+        "placeholder": "Comment here",
+        "maxLength": 500
+      },
+      "circleButtonContainerConfig": {
+        "id": "CWO_BUTTONS",
+        "rows": [
+          [
+            {
+              "id": "CWO_IMMOBILE_OBJECT",
+              "label": "Collision with immobile object",
+              "icon": "",
+              "svg": "./assets/images/cat-b-1.svg",
+              "svgChecked": "./assets/images/cat-b-1_active.svg"
+            },
+            {
+              "id": "CWO_DEBRIS_ON_THE_ROAD",
+              "label": "Collision with debris on the road",
+              "icon": "",
+              "svg": "./assets/images/cat-b-2.svg",
+              "svgChecked": "./assets/images/cat-b-2_active.svg"
+            },
+            {
+              "id": "CWO_ITEMS_FALLING_VEHICLE",
+              "label": "Items falling from a vehicle",
+              "icon": "",
+              "svg": "./assets/images/cat-c-3.svg",
+              "svgChecked": "./assets/images/cat-c-3_active.svg"
+            }
+          ],
+          [
+            {
+              "id": "CWO_OTHER",
+              "label": "Other",
+              "icon": "",
+              "svg": "./assets/images/other.svg",
+              "svgChecked": "./assets/images/other_active.svg"
+            }
+          ]
+        ],
+        "multiSelection": false
+      }
+    }
+	}

@@ -1,0 +1,73 @@
+  {
+    "pageId": "flatfrog",
+    "stepperConfig": {  
+      "totalSteps": 1,
+      "currentStepIndex": 1,
+       "currentProgress": 0.75,
+      "stepsLabels": [
+        "progress-stepper.stepLabel.1",
+        "progress-stepper.stepLabel.2",
+        "progress-stepper.stepLabel.3",
+        "progress-stepper.stepLabel.4",
+        "progress-stepper.stepLabel.5"
+      ]
+    },
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "carPartPickerPageConfig": {
+      "titleConfig": {
+        "titleText": "flatfrog.titleText"
+      },
+      "id": "ff_flatfrog",
+      "circleButtonContainerConfig": {
+        "id": "ff_typeSelector",
+        "rows": [
+          [
+            {
+              "id": "CAR_WITH_WHEELS",
+              "label": "flatfrog.CAR_WITH_WHEELS",
+              "svg": "./assets/images/cartype-1.svg",
+              "svgChecked": "./assets/images/cartype-1_active.svg"
+            },
+           {
+              "id": "MOTORBIKE",
+              "label": "flatfrog.MOTORBIKE",
+              "icon": "plus"
+            },
+            {
+              "id": "OTHER",
+              "label": "flatfrog.OTHER",
+              "icon": "",
+              "svg": "./assets/images/other.svg",
+              "svgChecked": "./assets/images/other_active.svg"
+            }
+          ]
+        ],
+        "multiSelection": false
+      },  
+      "carPartPickerConfig":{
+        "id": "ff_cartPart",
+        "title": "flatfrog.carPartPickerConfig.title"
+      },
+      "otherTextareaConfig": {
+        "id": "carPartPickerTextArea",
+        "maxLength": 1024,
+        "label": "",
+        "placeholder": "",
+        "hidden": false
+      },
+      "titleCircleButton": "flatfrog.titleCircleButton",
+      "questionContainerConfig": {
+        "id": "ff_questions",
+        "questions": [
+          
+        ]
+      },
+      "additionalQuestionsConfig": {
+        "id": "ff_additionalQuestions",
+        "questions": [
+          
+        ]
+      }
+    }
+  }

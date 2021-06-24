@@ -1,0 +1,89 @@
+{
+  "pageId": "location-of-car",
+  "stepperConfig": {
+    "totalSteps": 5,
+    "currentStepIndex": 3,
+    "currentProgress": 0.5,
+    "stepsLabels": [
+      "progress-stepper.stepLabel.1",
+      "progress-stepper.stepLabel.2",
+      "progress-stepper.stepLabel.3",
+      "progress-stepper.stepLabel.4",
+      "progress-stepper.stepLabel.5"
+    ]
+  },
+  "hideBackButton": false,
+  "hideNextButton": false,
+  "additionalInformationPageConfig": {
+    "titleConfig": {
+      "titleText": "location-of-car.titleText"
+    },
+    "questionContainerConfig": {
+      "id": "loc_questionContainer",
+      "showAllQuestions": true,
+      "questions": [
+        {
+          "id": "loc_atRepairShop",
+          "questionText": {
+            "id": "loc_atRepairShop_q1",
+            "type": "HEADLINE",
+            "label": "location-of-car.loc_atRepairShop",
+            "headerType": "h4",
+            "headerOption": "subsection-xsmall"
+          },
+          "required": true,
+          "hidden": false,
+          "iconsUrl": "assets/misc/",
+          "leftOptionConfig": {
+            "id": "loc_atRepairShop_Yes",
+            "icon": "/icon_yes-default.svg",
+            "iconChecked": "/icon_yes-selected.svg"
+          },
+          "rightOptionConfig": {
+            "id": "loc_atRepairShop_No",
+            "icon": "/icon_no-default.svg",
+            "iconChecked": "/icon_no-selected.svg"
+          },
+          "advancedQuestionConf": {
+            "additionalFieldType": "FORM",
+            "triggerOnButtonID": "loc_atRepairShop_Yes",
+            "lang": "en",
+            "inputLabel": "location-of-car.loc_nameAndLocationRepairShop.title",
+            "formConfigFields": [
+              {
+                "id": "location_of_car.loc_repairShopName",
+                "label": "location-of-car.loc_repairShopName",
+                "type": "INPUT",
+                "value": "",
+                "validators": [
+                  {
+                    "type": "REQUIRED"
+                  }
+                ]
+              },
+              {
+                "id": "location_of_car.loc_repairShopLocation",
+                "label": "location-of-car.loc_repairShopLocation",
+                "type": "INPUT",
+                "value": "",
+                "validators": [
+                  {
+                    "type": "REQUIRED"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "textareaConfig": {
+      "id": "loc_comment",
+      "label": "",
+      "hidden": true,
+      "maxLength": 0,
+      "required": false,
+      "placeholder": ""
+    }
+  }
+}
