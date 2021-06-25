@@ -1,0 +1,12 @@
+{
+  "searchResource": "/search",
+  "suggestionsResource": "/suggestion",
+  "poi_api_verb": "post",
+  "tenantId": "poi-at-test",
+  "googleMapsLazyLoaderApiConfig": {
+    "apiKey": "AIzaSyBiOSEr0CJowN560-NvzAURHfhQmjgPN8o",
+    "clientId": null,
+    "libraries": ["places", "geometry"],
+    "apiVersion": "3.39"
+  }
+}

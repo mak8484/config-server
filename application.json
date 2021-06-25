@@ -1,0 +1,15 @@
+{
+  "headerConfig": {
+    "logo": "./assets/logos/allianz-logo.png",
+    "logoUrl": "",
+    "logoAlt": "Allianz Logo"
+  },
+  "enableTwilioChat": false,
+  "pfeConfig": {
+    "nextButtonLabel": "NEXT",
+    "backButtonLabel": "BACK"
+  },
+  "languages": {
+    "de-at": "languages.de-at"
+  }
+}
