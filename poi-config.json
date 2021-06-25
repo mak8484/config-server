@@ -4,7 +4,7 @@
   "poi_api_verb": "post",
   "tenantId": "poi-at-test",
   "googleMapsLazyLoaderApiConfig": {
-    "apiKey": "AIzaSyBiOSEr0CJowN560-NvzAURHfhQmjgPN8o",
+    "apiKey": "AIzaSyCEiQHUIsF5QHDidTV18_SNm6-re-dCcWc",
     "clientId": null,
     "libraries": ["places", "geometry"],
     "apiVersion": "3.39"
