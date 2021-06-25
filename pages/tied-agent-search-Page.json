@@ -1,0 +1,417 @@
+{
+    "pageId": "tied-agent-search",
+    "hideBackButton": true,
+    "hideNextButton": true,
+    "searchPageConfig": {
+        "poiObject": {
+            "id": "poiRepairShop"
+        },
+        "poiSearchComponentConfig": {
+            "useSearchTermAutocomplete": true,
+            "backgroundColor": "#f5f5f5",
+            "mapCenter": {
+                "lat": 48.20807233723738,
+                "lng": 16.377589446602883
+            },
+            "searchLocationAutocompleteRestriction": {
+                "country": [
+                    "AT"
+                ]
+            },
+            "searchTermAutocompleteMinChars": 1,
+            "searchWithoutInput": false,
+            "searchTermId": "poi-search-term",
+            "termLocationErrorMsg": "ngx-poi.error_service_own",
+            "centerOnSelected": true,
+            "searchFitBound": true,
+            "mapHeight": "115vh",
+            "fields": ["name", "items.displayName"],
+            "suggestionsMode": 1,
+            "suggestionsFuzziness": 0,
+            "minimumRadius":  25
+        },
+        "headerTmplConfig": {
+            "formfields": [
+                {
+                    "type": "HEADLINE",
+                    "id": "Headline",
+                    "label": "poi.header",
+                    "headerType": "h3",
+                    "headerOption": "subsection-large"
+                },
+                {
+                    "type": "HEADLINE",
+                    "id": "SubHeadline",
+                    "label": "poi.subsection",
+                    "headerType": "h3",
+                    "headerOption": "subsection-xsmall"
+                }
+            ]
+        },
+        "additionalLinkConfig": [
+            {
+                "icon": "arrow-right",
+                "label": "additionalLink.registrationOffice.label",
+                "url": "zulassungsstellensuche.html"
+            }
+        ],
+        "resultListConfig": {
+            "showRating": true,
+            "showLanguages": false,
+            "showCopyText": true,
+            "showSocialMediaLinks": false,
+            "showCalculateRoute": true,
+            "primaryButtonConfig": {
+                "label": "button.homepage",
+                "value": "path",
+                "baseUrl": "https://www.allianz.at/de_AT/beratung/",
+                "urlSuffix": ".html"
+            },
+            "imageConfig": {
+                "value": "logo",
+                "baseUrl": "",
+                "defaultValue": {
+                    "url": "/assets/images/allianz.png",
+                    "normalizeURL": true
+                },
+                "useDefaultValue": true
+            },  
+            "infoConfig": [
+                {
+                    "label": "common.phone",
+                    "value": "displayPhone",
+                    "type": "tel"
+                },
+                {
+                    "label": "common.mobile",
+                    "value": "displayMobile",
+                    "type": "tel"
+                },
+                {
+                    "label": "common.fax",
+                    "value": "displayFax",
+                    "type": "text"
+                },
+                {
+                    "label": "common.email",
+                    "value": "suggest_email",
+                    "type": "email"
+                },
+                {
+                    "label": "common.hours",
+                    "value": "openinghours",
+                    "type": "list-expression",
+                    "expression": "%jsonPath%$.weekdayDescription%jsonPath% %jsonPath%$.openingHoursDescription%jsonPath%"
+                },
+                {
+                    "value": "openinghoursComment",
+                    "type": "text"
+                }
+            ],
+            "modalConfig": {
+                "modalItem": [
+                    {
+                        "type": "image",
+                        "value": "modalInfo.logo",
+                        "baseUrl": "",
+                        "defaultValue": {
+                            "url": "/assets/images/allianz.png",
+                            "normalizeURL": true
+                        },
+                        "useDefaultValue": true,
+                        "align": "center",
+                        "marginBottom": "m"
+                    },
+                    {
+                        "type": "title",
+                        "value": "modalInfo.suggest_name",
+                        "align": "center",
+                        "marginBottom": "m"
+                    },
+                    {
+                        "type": "expression",
+                        "value": "modalInfo",
+                        "expression": "%jsonPath%$.displayStreet%jsonPath%, %jsonPath%$.postcode%jsonPath% %jsonPath%$.city%jsonPath%",
+                        "align": "center",
+                        "marginBottom": "s"
+                    },
+                    {
+                        "type": "rating",
+                        "value": "modalInfo.rating",
+                        "align": "center",
+                        "marginBottom": "l"
+                    },
+                    {
+                        "label": "label.openHours",
+                        "type": "openhours",
+                        "value": "modalInfo.openinghours",
+                        "align": "center",
+                        "marginBottom": "m"
+                    },
+                    {
+                        "label": "label.call",
+                        "type": "tel",
+                        "value": "modalInfo.displayPhone",
+                        "align": "center",
+                        "marginBottom": "xs"
+                    },
+                    {
+                        "label": "common.mobile",
+                        "type": "tel",
+                        "value": "modalInfo.displayMobile",
+                        "align": "center",
+                        "marginBottom": "xs"
+                    },
+                    {
+                        "label": "label.email",
+                        "type": "email",
+                        "value": "modalInfo.suggest_email",
+                        "align": "center",
+                        "marginBottom": "l"
+                    },
+                    {
+                        "type": "link",
+                        "defaultValue": "common.calculate_route",
+                        "align": "center",
+                        "marginBottom": "l"
+                    }
+                ],
+                "modalButton": [
+                    {
+                        "type": "primary-button",
+                        "label": "button.homepage",
+                        "value": "modalInfo.path",
+                        "baseUrl": "https://www.allianz.at/de_AT/beratung/",
+                        "urlSuffix": ".html",
+                        "marginBottom": "s"
+                    }
+                ]
+            },
+            "itemConfig": {
+                "imageConfig": {
+                    "value": "image",
+                    "defaultValue": {
+                        "url": "/assets/images/profile.png",
+                        "normalizeURL": true
+                    }
+                },          
+                "infoConfig": [
+                    {
+                        "value": "displayName",
+                        "type": "title"
+                    },
+                    {
+                        "value": "responsibility",
+                        "type": "text"
+                    },
+                    {
+                        "value": "languages",
+                        "type": "language"
+                    },
+                    {
+                        "label": "common.phone",
+                        "value": "displayPhone",
+                        "type": "tel"
+                    },
+                    {
+                        "label": "common.mobile",
+                        "value": "displayMobile",
+                        "type": "tel"
+                    },
+                    {
+                        "label": "common.email",
+                        "value": "suggest_email",
+                        "type": "email"
+                    }
+                ],
+                "modalConfig": {
+                    "modalHeader": {
+                        "type": "dynamic",
+                        "value": {
+                            "selectedField": "modalInfo.type",
+                            "valueMapping": [
+                                {
+                                    "value": "AG",
+                                    "label": "button.agency"
+                                },
+                                {
+                                    "value": "KC",
+                                    "label": "button.customerCenter"
+                                }
+                            ]
+                        }
+                    },
+                    "modalItem": [
+                        {
+                            "type": "text",
+                            "value": "modalInfo.suggest_name",
+                            "marginBottom": "m"
+                        },
+                        {
+                            "type": "image",
+                            "value": "modalItem.image",
+                            "defaultValue": {
+                                "url": "/assets/images/profile.png",
+                                "normalizeURL": true
+                            },
+                            "align": "center",
+                            "marginBottom": "m"
+                        },
+                        {
+                            "type": "title",
+                            "value": "modalItem.suggest_name",
+                            "align": "center",
+                            "marginTop": "s",
+                            "marginBottom": "m"
+                        },
+                        {
+                            "type": "expression",
+                            "value": "modalInfo",
+                            "expression": "%jsonPath%$.displayStreet%jsonPath%, %jsonPath%$.postcode%jsonPath% %jsonPath%$.city%jsonPath%",
+                            "align": "center",
+                            "marginBottom": "m"
+                        },
+                        {
+                            "label": "label.call",
+                            "type": "tel",
+                            "value": "modalItem.displayPhone",
+                            "align": "center",
+                            "marginBottom": "xs"
+                        },
+                        {
+                            "label": "",
+                            "type": "mobile",
+                            "value": "modalItem.displayMobile",
+                            "align": "center",
+                            "marginBottom": "xs"
+                        },
+                        {
+                            "label": "label.email",
+                            "type": "email",
+                            "value": "modalItem.suggest_email",
+                            "align": "center",
+                            "marginBottom": "l"
+                        },
+                        {
+                            "type": "link",
+                            "defaultValue": "common.calculate_route",
+                            "align": "center",
+                            "marginBottom": "l"
+                        }
+                    ],
+                    "modalButton": [
+                        {
+                            "type": "primary-button",
+                            "label": "button.homepage",
+                            "baseUrl": "https://www.allianz.at/de_AT/beratung/",
+                            "urlSuffix": ".html",
+                            "value": "modalInfo.path"
+                        }
+                    ]
+                }
+            }
+        },
+        "sortConfig": {
+            "dropdownPlaceHolder": {
+                "label": "poi-result-panel-header.component.sorting.sortBy",
+                "value": [
+                    {
+                        "field": "geometry.coordinates",
+                        "order": "ASC"
+                    },
+                    {
+                        "field": "type.keyword",
+                        "order": "DESC"
+                    }
+                ]
+            },
+            "dropdownItems": [
+                {
+                    "value": [
+                        {
+                            "field": "geometry.coordinates",
+                            "order": "ASC"
+                        },
+                        {
+                            "field": "type.keyword",
+                            "order": "DESC"
+                        }
+                    ],
+                    "label": "poi-result-panel-header.component.sorting.distance"
+                },
+                {
+                    "value": {
+                        "field": "name.raw",
+                        "order": "ASC"
+                    },
+                    "label": "poi-result-panel-header.component.sorting.alphabetically"
+                }
+            ]
+        },
+        "filterConfig": {
+            "formfields": [
+                {
+                    "type": "PARAGRAPH",
+                    "id": "LanguageFilterTitle",
+                    "label": "filter_language.title",
+                    "copytextOption": "large"
+                },
+                {
+                    "type": "POI_LANGUAGE_FILTER_DROPDOWN",
+                    "id": "langFilterDropdown",
+                    "label": "filter_language.label",
+                    "name": "items.languages",
+                    "showFilter": true,
+                    "multiSelect": true,
+                    "filterPlaceholder": "filter_language.label"
+                },
+                {
+                    "type": "PARAGRAPH",
+                    "id": "additionalCriteriaTitle",
+                    "label": "filter.title.additionalCriteria",
+                    "copytextOption": "large"
+                },
+                {
+                    "type": "POI_FILTER_CHECKBOX",
+                    "id": "hasParkingLot",
+                    "label": "filter.hasParkingLot",
+                    "name": "extension.hasParkingLot",
+                    "value": true,
+                    "defaultValue": false
+                },
+                {
+                    "type": "POI_FILTER_CHECKBOX",
+                    "id": "isAccessible",
+                    "label": "filter.isAccessible",
+                    "name": "extension.isAccessible",
+                    "value": true,
+                    "defaultValue": false
+                },
+                {
+                    "type": "POI_FILTER_CHECKBOX",
+                    "id": "hasPublicTransportationAccess",
+                    "label": "filter.hasPublicTransportationAccess",
+                    "name": "extension.hasPublicTransportationAccess",
+                    "value": true,
+                    "defaultValue": false
+                },
+                {
+                    "type": "POI_FILTER_CHECKBOX",
+                    "id": "isDigitalAgency",
+                    "label": "filter.isDigitalAgency",
+                    "name": "extension.isDigitalAgency",
+                    "value": true,
+                    "defaultValue": false
+                },
+                {
+                    "type": "POI_FILTER_CHECKBOX",
+                    "id": "hasRegistrationService",
+                    "label": "filter.hasRegistrationService",
+                    "name": "filter",
+                    "value": "zulassungsstelle",
+                    "defaultValue": ""
+                }
+            ]
+        }
+    }
+}
