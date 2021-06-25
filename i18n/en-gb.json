@@ -1,0 +1,78 @@
+{
+  "poi-result-panel-header.component.showing": "Showing",
+  "poi-result-panel-header.component.sorting.alphabetically": "Alphabetical order (A to Z)",
+  "poi-result-panel-header.component.sorting.rating": "Customer reviews (descending)",
+  "poi-result-panel-header.component.sorting.distance": "Distance (closest to furthest)",
+  "poi-result-panel-header.component.sorting.sortBy": "Sort by",
+
+  "poi.header": "Allianz",
+  "poi.subsection": "Agent Search",
+
+  "ngx-poi": {
+    "button_more": "Load more results",
+    "button_submit": "Search...",
+    "button_show_result": "Show Results",
+    "error_empty": "Sorry, no matches for your search.",
+    "error_new_search_link": "START NEW SEARCH",
+    "error_service": "Sorry, search service returned error. Please try again.",
+    "input_field_location_label": "ZIP, City, or street..",
+    "input_field_location_not_found": "Location not found",
+    "input_field_term_label": "Name...",
+    "warning_message": "Please insert either a location or a name to start your search.",
+    "label_filters": "Filters",
+    "label_list": "List",
+    "label_map": "Map",
+    "label_sortby": "Sort By",
+    "label_looking_in_your_area": "Looking in your area?",
+    "link_search_my_location": "Search My Location",
+    "popover_search_my_location": "Cannot access your location. Please check your browser's permission settings.",
+    "link_back_to_list": "Back to list",
+    "link_details": "Show details",
+    "slider_field_radius_label": "Search radius",
+    "map": {
+      "button_search_area": "Search in this area",
+      "info_window_show_details": "Details",
+      "tooltip_browser_location_disabled": "Cannot access your location. Please check your browser's permission settings."
+    },
+    "error": {
+      "btnClose": "Close"
+    }
+  },
+  "common.specialty": "Specialty",
+  "common.phone": "Phone",
+  "common.mobile": "Mobile",
+  "common.fax": "Fax",
+  "common.email": "Email",
+  "common.hours": "Hours",
+  "common.calculate_route": "Calculate route",
+  "common.filters": "Filters",
+  "common.results": "results",
+  "common.languages": "Languages",
+  "button.homepage": "Homepage",
+  "button.make_an_appointment": "Make an appointment",
+  "button.show_items": "Show agents",
+  "button.show_other_items": "Show other agents",
+  "button.agency": "Agency",
+  "button.customerCenter": "Customer center",
+  "label.call": "Call",
+  "label.email": "Send Email",
+  "label.openHours": "Opening hours",
+  "lang": {
+    "en": "English",
+    "de": "German",
+    "nl": "Dutch"
+  },
+  "filter_language": {
+    "label": "Language",
+    "title": "<strong>Language</strong>"
+  },
+  "filter.title.rating": "<strong>Rating</strong>",
+  "filter.title.additionalCriteria": "<strong>Additional Criteria</strong>",
+  "filter.hasParkingLot": "Parking Lot Available",
+  "filter.isAccessible": "Is Accessible",
+  "filter.hasPublicTransportationAccess": "Has Public Transportation Access",
+  "filter.isDigitalAgency": "Is Digital Agency",
+  "filter.hasRegistrationService": "Has Registration Service",
+  "additionalLink.agency.label": "For agency search page",
+  "additionalLink.registrationOffice.label": "For registration office search page"
+}

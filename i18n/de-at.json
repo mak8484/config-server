@@ -1,0 +1,83 @@
+{ 
+  "poi-result-panel-header.component.showing": "Showing",
+  "poi-result-panel-header.component.sorting.alphabetically": "Alphabetisch",
+  "poi-result-panel-header.component.sorting.rating": "Bewertung (absteigend)",
+  "poi-result-panel-header.component.sorting.distance": "Entfernung",
+  "poi-result-panel-header.component.sorting.sortBy": "Sortieren",
+
+
+  "poi.header": "Beratersuche",
+  "poi.subsection":"Finden Sie einen passenden Berater in Ihrer Nähe. Geben Sie dazu die Adresse und/oder den Namen des Beraters ein.",
+
+  "ngx-poi": {
+    "button_more": "Mehr Ergebnisse anzeigen",
+    "button_submit": "Suchen...",
+    "button_show_result": "Ergebnisse anzeigen",
+    "error_empty": "Ihre Suche erzielte keine Treffer. Bitte versuchen Sie es mit einer anderen Adresse oder einem anderen Namen.",
+    "error_new_search_link": "Neue Suche",
+    "error_service": "Ihre Suchanfrage hat zu keinen Ergebnissen geführt. Bitte versuchen Sie es erneut.",
+    "input_field_location_label": "Straße, PLZ oder Ort...",
+    "input_field_location_not_found": "Ort nicht gefunden",
+    "input_field_term_label": "Name...",
+    "warning_message": "Bitte geben Sie eine Adresse oder einen Namen ein um Ihre Suche zu starten.",
+    "label_filters": "Filter",
+    "label_list": "Liste",
+    "label_map": "Karte",
+    "label_sortby": "Sortieren",
+    "label_looking_in_your_area": "Finden Sie einen Berater in Ihrer Umgebung",
+    "link_search_my_location": "In meiner Nähe suchen",
+    "popover_search_my_location": "Ihr Standort kann nicht gefunden werden. Bitte überprüfen Sie Ihre Browser-Einstellungen.",
+    "link_back_to_list": "Zurück zur Liste",
+    "link_details": "Details",
+    "slider_field_radius_label": "Suchradius",
+    "poi_result_panel_header.showing": "",
+    "poi_result_panel_header.results": "Ergebnisse",
+    "poi_left_panel_header.filter.clear": "Löschen",
+    "poi_left_panel_header.filter.filter": "Filter",
+    "map": {
+      "button_search_area": "In dieser Gegend suchen",
+      "info_window_show_details": "Details",
+      "tooltip_browser_location_disabled": "Ihr Standort kann nicht gefunden werden. Bitte überprüfen Sie Ihre Browser-Einstellungen."
+    },
+    "error": {
+      "btnClose": "Schließen"
+    }
+  },
+  "common.specialty": "Fachgebiete",
+  "common.phone": "Telefon",
+  "common.mobile": "Handy",
+  "common.fax": "Fax",
+  "common.email": "Email",
+  "common.hours": "Öffnungs-zeiten",
+  "common.calculate_route": "Route berechnen",
+  "common.filters": "Filter",
+  "common.results": "Ergebnisse",
+  "common.languages": "Sprachen",
+  "button.homepage": "Homepage",
+  "button.make_an_appointment": "Termin vereinbaren",
+  "button.show_items": "Berater anzeigen",
+  "button.show_other_items": "Andere Berater anzeigen",
+  "button.agency": "Agentur",
+  "button.customerCenter": "Kunden-Center",
+  "label.call": "",
+  "label.email": "E-mail senden",
+  "label.openHours": "Öffnungszeiten",
+  "lang": {
+    "en": "Englisch",
+    "de": "Deutsch",
+    "nl": "Niederländisch"
+  },
+  "filter_language": {
+    "label": "Sprachen",
+    "title": "<strong>Sprachen</strong>"
+  },
+  "filter.title.rating": "<strong>Rating</strong>",
+  "filter.title.additionalCriteria": "<strong>Weitere Filter</strong>",
+  "filter.hasParkingLot": "Parkplatz vorhanden",
+  "filter.isAccessible": "Barrierefreier Zugang",
+  "filter.hasPublicTransportationAccess": "Öffentlich erreichbar",
+  "filter.isDigitalAgency": "Online Berater",
+  "filter.hasRegistrationService": "Zulassungsstelle",
+  "additionalLink.agency.label": "Einen Berater suchen",
+  "additionalLink.registrationOffice.label": "Eine Zulassungsstelle suchen"
+}
