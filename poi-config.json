@@ -2,7 +2,7 @@
   "searchResource": "/search",
   "suggestionsResource": "/suggestion",
   "poi_api_verb": "post",
-  "tenantId": "poi-at-test",
+  "tenantId": "poi-at-prod",
   "apiEndpoint": "http:\/\/20.43.178.115\/poi",
   "googleMapsLazyLoaderApiConfig": {
     "apiKey": "AIzaSyCEiQHUIsF5QHDidTV18_SNm6-re-dCcWc",
