@@ -1,0 +1,1753 @@
+{
+  "errorPageID": "error-page",
+  "pages": [
+    {
+      "pageId": "when-and-where",
+      "executeServiceActivatorsSync": true,
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "frontendconfiguration",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.bffConfiguration"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "!{$.bffConfiguration}"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "pnr-vehicle-details",
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "which-number-plate",
+          "updateStateValues": [
+            {
+              "key": "$.claim.status",
+              "value": "FNOL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "pnr-vehicle-details",
+      "updateStateValues": [
+        {
+          "key": "$.claim.status",
+          "value": "PNR"
+        }
+      ],
+      "executeServiceActivatorsSync": true,
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "init-pnr",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.bffConfiguration"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} != 'lodge_pnr'"
+            }
+          ]
+        }
+      ],
+      "onPageLeaveActions": [
+        {
+          "type": "STALE_STATE",
+          "key": "$.claim.NP_VEHICLE",
+          "value": "other"
+        }
+      ],      
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "claims",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber"
+            },
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.pnrNumber"
+            },
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.uploadId"
+            },
+            {
+              "responseDataExpression": "$.incidentDate",
+              "stateKeyExpression": "$.claim.AYI_DATE_DISPLAY"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "select/vehicle",
+          "async": false,
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED"
+            }
+          ]
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "when-and-where"
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "updateStateValues": [
+            {
+              "key": "$.claim.bffContractDetails.vehicleType",
+              "value": "$.claim.PNR_VEHICLE.vehicleType"
+            },
+            {
+              "key": "$.claim.FF_VEHICLE_TYPE",
+              "value": "$.claim.PNR_VEHICLE.vehicleType"
+            },
+            {
+              "key": "$.claim.NP_VEHICLE",
+              "operation": "remove"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "which-number-plate",
+      "executeServiceActivatorsSync": true,
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.AYI_DATE",
+              "requestDataExpression": "$.date"
+            },
+            {
+              "stateKeyExpression": "$.claim.AYI_TIME",
+              "requestDataExpression": "$.time"
+            }
+          ],
+          "serviceActivatorID": "contracts/licenseplate",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffContracts"
+            }
+          ]
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "select/vehicle",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "{$.claim.NP_VEHICLE} != 'other'"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims",
+          "async": false,
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            },
+            {
+              "stateKeyExpression": "undefined",
+              "requestDataExpression": "$.claim.DS_DRIVER"
+            },
+            {
+              "stateKeyExpression": "undefined",
+              "requestDataExpression": "$.claim.DS_DRIVER_SELECTED"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber"
+            },
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.uploadId"
+            },
+            {
+              "responseDataExpression": "$.incidentDate",
+              "stateKeyExpression": "$.claim.AYI_DATE_DISPLAY"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "{$.claim.NP_VEHICLE} != 'other' && {$.claim.bffCreateClaim.claimNumber} && {$.claim.bffCreateClaim.claimNumber} != '' && !{$.claim.NP_VEHICLE_SELECTED.diffContractClaim}"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "claims",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber"
+            },
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.uploadId"
+            },
+            {
+              "responseDataExpression": "$.incidentDate",
+              "stateKeyExpression": "$.claim.AYI_DATE_DISPLAY"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "({$.claim.NP_VEHICLE} != 'other' && !{$.claim.bffCreateClaim.claimNumber}) || {$.claim.NP_VEHICLE_SELECTED.diffContractClaim}"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "error-duplicate-claim",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffCreateClaim.claimNumber",
+              "operator": "==",
+              "value2Expression": "duplicate"
+            }
+          ]
+        },
+        {
+          "nextPageId": "error-vehicle",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.NP_VEHICLE_SELECTED.self",
+              "operator": "==",
+              "value2Expression": ""
+            }
+          ]
+        },
+        {
+          "nextPageId": "pnr-vehicle-details",
+          "updateStateValues": [
+            {
+              "key": "$.claim.status",
+              "value": "PNR"
+            },
+            {
+              "key": "$.claim.bffContracts",
+              "operation": "remove"
+            },
+            {
+              "key": "$.claim.bffCreateClaim.claimNumber",
+              "operation": "remove"
+            },
+            {
+              "key": "$.claim.NP_VEHICLE_SELECTED",
+              "operation": "remove"
+            },
+            {
+              "key": "$.claim.uploadId",
+              "operation": "remove"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "{$.claim.NP_VEHICLE} == 'other'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "what-happened"
+        }
+      ]
+    },
+    {
+      "pageId": "error-duplicate-claim",
+      "nextOptionList": [],
+      "backOptionList": [
+        {
+          "nextPageId": "which-number-plate",
+          "updateStateValues": [
+            {
+              "key": "$.claim.bffCreateClaim.claimNumber",
+              "operation": "remove"
+            },
+            {
+              "key": "$.claim.uploadId",
+              "operation": "remove"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "error-vehicle",
+      "nextOptionList": []
+    },
+    {
+      "pageId": "what-happened",
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "contracts/details",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} !== 'lodge_pnr'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.contractNumber",
+              "requestDataExpression": "$.contractNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.self",
+              "requestDataExpression": "$.identificationNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber",
+              "requestDataExpression": "$.claimNumber"
+            },
+            {
+              "stateKeyExpression": "$.bffConfiguration.authScope[0]",
+              "requestDataExpression": "$.scope"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffContractDetails"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "theft-of-vehicle",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'VEHICLE_COLLISION'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "collision-with-object",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_OBJECT'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "windscreen-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "weather-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "unattended-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "animal-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'ANIMAL_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "collision-with-cyclist-or-pedestrian",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_HUMAN'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "other-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision",
+      "nextOptionList": [
+        {
+          "nextPageId": "vehicle-collision-open-door",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_OPENING_DOOR'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-hit-in-rear",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_REAR_END_COLLISION'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-reversing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_REVERSING'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-changing-lanes",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_CHANGING_LANES'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-other",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_OTHER'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-failure-to-give-way-roundabout",
+          "conditions": [
+            {
+              "expression": "{$.claim.VC_FTGW_TYPES} == 'VC_FTGW_ROUNDABOUT'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-failure-to-give-way-lights",
+          "conditions": [
+            {
+              "expression": "{$.claim.VC_FTGW_TYPES} == 'VC_FTGW_SET_LIGHTS'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-failure-to-give-way-sign",
+          "conditions": [
+            {
+              "expression": "{$.claim.VC_FTGW_TYPES} == 'VC_FTGW_GIVE_WAY' || {$.claim.VC_FTGW_TYPES} == 'VC_FTGW_OTHER_GIVE_WAY'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-open-door",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-hit-in-rear",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-reversing",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-failure-to-give-way-roundabout",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-failure-to-give-way-lights",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-failure-to-give-way-sign",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-changing-lanes",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-other",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "upload-content",
+      "executeServiceActivatorsSync": true,
+      "onPageLeaveServiceActivators": [
+        {
+          "cleanStaleState": true
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} == 'other' && {$.bffConfiguration.authScope[0]} != 'lodge_pnr'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            },
+            {
+              "stateKeyExpression": "undefined",
+              "requestDataExpression": "$.claim.WE_EVENT"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffUpdateClaim"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} != 'other' && {$.bffConfiguration.authScope[0]} != 'lodge_pnr'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffUpdateClaim"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "contracts/hireoptions",
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} != 'lodge_pnr'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.contractNumber",
+              "requestDataExpression": "$.contractNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber",
+              "requestDataExpression": "$.claimNumber"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffBenefitsEntitlements"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'VEHICLE_COLLISION' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_OBJECT' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_FOUND' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && {$.claim.DAMAGE_SUB_TYPE} == 'TOV_THEFT_FROM_VEHICLE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'ANIMAL_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_HUMAN' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "TIO"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "AAL"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.vehicleType",
+              "operator": "==",
+              "value2Expression": "CAR_WITH_WHEELS"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": "Active"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": "Pending"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "AAL"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.vehicleType",
+              "operator": "!=",
+              "value2Expression": "CAR_WITH_WHEELS"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "==",
+              "value2Expression": "undefined"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "==",
+              "value2Expression": "other"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing-assess-hold",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE'"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "AAL"
+            },
+            {
+              "value1Expression": "$.claim.DD_CLAIM_TO_MY_VEHICLE",
+              "operator": "==",
+              "value2Expression": "DD_CLAIM_TO_MY_VEHICLE_YES"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.vehicleType",
+              "operator": "==",
+              "value2Expression": "CAR_WITH_WHEELS"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": "NotApplicable"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": ""
+            }
+          ]
+        },
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            },
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && ({$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_NOT_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_BURNT_OUT')"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit-pnr",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' && {$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ],
+          "updateStateValues": [
+            {
+              "key": "$.claim.SUBMIT_EMAIL",
+              "value": "$.claim.bffContractDetails.policyHolder.email"
+            },
+            {
+              "key": "$.claim.SUBMIT_MOBILE",
+              "value": "$.claim.bffContractDetails.policyHolder.phone"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE'"
+            }
+          ],
+          "updateStateValues": [
+            {
+              "key": "$.claim.SUBMIT_EMAIL",
+              "value": "$.claim.bffContractDetails.policyHolder.email"
+            },
+            {
+              "key": "$.claim.SUBMIT_MOBILE",
+              "value": "$.claim.bffContractDetails.policyHolder.phone"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits"
+        }
+      ]
+    },
+    {
+      "pageId": "theft-of-vehicle",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_THEFT_FROM_VEHICLE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "police",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_NOT_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_BURNT_OUT'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'TOV_STOLEN_OR_LOST_KEYS'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "collision-with-object",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "windscreen-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "contact-windscreen",
+          "conditions": [
+            {
+              "expression": "{$.claim.WSD_ALREADY_REPAIRED} == 'WSD_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure"
+        }
+      ]
+    },
+    {
+      "pageId": "weather-damage",
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorID": "datalists/catastrophe",
+          "serviceActivatorMethod": "GET",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.AYI_DATE",
+              "requestDataExpression": "$.date"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.bffWeatherEvents"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage",
+          "conditions": [
+            {
+              "expression": "{$.bffWeatherEvents.length} == 1"
+            }
+          ]
+        },
+        {
+          "nextPageId": "weather-event"
+        }
+      ]
+    },
+    {
+      "pageId": "weather-event",
+      "updateStateValues": [
+        {
+          "key": "$.claim.bffWeatherEvents",
+          "value": "$.bffWeatherEvents"
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "select/weatherevent",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.WE_EVENT_SELECTED"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "unattended-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "animal-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "collision-with-cyclist-or-pedestrian",
+      "nextOptionList": [
+        {
+          "nextPageId": "cyclist-collision",
+          "conditions": [
+            {
+              "expression": "{$.claim.CWH_COLLISION_WITH_HUMAN} == 'CWH_CYCLIST'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "cyclist-collision",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "other-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "police",
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' || ({$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DAMAGE_SUB_TYPE} == 'OD_FIRE')"
+            }
+          ]
+        },
+        {
+          "nextPageId": "pnr-driver-details",
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "driver-selection"
+        }
+      ]
+    },
+    {
+      "pageId": "describe-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "police",
+          "conditions": [
+            {
+              "expression": "{$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO' && {$.claim.DAMAGE_TYPE} != 'WEATHER_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO' && ({$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' || ({$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DAMAGE_SUB_TYPE} == 'OD_FIRE'))"
+            }
+          ]
+        },
+        {
+          "nextPageId": "pnr-driver-details",
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "driver-selection",
+          "conditions": [
+            {
+              "expression": "{$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "flatfrog",
+          "updateStateValues": [
+            {
+              "key": "$.claim.FF_VEHICLE_TYPE",
+              "value": "$.claim.bffContractDetails.vehicleType",
+              "conditions": [
+                {
+                  "expression": "{$.claim.bffContractDetails.vehicleType} && !({$.claim.bffContractDetails.vehicleType} == 'CAR_WITH_WHEELS' && ({$.claim.FF_VEHICLE_TYPE} == 'VAN_WITH_WHEELS' || {$.claim.FF_VEHICLE_TYPE} == 'UTE_WITH_WHEELS' || {$.claim.FF_VEHICLE_TYPE} ==  '4X4_WITH_WHEELS' || {$.claim.FF_VEHICLE_TYPE} == 'CAR2_WITH_WHEELS'))"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "flatfrog",
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure",
+          "conditions": {
+            "operator": "OR",
+            "conditions": [
+              {
+                "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE'"
+              },
+              {
+                "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE'"
+              },
+              {
+                "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE'"
+              }
+            ]
+          }
+        },
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT'"
+            },
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'OD_FIRE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "pnr-driver-details",
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "driver-selection"
+        }
+      ]
+    },
+    {
+      "pageId": "other-parties",
+      "executeServiceActivatorsSync": true,
+      "nextOptionList": [
+        {
+          "nextPageId": "upload-content"
+        }
+      ]
+    },
+    {
+      "pageId": "contact-windscreen",
+      "nextOptionList": [
+        {
+          "nextPageId": "when-and-where"
+        }
+      ]
+    },
+    {
+      "pageId": "driver-selection",
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "select/driver",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.DS_DRIVER_SELECTED"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "about-other-driver",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.DS_DRIVER",
+              "operator": "==",
+              "value2Expression": "other"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure"
+        }
+      ]
+    },
+    {
+      "pageId": "pnr-driver-details",
+      "onPageLeaveServiceActivators": [
+
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure"
+        }
+      ]
+    },
+    {
+      "pageId": "about-other-driver",
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure"
+        }
+      ]
+    },
+    {
+      "pageId": "disclosure",
+      "executeServiceActivatorsSync": true,
+      "nextOptionList": [
+        {
+          "nextPageId": "other-parties",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} != 'WINDSCREEN_DAMAGE' && {$.claim.DAMAGE_TYPE} != 'WEATHER_DAMAGE' && ( {$.claim.DAMAGE_TYPE} != 'OTHER_INCIDENT' || ({$.claim.DAMAGE_SUB_TYPE} != 'OD_SUBMERGED' && {$.claim.DAMAGE_SUB_TYPE} != 'OD_LOSTCONTROL_NO_TP') )"
+            }
+          ]
+        },
+        {
+          "nextPageId": "upload-content",
+          "updateStateValues": [
+            {
+              "key": "$.TP_CONTAINER",
+              "value": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "repairer-landing",
+      "nextOptionList": [
+        {
+          "nextPageId": "repairer"
+        }
+      ]
+    },
+    {
+      "pageId": "repairer-landing-assess-hold",
+      "nextOptionList": [
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits"
+        }
+      ]
+    },
+    {
+      "pageId": "repairer",
+      "nextOptionList": [
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits"
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "repairer-landing",
+          "updateStateValues": [
+            {
+              "key": "$.poiPreviousState",
+              "operation": "remove",
+              "conditions": {
+                "operator": "OR",
+                "conditions": [
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "null"
+                  },
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "undefined"
+                  }
+                ]
+              }
+            },
+            {
+              "key": "$.searchMode",
+              "operation": "remove",
+              "conditions": {
+                "operator": "OR",
+                "conditions": [
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "null"
+                  },
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "undefined"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "rental-car",
+      "nextOptionList": [
+        {
+          "nextPageId": "features-benefits"
+        }
+      ]
+    },
+    {
+      "pageId": "features-benefits",
+      "nextOptionList": [
+        {
+          "nextPageId": "submit-pnr",
+          "updateStateValues": [
+            {
+              "key": "$.claim.SUBMIT_EMAIL",
+              "value": "$.claim.bffContractDetails.policyHolder.email"
+            },
+            {
+              "key": "$.claim.SUBMIT_MOBILE",
+              "value": "$.claim.bffContractDetails.policyHolder.phone"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit",
+          "updateStateValues": [
+            {
+              "key": "$.claim.SUBMIT_EMAIL",
+              "value": "$.claim.bffContractDetails.policyHolder.email"
+            },
+            {
+              "key": "$.claim.SUBMIT_MOBILE",
+              "value": "$.claim.bffContractDetails.policyHolder.phone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "submit",
+      "executeServiceActivatorsSync": true,
+      "onPageLeaveServiceActivators": [
+        {
+          "cleanStaleState": true
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims/submission",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} == 'other'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            },
+            {
+              "stateKeyExpression": "undefined",
+              "requestDataExpression": "$.claim.WE_EVENT"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffSubmitClaim"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims/submission",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} != 'other'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffSubmitClaim"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "all-done-pnr",
+          "conditions": [
+            {
+              "expression": "{$.bffConfiguration.authScope[0]} == 'lodge_pnr'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-divided",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffSubmitClaim.totalSumInsured",
+              "operator": "==",
+              "value2Expression": "AD_DividedLiabilityExcess"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-at-fault",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffSubmitClaim.totalSumInsured",
+              "operator": "==",
+              "value2Expression": "AD_AtFaultExcess"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-windscreen-not-at-fault",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffSubmitClaim.totalSumInsured",
+              "operator": "==",
+              "value2Expression": "AD_WSZeroExcess"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-not-at-fault"
+        }
+      ]
+    },
+    {
+      "pageId": "submit-pnr",
+      "executeServiceActivatorsSync": true,
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "init/submit-pnr",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "!{$.claim.SUBMIT_PNR.initialized}"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "true",
+              "stateKeyExpression": "$.claim.SUBMIT_PNR.initialized"
+            },
+            {
+              "responseDataExpression": "$.policyNumber",
+              "stateKeyExpression": "$.claim.contractNumber"
+            },
+            {
+              "responseDataExpression": "$.policyHolderEmail",
+              "stateKeyExpression": "$.claim.SUBMIT_PNR.policyHolderEmail"
+            },
+            {
+              "responseDataExpression": "$.policyHolderMobile",
+              "stateKeyExpression": "$.claim.SUBMIT_PNR.policyHolderMobile"
+            }
+          ]
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "cleanStaleState": true
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims/submission",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} == 'other'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            },
+            {
+              "stateKeyExpression": "undefined",
+              "requestDataExpression": "$.claim.WE_EVENT"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffSubmitClaim"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims/submission",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} != 'other'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffSubmitClaim"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "all-done-pnr"
+        }
+      ]
+    },
+    {
+      "pageId": "all-done-pnr",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-not-at-fault",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-divided",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-at-fault",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-windscreen-not-at-fault",
+      "nextOptionList": [],
+      "backOptionList": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "headerConfig": {
+    "logo": "./assets/logos/allianz-logo.png",
+    "logoUrl": "",
+    "logoAlt": "Allianz Logo"
+  },
+  "footerConfig": {
+    "staticText": "Allianz Australia Insurance Limited ABN 15 000 122 850. Allianz Australia Limited ABN 21 000 006 226. AFS Licence No. 234708",
+    "links": [
+      {
+        "url": "http://www.allianz.com.au/redirect/allianz-termsofuse",
+        "text": "footer.termsofuse.title"
+      },
+      {
+        "url": "http://www.allianz.com.au/redirect/allianz-privacy",
+        "text": "footer.privacy.title"
+      },
+      {
+        "url": "http://www.allianz.com.au/redirect/allianz-security",
+        "text": "footer.security.title"
+      },
+      {
+        "url": "http://www.allianz.com.au/redirect/allianz-disclaimer",
+        "text": "footer.disclaimer.title"
+      }
+    ]
+  },
+  "enableTwilioChat": false,
+  "pfeConfig": {
+    "disableAutomaticScrolling": false,
+    "nextButtonLabel": "NEXT",
+    "backButtonLabel": "BACK",
+    "enableStateCleaning": true,
+    "autoCleanStaleState": false,
+    "excludeFromStaleState": [
+      "error-duplicate-claim"
+    ],
+    "trackingConfig": {
+      "stateTracking": [
+        {
+          "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber",
+          "event": "claimNumber",
+          "ignorePageId": true
+        }
+      ]
+    }
+  },
+  "languages": {
+    "en-au": "languages.en-au"
+  }  
+}

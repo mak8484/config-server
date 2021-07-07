@@ -1,0 +1,30 @@
+{
+  "favIcon": "./assets/favicons/favicon-TIO.ico",
+  "headerConfig": {
+    "logo": "./assets/logos/TIODevice_Logo_transparent.png",
+    "logoUrl": "",
+    "logoAlt": "TIO Logo",
+    "logoHeight": 60
+  },
+  "footerConfig": {
+    "staticText": "Territory Insurance Office (TIO) is a trading name and division of the insurer Allianz Australia Insurance Limited ABN 15 000 122 850. AFS Licence No. 234708",
+    "links": [
+      {
+        "url": "https://www.tiofi.com.au/redirect/tio-termsofuse",
+        "text": "footer.termsofuse.title"
+      },
+      {
+        "url": "https://www.tiofi.com.au/redirect/tio-privacy",
+        "text": "footer.privacy.title"
+      },
+      {
+        "url": "https://www.tiofi.com.au/redirect/tio-security",
+        "text": "footer.security.title"
+      },
+      {
+        "url": "https://www.tiofi.com.au/redirect/tio-disclaimer",
+        "text": "footer.disclaimer.title"
+      }
+    ]
+  }
+}

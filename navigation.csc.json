@@ -1,0 +1,2103 @@
+{
+  "errorPageID": "error-csc-page",
+  "pages": [
+    {
+      "pageId": "when-and-where",
+      "executeServiceActivatorsSync": true,
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "frontendconfiguration",
+          "async": false,
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.bffConfiguration"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "!{$.bffConfiguration}"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "claims/details",
+          "async": false,
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.bffConfiguration.claimId",
+              "requestDataExpression": "$.claimId"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim"
+            }
+          ],
+          "conditions": [
+            {
+              "expression": "!{$.claim}"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "what-happened",
+          "updateStateValues": [
+            {
+              "key": "$.claim.bffCreateClaim.claimNumber",
+              "value": "$.claim.claimNumber"
+            },
+            {
+              "key": "$.staleState.removePageFromState[0]",
+              "value": "animal-damage"
+            },	
+            {
+              "key": "$.staleState.removePageFromState[1]",
+              "value": "windscreen-damage"
+            },	
+            {
+              "key": "$.staleState.removePageFromState[2]",
+              "value": "vehicle-collision"
+            },	
+            {
+              "key": "$.staleState.removePageFromState[3]",
+              "value": "collision-with-cyclist-or-pedestrian"
+            },
+            {
+              "key": "$.staleState.removePageFromState[4]",
+              "value": "disclosure"
+            },
+            {
+              "key": "$.staleState.removePageFromState[5]",
+              "value": "flatfrog"
+            },
+            {
+              "key": "$.staleState.removePageFromState[6]",
+              "value": "driver-selection-csc"
+            },
+            {
+              "key": "$.staleState.removePageFromState[7]",
+              "value": "police"
+            },
+            {
+              "key": "$.staleState.removePageFromState[8]",
+              "value": "weather-event"
+            },
+            {
+              "key": "$.staleState.removePageFromState[9]",
+              "value": "describe-damage"
+            },
+            {
+              "key": "$.staleState.removePageFromState[9]",
+              "value": "cyclist-collision"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[0]",
+              "value": "claim.AD_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[1]",
+              "value": "claim.AD_ANIMAL_OWNER"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[2]",
+              "value": "claim.AD_OWNER_GENDER"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[3]",
+              "value": "claim.AD_OWNER_FIRST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[4]",
+              "value": "claim.AD_OWNER_LAST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[5]",
+              "value": "claim.AD_OWNER_PHONE"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[6]",
+              "value": "claim.AD_OWNER_EMAIL"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[7]",
+              "value": "claim.AD_OWNER_ADDRESS"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[8]",
+              "value": "claim.AD_OWNER_SUBURB"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[9]",
+              "value": "claim.AD_OWNER_STATE"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].keys[10]",
+              "value": "claim.AD_OWNER_POSTCODE"
+            }, 
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[0]",
+              "value": "claim.AD_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[1]",
+              "value": "claim.AD_ANIMAL_OWNER"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[2]",
+              "value": "claim.AD_OWNER_GENDER"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[3]",
+              "value": "claim.AD_OWNER_FIRST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[4]",
+              "value": "claim.AD_OWNER_LAST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[5]",
+              "value": "claim.AD_OWNER_PHONE"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[6]",
+              "value": "claim.AD_OWNER_EMAIL"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[7]",
+              "value": "claim.AD_OWNER_ADDRESS"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[8]",
+              "value": "claim.AD_OWNER_SUBURB"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[9]",
+              "value": "claim.AD_OWNER_STATE"
+            },
+            {
+              "key": "$.staleState.pages['animal-damage'].staleKeys[10]",
+              "value": "claim.AD_OWNER_POSTCODE"
+            }, 	
+            {
+              "key": "$.staleState.pages['animal-damage'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[0]",
+              "value": "claim.WSD_ALREADY_REPAIRED"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[1]",
+              "value": "claim.WSD_THIRD_PARTY"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[2]",
+              "value": "claim.WSD_THIRD_PARTY_DETAILS_GENDER"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[3]",
+              "value": "claim.WSD_FIRST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[4]",
+              "value": "claim.WSD_LAST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[5]",
+              "value": "claim.WSD_PHONE"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[6]",
+              "value": "claim.WSD_EMAIL"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[7]",
+              "value": "claim.WSD_ADDRESS"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[8]",
+              "value": "claim.WSD_SUBURB"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[9]",
+              "value": "claim.WSD_STATE"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[10]",
+              "value": "claim.WSD_POSTCODE"
+            }, 	
+            {
+              "key": "$.staleState.pages['windscreen-damage'].keys[11]",
+              "value": "claim.WSD_COUNTRY"
+            }, 		
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[0]",
+              "value": "claim.WSD_ALREADY_REPAIRED"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[1]",
+              "value": "claim.WSD_THIRD_PARTY"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[2]",
+              "value": "claim.WSD_THIRD_PARTY_DETAILS_GENDER"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[3]",
+              "value": "claim.WSD_FIRST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[4]",
+              "value": "claim.WSD_LAST_NAME"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[5]",
+              "value": "claim.WSD_PHONE"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[6]",
+              "value": "claim.WSD_EMAIL"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[7]",
+              "value": "claim.WSD_ADDRESS"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[8]",
+              "value": "claim.WSD_SUBURB"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[9]",
+              "value": "claim.WSD_STATE"
+            },
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[10]",
+              "value": "claim.WSD_POSTCODE"
+            }, 	
+            {
+              "key": "$.staleState.pages['windscreen-damage'].staleKeys[11]",
+              "value": "claim.WSD_COUNTRY"
+            }, 				
+            {
+              "key": "$.staleState.pages['windscreen-damage'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].keys[0]",
+              "value": "claim.DAMAGE_SUB_TYPE"
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].keys[1]",
+              "value": "claim.VC_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].keys[2]",
+              "value": "claim.VC_FTGW_TYPES"
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].staleKeys[0]",
+              "value": "claim.DAMAGE_SUB_TYPE"
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].staleKeys[1]",
+              "value": "claim.VC_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].staleKeys[2]",
+              "value": "claim.VC_FTGW_TYPES"
+            },
+            {
+              "key": "$.staleState.pages['vehicle-collision'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].keys[0]",
+              "value": "claim.DAMAGE_SUB_TYPE"
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].keys[1]",
+              "value": "claim.CC_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].keys[2]",
+              "value": "claim.CC_FTGW_TYPES"
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].staleKeys[0]",
+              "value": "claim.DAMAGE_SUB_TYPE"
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].staleKeys[1]",
+              "value": "claim.CC_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].staleKeys[2]",
+              "value": "claim.CC_FTGW_TYPES"
+            },
+            {
+              "key": "$.staleState.pages['cyclist-collision'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['collision-with-cyclist-or-pedestrian'].keys[0]",
+              "value": "claim.CWH_COLLISION_WITH_HUMAN"
+            },
+            {
+              "key": "$.staleState.pages['collision-with-cyclist-or-pedestrian'].keys[1]",
+              "value": "claim.CWH_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['collision-with-cyclist-or-pedestrian'].staleKeys[0]",
+              "value": "claim.CWH_COLLISION_WITH_HUMAN"
+            },
+            {
+              "key": "$.staleState.pages['collision-with-cyclist-or-pedestrian'].staleKeys[1]",
+              "value": "claim.CWH_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['collision-with-cyclist-or-pedestrian'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[0]",
+              "value": "claim.status"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[1]",
+              "value": "claim.DIS_CANCELLED"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[2]",
+              "value": "claim.DIS_FINE_DEFAULTS"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[3]",
+              "value": "claim.DIS_FINE_DEFAULTS_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[4]",
+              "value": "claim.DIS_CONVICTED"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[5]",
+              "value": "claim.DIS_CONVICTED_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[6]",
+              "value": "claim.DIS_DECLINED"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[7]",
+              "value": "claim.DIS_DECLINED_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[8]",
+              "value": "claim.DIS_GST"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[9]",
+              "value": "claim.DIS_GST_TAX"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].keys[10]",
+              "value": "claim.DIS_GST_ABN"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[0]",
+              "value": "claim.DIS_CANCELLED"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[1]",
+              "value": "claim.DIS_FINE_DEFAULTS"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[2]",
+              "value": "claim.DIS_FINE_DEFAULTS_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[3]",
+              "value": "claim.DIS_CONVICTED"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[4]",
+              "value": "claim.DIS_CONVICTED_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[5]",
+              "value": "claim.DIS_DECLINED"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[6]",
+              "value": "claim.DIS_DECLINED_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[7]",
+              "value": "claim.DIS_GST"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[8]",
+              "value": "claim.DIS_GST_TAX"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[9]",
+              "value": "claim.DIS_GST_ABN"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].staleKeys[10]",
+              "value": "claim.status"
+            },
+            {
+              "key": "$.staleState.pages['disclosure'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[0]",
+              "value": "claim.FF_VEHICLE_TYPE"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[1]",
+              "value": "claim.FF_FLATFROG"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[2]",
+              "value": "FF_FLATFROG"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[3]",
+              "value": "FF_SEPARATOR"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[4]",
+              "value": "claim.FF_EXTRA_INFO.FF_BURNT"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[5]",
+              "value": "claim.FF_EXTRA_INFO.FF_STRIPPED"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[6]",
+              "value": "claim.FF_EXTRA_INFO.FF_ENGINE"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[7]",
+              "value": "claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[8]",
+              "value": "claim.FF_EXTRA_INFO.FF_INTERIOR"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[9]",
+              "value": "claim.FF_ALREADY_REPAIRED"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[10]",
+              "value": "claim.PO_POLICE_RECORD"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].keys[11]",
+              "value": "claim.PO_POLICE_RECORD_NUMBER"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[0]",
+              "value": "claim.FF_VEHICLE_TYPE"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[1]",
+              "value": "claim.FF_FLATFROG"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[2]",
+              "value": "FF_FLATFROG"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[3]",
+              "value": "FF_SEPARATOR"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[4]",
+              "value": "claim.FF_EXTRA_INFO.FF_BURNT"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[5]",
+              "value": "claim.FF_EXTRA_INFO.FF_STRIPPED"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[6]",
+              "value": "claim.FF_EXTRA_INFO.FF_ENGINE"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[7]",
+              "value": "claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[8]",
+              "value": "claim.FF_EXTRA_INFO.FF_INTERIOR"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[9]",
+              "value": "claim.FF_ALREADY_REPAIRED"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[10]",
+              "value": "claim.PO_POLICE_RECORD"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].staleKeys[11]",
+              "value": "claim.PO_POLICE_RECORD_NUMBER"
+            },
+            {
+              "key": "$.staleState.pages['flatfrog'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[0]",
+              "value": "claim.DS_ALCOHOL"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[1]",
+              "value": "claim.DS_DRIVER"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[2]",
+              "value": "claim.driverDetailsCheckFlag"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[3]",
+              "value": "claim.AOD_FIRSTNAME"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[4]",
+              "value": "claim.AOD_LASTNAME"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[5]",
+              "value": "claim.AOD_BIRTHDAY"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[6]",
+              "value": "claim.AOD_DRIVER_LICENSE_NO"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[7]",
+              "value": "claim.AOD_YEARS_LICENSE"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[8]",
+              "value": "claim.DS_DRIVER_SELECTED"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].keys[9]",
+              "value": "claim.DS_ALCOHOL_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[0]",
+              "value": "claim.DS_ALCOHOL"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[1]",
+              "value": "claim.DS_DRIVER"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[2]",
+              "value": "claim.driverDetailsCheckFlag"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[3]",
+              "value": "claim.AOD_FIRSTNAME"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[4]",
+              "value": "claim.AOD_LASTNAME"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[5]",
+              "value": "claim.AOD_BIRTHDAY"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[6]",
+              "value": "claim.AOD_DRIVER_LICENSE_NO"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[7]",
+              "value": "claim.AOD_YEARS_LICENSE"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[8]",
+              "value": "claim.DS_DRIVER_SELECTED"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].staleKeys[9]",
+              "value": "claim.DS_ALCOHOL_COMMENT"
+            },
+            {
+              "key": "$.staleState.pages['driver-selection-csc'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['police'].keys[0]",
+              "value": "claim.PO_POLICE_RECORD"
+            },
+            {
+              "key": "$.staleState.pages['police'].keys[1]",
+              "value": "claim.PO_POLICE_RECORD_NUMBER"
+            },
+            {
+              "key": "$.staleState.pages['police'].staleKeys[0]",
+              "value": "claim.PO_POLICE_RECORD"
+            },
+            {
+              "key": "$.staleState.pages['police'].staleKeys[1]",
+              "value": "claim.PO_POLICE_RECORD_NUMBER"
+            },
+            {
+              "key": "$.staleState.pages['police'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['weather-event'].keys[0]",
+              "value": "claim.bffWeatherEvents"
+            },
+            {
+              "key": "$.staleState.pages['weather-event'].keys[1]",
+              "value": "claim.WE_EVENT"
+            },
+            {
+              "key": "$.staleState.pages['weather-event'].staleKeys[0]",
+              "value": "claim.bffWeatherEvents"
+            },
+            {
+              "key": "$.staleState.pages['weather-event'].staleKeys[1]",
+              "value": "claim.WE_EVENT"
+            },
+            {
+              "key": "$.staleState.pages['weather-event'].staleKeys[2]",
+              "value": "claim.WE_EVENT_SELECTED"
+            },
+            {
+              "key": "$.staleState.pages['weather-event'].revisit",
+              "value": true
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[0]",
+              "value": "claim.DD_CLAIM_TO_MY_VEHICLE"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[1]",
+              "value": "claim.DD_DRIVABLE"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[2]",
+              "value": "claim.DD_TOWED_AWAY"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[3]",
+              "value": "claim.DD_ARRANGE_TOW"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[4]",
+              "value": "claim.DD_TOW_LOCATION"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[5]",
+              "value": "claim.DD_SPEED_LIMIT"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].keys[6]",
+              "value": "claim.DD_AIRBAG"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[0]",
+              "value": "claim.DD_CLAIM_TO_MY_VEHICLE"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[1]",
+              "value": "claim.DD_DRIVABLE"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[2]",
+              "value": "claim.DD_TOWED_AWAY"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[3]",
+              "value": "claim.DD_ARRANGE_TOW"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[4]",
+              "value": "claim.DD_TOW_LOCATION"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[5]",
+              "value": "claim.DD_SPEED_LIMIT"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].staleKeys[6]",
+              "value": "claim.DD_AIRBAG"
+            },
+            {
+              "key": "$.staleState.pages['describe-damage'].revisit",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "what-happened",
+      "onPageEnterServiceActivators": [
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "contracts/details",
+          "async": false,
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.contractNumber",
+              "requestDataExpression": "$.contractNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.self",
+              "requestDataExpression": "$.identificationNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber",
+              "requestDataExpression": "$.claimNumber"
+            },
+            {
+              "stateKeyExpression": "$.bffConfiguration.authScope[0]",
+              "requestDataExpression": "$.scope"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffContractDetails"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "theft-of-vehicle",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'VEHICLE_COLLISION'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "collision-with-object",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_OBJECT'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "windscreen-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "weather-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "unattended-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "animal-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'ANIMAL_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "collision-with-cyclist-or-pedestrian",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_HUMAN'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "other-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision",
+      "nextOptionList": [
+        {
+          "nextPageId": "vehicle-collision-open-door",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_OPENING_DOOR'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-hit-in-rear",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_REAR_END_COLLISION'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-reversing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_REVERSING'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-changing-lanes",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_CHANGING_LANES'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-other",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'VC_OTHER'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-failure-to-give-way-roundabout",
+          "conditions": [
+            {
+              "expression": "{$.claim.VC_FTGW_TYPES} == 'VC_FTGW_ROUNDABOUT'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-failure-to-give-way-lights",
+          "conditions": [
+            {
+              "expression": "{$.claim.VC_FTGW_TYPES} == 'VC_FTGW_SET_LIGHTS'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "vehicle-collision-failure-to-give-way-sign",
+          "conditions": [
+            {
+              "expression": "{$.claim.VC_FTGW_TYPES} == 'VC_FTGW_GIVE_WAY' || {$.claim.VC_FTGW_TYPES} == 'VC_FTGW_OTHER_GIVE_WAY'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-open-door",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-hit-in-rear",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-reversing",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-failure-to-give-way-roundabout",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-failure-to-give-way-lights",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-failure-to-give-way-sign",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-changing-lanes",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "vehicle-collision-other",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "theft-of-vehicle",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_THEFT_FROM_VEHICLE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "police",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_NOT_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_BURNT_OUT'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'TOV_STOLEN_OR_LOST_KEYS'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "collision-with-object",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "windscreen-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "contact-windscreen",
+          "conditions": [
+            {
+              "expression": "{$.claim.WSD_ALREADY_REPAIRED} == 'WSD_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure"
+        }
+      ]
+    },
+    {
+      "pageId": "weather-damage",
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorID": "datalists/catastrophe",
+          "serviceActivatorMethod": "GET",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.AYI_DATE",
+              "requestDataExpression": "$.date"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.bffWeatherEvents"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage",
+          "conditions": [
+            {
+              "expression": "{$.bffWeatherEvents.length} == 1"
+            }
+          ]
+        },
+        {
+          "nextPageId": "weather-event"
+        }
+      ]
+    },
+    {
+      "pageId": "weather-event",
+      "updateStateValues": [
+        {
+          "key": "$.claim.bffWeatherEvents",
+          "value": "$.bffWeatherEvents"
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "select/weatherevent",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.WE_EVENT_SELECTED"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "unattended-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "animal-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "collision-with-cyclist-or-pedestrian",
+      "nextOptionList": [
+        {
+          "nextPageId": "cyclist-collision",
+          "conditions": [
+            {
+              "expression": "{$.claim.CWH_COLLISION_WITH_HUMAN} == 'CWH_CYCLIST'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "cyclist-collision",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "other-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "describe-damage"
+        }
+      ]
+    },
+    {
+      "pageId": "police",
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' || ({$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DAMAGE_SUB_TYPE} == 'OD_FIRE')"
+            }
+          ]
+        },
+        {
+          "nextPageId": "driver-selection-csc"
+        }
+      ]
+    },
+    {
+      "pageId": "describe-damage",
+      "nextOptionList": [
+        {
+          "nextPageId": "police",
+          "conditions": [
+            {
+              "expression": "{$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO' && {$.claim.DAMAGE_TYPE} != 'WEATHER_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO' && ({$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' || ({$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DAMAGE_SUB_TYPE} == 'OD_FIRE'))"
+            }
+          ]
+        },
+        {
+          "nextPageId": "driver-selection-csc",
+          "conditions": [
+            {
+              "expression": "{$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "flatfrog",
+          "updateStateValues": [
+            {
+              "key": "$.claim.FF_VEHICLE_TYPE",
+              "value": "$.claim.bffContractDetails.vehicleType",
+              "conditions": [
+                {
+                  "expression": "{$.claim.bffContractDetails.vehicleType} && !({$.claim.bffContractDetails.vehicleType} == 'CAR_WITH_WHEELS' && ({$.claim.FF_VEHICLE_TYPE} == 'VAN_WITH_WHEELS' || {$.claim.FF_VEHICLE_TYPE} == 'UTE_WITH_WHEELS' || {$.claim.FF_VEHICLE_TYPE} ==  '4X4_WITH_WHEELS' || {$.claim.FF_VEHICLE_TYPE} == 'CAR2_WITH_WHEELS'))"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "flatfrog",
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure",
+          "conditions": {
+            "operator": "OR",
+            "conditions": [
+              {
+                "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE'"
+              },
+              {
+                "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE'"
+              },
+              {
+                "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE'"
+              }
+            ]
+          }
+        },
+        {
+          "nextPageId": "disclosure",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT'"
+            },
+            {
+              "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'OD_FIRE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "driver-selection-csc"
+        }
+      ]
+    },
+    {
+      "pageId": "other-parties",
+      "updateStateValues": [
+        {
+          "key": "$.TP_CONTAINER",
+          "value": "$.claim.TP_CONTAINER",
+          "conditions": [
+            {
+              "expression": "!{$.TP_CONTAINER} && {$.claim.TP_CONTAINER}"
+            }
+          ]
+        }
+      ],
+      "executeServiceActivatorsSync": true,
+      "onPageLeaveServiceActivators": [
+        {
+          "cleanStaleState": true
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims",
+          "async": false,
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            },
+            {
+              "stateKeyExpression": "$.TP_CONTAINER",
+              "requestDataExpression": "$.TP_CONTAINER"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.bffUpdateClaim"
+            },
+            {
+              "responseDataExpression": "$.incidentDate",
+              "stateKeyExpression": "$.claim.AYI_DATE_DISPLAY"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "contracts/hireoptions",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.contractNumber",
+              "requestDataExpression": "$.contractNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber",
+              "requestDataExpression": "$.claimNumber"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffBenefitsEntitlements"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'VEHICLE_COLLISION' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_OBJECT' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_FOUND' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && {$.claim.DAMAGE_SUB_TYPE} == 'TOV_THEFT_FROM_VEHICLE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'ANIMAL_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_HUMAN' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            },
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && ({$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_NOT_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_BURNT_OUT')"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits"
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "disclosure",
+          "updateStateValues": [
+            {
+              "key": "$.claim.TP_CONTAINER",
+              "value": "$.TP_CONTAINER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "contact-windscreen",
+      "nextOptionList": [
+        {
+          "nextPageId": "when-and-where"
+        }
+      ]
+    },
+    {
+      "pageId": "driver-selection-csc",
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "POST",
+          "serviceActivatorID": "select/driver",
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.DS_DRIVER_SELECTED"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "disclosure"
+        }
+      ]
+    },
+    {
+      "pageId": "disclosure",
+      "updateStateValues": [
+        {
+          "key": "$.claim.status",
+          "value": "FNOL"
+        },
+        {
+          "key": "$.claim.TP_CONTAINER",
+          "value": [],
+          "conditions": [
+            {
+              "expression": "({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE') || ( {$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && ({$.claim.DAMAGE_SUB_TYPE} == 'OD_SUBMERGED' || {$.claim.DAMAGE_SUB_TYPE} == 'OD_LOSTCONTROL_NO_TP') )"
+            }
+          ]
+        }
+      ],
+      "executeServiceActivatorsSync": true,
+      "onPageLeaveActions": [
+        {
+          "type": "STALE_STATE",
+          "key": "$.claim.DAMAGE_TYPE",
+          "value": "WINDSCREEN_DAMAGE"
+        },
+        {
+          "type": "STALE_STATE",
+          "key": "$.claim.DAMAGE_TYPE",
+          "value": "WEATHER_DAMAGE"
+        },
+        {
+          "type": "STALE_STATE",
+          "key": "$.claim.DAMAGE_SUB_TYPE",
+          "value": "OD_SUBMERGED"
+        },
+        {
+          "type": "STALE_STATE",
+          "key": "$.claim.DAMAGE_SUB_TYPE",
+          "value": "OD_LOSTCONTROL_NO_TP"
+        }
+      ],
+      "onPageLeaveServiceActivators": [
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE') || ( {$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && ({$.claim.DAMAGE_SUB_TYPE} == 'OD_SUBMERGED' || {$.claim.DAMAGE_SUB_TYPE} == 'OD_LOSTCONTROL_NO_TP') )"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$.claimNumber",
+              "stateKeyExpression": "$.claim.bffUpdateClaim"
+            },
+            {
+              "responseDataExpression": "$.incidentDate",
+              "stateKeyExpression": "$.claim.AYI_DATE_DISPLAY"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "GET",
+          "serviceActivatorID": "contracts/hireoptions",
+          "conditions": [
+            {
+              "expression": "({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE') || ( {$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && ({$.claim.DAMAGE_SUB_TYPE} == 'OD_SUBMERGED' || {$.claim.DAMAGE_SUB_TYPE} == 'OD_LOSTCONTROL_NO_TP') )"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim.NP_VEHICLE_SELECTED.contractNumber",
+              "requestDataExpression": "$.contractNumber"
+            },
+            {
+              "stateKeyExpression": "$.claim.bffCreateClaim.claimNumber",
+              "requestDataExpression": "$.claimNumber"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffBenefitsEntitlements"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "other-parties",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} != 'WINDSCREEN_DAMAGE' && {$.claim.DAMAGE_TYPE} != 'WEATHER_DAMAGE' && ( {$.claim.DAMAGE_TYPE} != 'OTHER_INCIDENT' || ({$.claim.DAMAGE_SUB_TYPE} != 'OD_SUBMERGED' && {$.claim.DAMAGE_SUB_TYPE} != 'OD_LOSTCONTROL_NO_TP') )"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'VEHICLE_COLLISION' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_OBJECT' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'UNATTENDED_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_FOUND' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && {$.claim.DAMAGE_SUB_TYPE} == 'TOV_THEFT_FROM_VEHICLE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'ANIMAL_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_HUMAN' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'OTHER_INCIDENT' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "TIO"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "AAL"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.vehicleType",
+              "operator": "==",
+              "value2Expression": "CAR_WITH_WHEELS"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": "Active"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": "Pending"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "AAL"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.vehicleType",
+              "operator": "!=",
+              "value2Expression": "CAR_WITH_WHEELS"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "==",
+              "value2Expression": "undefined"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.claim.DD_CLAIM_TO_MY_VEHICLE} == 'DD_CLAIM_TO_MY_VEHICLE_YES'"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.value",
+              "operator": "==",
+              "value2Expression": "other"
+            }
+          ]
+        },
+        {
+          "nextPageId": "repairer-landing-assess-hold",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE'"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.branchAbbreviation",
+              "operator": "==",
+              "value2Expression": "AAL"
+            },
+            {
+              "value1Expression": "$.claim.DD_CLAIM_TO_MY_VEHICLE",
+              "operator": "==",
+              "value2Expression": "DD_CLAIM_TO_MY_VEHICLE_YES"
+            },
+            {
+              "expression": "{$.claim.FF_ALREADY_REPAIRED} == 'FF_ALREADY_REPAIRED_NO'"
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.length",
+              "operator": ">",
+              "value2Expression": "1",
+              "value2AsReal": true
+            },
+            {
+              "value1Expression": "$.bffWeatherEvents.value",
+              "operator": "!=",
+              "value2Expression": "other"
+            },
+            {
+              "value1Expression": "$.claim.bffContractDetails.vehicleType",
+              "operator": "==",
+              "value2Expression": "CAR_WITH_WHEELS"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": "NotApplicable"
+            },
+            {
+              "value1Expression": "$.claim.WE_EVENT_SELECTED.assessmentCenterStatus",
+              "operator": "!=",
+              "value2Expression": ""
+            }
+          ]
+        },
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            },
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} == 'THEFT_OF_VEHICLE' && ({$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_NOT_FOUND' || {$.claim.DAMAGE_SUB_TYPE} == 'TOV_VEHICLE_BURNT_OUT')"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits",
+          "conditions": [
+            {
+              "expression": "{$.claim.DAMAGE_TYPE} != 'WINDSCREEN_DAMAGE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "submit-csc"
+        }
+      ]
+    },
+    {
+      "pageId": "repairer-landing",
+      "nextOptionList": [
+        {
+          "nextPageId": "repairer"
+        }
+      ]
+    },
+    {
+      "pageId": "repairer-landing-assess-hold",
+      "nextOptionList": [
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits"
+        }
+      ]
+    },
+    {
+      "pageId": "repairer",
+      "nextOptionList": [
+        {
+          "nextPageId": "rental-car",
+          "conditions": [
+            {
+              "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' || {$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+            }
+          ]
+        },
+        {
+          "nextPageId": "features-benefits"
+        }
+      ],
+      "backOptionList": [
+        {
+          "nextPageId": "repairer-landing",
+          "updateStateValues": [
+            {
+              "key": "$.poiPreviousState",
+              "operation": "remove",
+              "conditions": {
+                "operator": "OR",
+                "conditions": [
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "null"
+                  },
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "undefined"
+                  }
+                ]
+              }
+            },
+            {
+              "key": "$.searchMode",
+              "operation": "remove",
+              "conditions": {
+                "operator": "OR",
+                "conditions": [
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "null"
+                  },
+                  {
+                    "value1Expression": "$.poiRepairShop",
+                    "operator": "===",
+                    "value2Expression": "undefined"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageId": "rental-car",
+      "nextOptionList": [
+        {
+          "nextPageId": "features-benefits"
+        }
+      ]
+    },
+    {
+      "pageId": "features-benefits",
+      "nextOptionList": [
+        {
+          "nextPageId": "submit-csc"
+        }
+      ]
+    },
+    {
+      "pageId": "submit-csc",
+      "executeServiceActivatorsSync": true,
+      "onPageLeaveServiceActivators": [
+        {
+          "cleanStaleState": true
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims/submission",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} == 'other'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            },
+            {
+              "stateKeyExpression": "undefined",
+              "requestDataExpression": "$.claim.WE_EVENT"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffSubmitClaim"
+            }
+          ]
+        },
+        {
+          "serviceActivatorMethod": "PUT",
+          "serviceActivatorID": "claims/submission",
+          "async": false,
+          "conditions": [
+            {
+              "expression": "{$.claim.WE_EVENT} != 'other'"
+            }
+          ],
+          "requestDataMapping": [
+            {
+              "stateKeyExpression": "$.claim",
+              "requestDataExpression": "$"
+            }
+          ],
+          "responseDataMapping": [
+            {
+              "responseDataExpression": "$",
+              "stateKeyExpression": "$.claim.bffSubmitClaim"
+            }
+          ]
+        }
+      ],
+      "nextOptionList": [
+        {
+          "nextPageId": "all-done-divided-csc",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffSubmitClaim.totalSumInsured",
+              "operator": "==",
+              "value2Expression": "AD_DividedLiabilityExcess"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-at-fault-csc",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffSubmitClaim.totalSumInsured",
+              "operator": "==",
+              "value2Expression": "AD_AtFaultExcess"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-windscreen-not-at-fault-csc",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.bffSubmitClaim.totalSumInsured",
+              "operator": "==",
+              "value2Expression": "AD_WSZeroExcess"
+            }
+          ]
+        },
+        {
+          "nextPageId": "all-done-not-at-fault-csc"
+        }
+      ]
+    },
+    {
+      "pageId": "all-done-not-at-fault-csc",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-divided-csc",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-at-fault-csc",
+      "nextOptionList": [],
+      "backOptionList": []
+    },
+    {
+      "pageId": "all-done-windscreen-not-at-fault-csc",
+      "nextOptionList": [],
+      "backOptionList": []
+    }
+  ]
+}
+
