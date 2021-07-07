@@ -1,0 +1,24 @@
+{
+  "welcome.buttonCustomer": "START TIO",
+
+  "error-duplicate-claim.phone": "131 846",
+  "error-vehicle.url": "https://www.tiofi.com.au/redirect/tio-motor-claims",
+  "error-page.phoneNumber": "131 846",
+  "error-page.linkUrl": "https://www.tiofi.com.au/redirect/tio-motor-claims",
+
+  "contact-windscreen.subtitleText": "Select one of the below methods to arrange a windscreen repair or replacement through an approved repairer.",
+  "contact-windscreen.option2.title": "Call us",
+  "contact-windscreen.option2.text": "Select the option for windscreen claims.<br>&nbsp;<br>Our lines are open 24 hours a day, 7 days a week.",
+  "contact-windscreen.option2.link": "CALL 131 846",
+  "contact-windscreen.option2.url": "tel:131846",
+
+  "submit.tos.popUpHtmlContent": "<h4>Declaration</h4> <p style='margin-top=0'>I certify that:</p> <ol style='margin: 0 0 12px 20px'> <li>I am authorised to submit this claim as: <ul style='margin-left: 20px'> <li>the insured person,</li> <li>a broker who has been appointed as the agent of the insured person,</li> <li>a fleet manager or custodian of a fleet vehicle,</li> <li>an authorised representative of the insured person or an insured company, or</li> <li>a nominated driver on a policy;</li> </ul> </li> <li>I am authorised to provide this information to you for the purpose of making this claim; and</li> <li>the information given in this form is truthful, accurate and complete, and no information likely to affect this claim has been withheld. I understand that this claim may be refused if information is untrue, inaccurate or concealed.</li> </ol> <h4>Privacy</h4> <p>The personal and sensitive information collected in this form and other information you or third parties provide in connection with this claim will be used to process this claim, compile and analyse data, and resolve claim disputes. If you do not provide this information to us we may not be able to process this claim.</p>  <p>We may have to disclose your personal and other information to third parties who assist us in assessing and processing this claim, including other insurers, health service providers, investigators, our specialist advisors, our service providers, or as required by law.</p> <p>You have the right to seek access to your personal information and to correct it at any time. For information about how you may access and request correction of personal information we hold about you, or complain about a breach of the Australian Privacy Principles, please see our privacy policy available at&nbsp; <a href=\"https://www.tiofi.com.au/\" target=\"_blank\" rel=\"noopener\">www.tiofi.com.au </a>&nbsp;or contact us on 131 846 9am-5pm, Monday-Friday. </p> <h4>Telephone Call Recording</h4> <p>We may record incoming and/or outgoing telephone calls for training or verification purposes. Where we have recorded a telephone call, we can provide you with a copy at your request, where it is reasonable to do so.</p>",
+  "submit.tos.url": "https://www.einsure.com.au/wb/redirect/TIO-declaration-and-privacy-notice",
+
+  "all-done.sentText": "Your claim summary has been sent to the email address(es) you provided.<br><br>For assistance with an urgent towing request, please call us now on <img src='./assets/images/phone.svg'> <a href='tel:131846'>131 846</a> (available 24/7).",
+  "all-done.callUs.label": "Call TIO",
+  "all-done.callUs.popUpdPhoneNumber": "131 846",
+  "all-done.callUs.popUpText": "Available Monday to Friday - 8am to 5pm",
+
+  "all-done-pnr.sentText": "<div>Our Claims team will review the details and be in contact within 48 hours to:<br><br>Provide your claim number,<br>Discuss the repair process, including arranging an assessment (if required),<br>Advise you if an excess may apply, and<br>Discuss the next steps.<br>For assistance with an urgent towing request, please call us now on <img src='./assets/images/phone.svg'> <a href='tel:131846'>131 846</a> (available 24/7)."
+}

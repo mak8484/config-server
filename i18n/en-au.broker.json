@@ -1,0 +1,7 @@
+{
+  "welcome.buttonCustomer": "START BROKER",
+  "submit.confirmation": "We'll send confirmation of lodgement to you and the policyholder using the email address provided.<br><br>We'll use the policyholder´s preferred contact method for further updates.",
+  "submit-pnr.confirmation": "Once we've reviewed your claim, we'll send confirmation of lodgement to you and the policyholder using the email address provided. We'll use the policyholder's preferred contact method for further updates. ",
+  "submit-pnr.preferred": "Policyholder’s preferred method of contact",
+  "common.preferred": "Policyholder's preferred method of contact"
+}
