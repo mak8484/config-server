@@ -1,0 +1,45 @@
+{
+  "applicationID": "",
+  "defaultTenant": "",
+  "allowedLanguages": [
+    "en-au"
+  ],
+  "fallbackLanguage": "en-au",
+  "production": false,
+  "env": "local",
+  "fileUpload": {
+    "upload_endpoint": "./api/file/uploadfile",
+    "delete_endpoint": "./api/file/deletefile",
+    "fetch_endpoint": "./api/file/filedownload",
+    "list_fetch_endpoint": "./api/file/fetchfilelist"
+  },
+  "poi": {
+    "apiEndpoint": "./api/poi",
+    "searchResource": "/search",
+    "suggestionsResource": "/suggestion",
+    "google_api_clientId": null,
+    "apiKey": "AIzaSyAgyy19DwgRHhfchfTFbW-a9Y_cndstxY0",
+    "poi_api_verb": "post",
+    "tenantId": "fnol-australia"
+  },
+  "googleMapsApi": {
+    "key": "AIzaSyAgyy19DwgRHhfchfTFbW-a9Y_cndstxY0",
+    "libraries": [
+      "places",
+      "geometry"
+    ],
+    "language": "de-ch",
+    "region": "CH"
+  },
+  "deployUrl": "",
+  "tracking": {
+    "customScript": "//nexus.ensighten.com/allianzau/uat/Bootstrap.js"
+  },
+  "reCaptcha": {
+    "siteKey": "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  },
+  "apiPrefix": "./api",
+  "apiGatewayHost": "",
+  "configResource": "./config",
+  "stateResource": null
+}
