@@ -1,0 +1,139 @@
+{
+    "pageId": "repairer",
+    "updateStateValues": [
+      {
+        "key": "$.bffCreateClaim.claimNumber",
+        "value": "$.claim.bffCreateClaim.claimNumber"
+      },
+      {
+        "key": "$.bffContractDetails.insuredAddress",
+        "value": "$.claim.bffContractDetails.insuredAddress"
+      }
+    ],
+    "hideBackButton": false,
+    "hideNextButton": true,
+    "poiSearchPageConfig": {
+        "titleConfig": [{
+            "id": "TITLE_TIO",
+            "headerOption": "section",
+            "headerType": "h2",
+            "label": "poi-search.titleText.tio",
+            "type": "HEADLINE",
+            "showComponentConditions": {
+              "operator": "OR",
+              "conditions": [
+                {
+                  "expression": "{$.searchMode} == undefined && {$.claim.bffContractDetails.branchAbbreviation} != 'AAL'"
+                }
+              ]
+            }
+            },
+            {
+              "id": "TITLE_ALLIANZ",
+              "headerOption": "section",
+              "headerType": "h2",
+              "label": "poi-search.titleText",
+              "type": "HEADLINE",
+              "showComponentConditions": {
+                "operator": "OR",
+                "conditions": [
+                  {
+                    "expression": "{$.searchMode} == undefined && {$.claim.bffContractDetails.branchAbbreviation} == 'AAL'"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "TITLE_FIND_OWN_REPAIRER",
+              "headerOption": "section",
+              "headerType": "h2",
+              "label": "poi-search.titleTextAlt",
+              "type": "HEADLINE",
+              "showComponentConditions": [
+                {
+                  "value1Expression": "$.searchMode"
+                }
+              ]
+            }
+        ],
+        "poiObject": {
+            "id": "poiRepairShop"
+        },
+        "errorTemplate": "australia",
+        "poiSearchComponentConfig": {
+            "useSearchTermAutocomplete": true,
+            "backgroundColor": "#f5f5f5",
+            "mapCenter": {
+                "lat": -37.8139445,
+                "lng": 144.962404
+            },
+            "searchTermAutocompleteMinChars": 1,
+            "searchLocationAutocompleteRestriction": {
+                "country": [
+                    "AU"
+                ]
+            },
+            "searchBySingleField": true,
+            "searchWithoutInput": false,
+            "searchTermId": "poi-search-term",
+            "termLocationErrorMsg": "ngx-poi.error_service_own",
+            "searchFitBound": true
+        },
+        "poiSearchTermHidden": true,
+        "poiSearchPrefillAddress": "$.claim.bffContractDetails.insuredAddress",
+        "poiMapTmplConfig": {
+            "wrapperClass": "map-detail-wrapper",
+            "padding": "15px 15px 0 15px",
+            "maxWidth": "100%",
+            "maxHeight": 500,
+            "showCloseButton": true
+        },
+        "poiSelectThisPlaceMapButton": {
+            "id": "poiSelectThisPlaceButton",
+            "label": "poi-search.button.label"
+        },
+        "poiMapComponentConfig": {
+            "featureTitleText": "poi-search.map.feature.titleText",
+            "poiFeatureListEnabled": true,
+            "showFullAddress": true
+        },
+        "poiAdditionalParams": {
+            "searchFnEnabled": true,
+            "suggestionFnEnabled": true
+        },
+        "poiSelectThisPlaceListDetailsButton":   {
+            "id": "selectThisPlaceDetailsButton",
+            "label": "poi.listSelectedPoi.details"
+        },
+        "poiHideListSelectedPoiTitle": true,
+        "poiHideDistanceOnSelectedPoi": true,
+        "poiHideZeroDistance": true,
+        "poiShowPhoneOnSelectedPoi": false,
+        "poiAdditionalFilterEnabled": true,
+        "poiDefaultFilter": [
+            {
+                "name": "status",
+                "values": ["Preferred"]
+            }
+        ],
+        "poiSelectionConfirmationModal": {
+            "messageHead": "poi.confirmSelectionModal.messageHead",
+            "messageTail": "poi.confirmSelectionModal.messageTail",
+            "btnAccept": "poi.confirmSelectionModal.btnAccept",
+            "btnCancel": "poi.confirmSelectionModal.btnCancel"
+        },
+        "customActionConfig": {
+            "enabled": true,
+            "actions": [
+                {
+                    "id": "findMyOwnRepairer",
+                    "label": "poi-search.custom.action.findmyown.label"
+                },
+                {
+                    "id": "proceedWithoutSelect",
+                    "label": "poi-search.custom.action.proceed.label"
+                }
+            ]
+        }
+    }
+}

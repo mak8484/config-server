@@ -1,0 +1,17 @@
+  {
+    "pageId": "error-duplicate-claim",
+    "hideNextButton": true,
+    "hideBackButton": false,
+    "errorPageConfig": {
+        "titleConfig": {
+            "titleText": "error-duplicate-claim.title"
+          },
+          "subtitleConfig": {
+        "subtitleText": ""
+      },
+      "text": "error-duplicate-claim.text",
+      "phoneConfig": {
+          "phone": "error-duplicate-claim.phone"
+      }
+    }
+  }

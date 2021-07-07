@@ -1,0 +1,174 @@
+{
+  "pageId": "vehicle-collision-hit-in-rear",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_HIR_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-hit-in-rear.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_HIR_QUESTIONS.HIR_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-hit-in-rear.HIR_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-hit-in-rear.HIR_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-hit-in-rear.HIR_FAULT.label"
+        }
+      },
+      {
+        "id": "claim.VC_HIR_QUESTIONS.HIR_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "HIR_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "HIR_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_HIR_QUESTIONS.HIR_WERE_HIT",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-hit-in-rear.HIR_WERE_HIT.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_HIR_QUESTIONS.HIR_FAULT} == 'HIR_FAULT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "HIR_WERE_HIT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "HIR_WERE_HIT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_HIR_QUESTIONS.HIR_OTHER_FRONT",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-hit-in-rear.HIR_OTHER_FRONT.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_HIR_QUESTIONS.HIR_WERE_HIT} == 'HIR_WERE_HIT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "HIR_OTHER_FRONT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "HIR_OTHER_FRONT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_HIR_QUESTIONS.HIR_PUSHED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-hit-in-rear.HIR_PUSHED.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_HIR_QUESTIONS.HIR_OTHER_FRONT} == 'HIR_OTHER_FRONT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "HIR_PUSHED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "HIR_PUSHED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_HIR_QUESTIONS.HIR_ROLLBACK",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-hit-in-rear.HIR_ROLLBACK.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_HIR_QUESTIONS.HIR_PUSHED} == 'HIR_PUSHED_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "HIR_ROLLBACK_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "HIR_ROLLBACK_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+    "pageId": "collision-with-cyclist-or-pedestrian",
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "collision-with-cyclist.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.CWH_COLLISION_WITH_HUMAN",
+                "type": "CIRCLE_BUTTONS",
+                "label": "collision-with-cyclist.WITH_WHOM.label",
+                "options": {
+                    "buttons": [
+                        {
+                            "id": "CWH_PEDESTRIAN",
+                            "icon": "product-person-1",
+                            "label": "collision-with-cyclist.PEDESTRIAN.label"
+                        },
+                        {
+                            "id": "CWH_CYCLIST",
+                            "icon": "product-person-2",
+                            "label": "collision-with-cyclist.CYCLIST.label"
+                        }
+                    ],
+                    "multiSelection": false
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.required"
+                    }
+                ]
+            },
+            {
+                "label": "common.au.moreDetails",
+                "headerOption": "subsection-medium",
+                "headerType": "h3",
+                "id": "CWH_COMMENT_TITLE",
+                "type": "HEADLINE",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.claim.CWH_COLLISION_WITH_HUMAN} == 'CWH_PEDESTRIAN'"
+                    }
+                ]
+            },
+            {
+                "id": "claim.CWH_COMMENT",
+                "type": "TEXT_AREA",
+                "label": "common.whatHappened",
+                "maxLength": 1000,
+                "hint": {
+                    "text": "common.au.min50chars",
+                    "links": []
+                },
+                "infoIcon": {
+                    "infoText": "common.au.incidentDescription.infoIcon.text",
+                    "componentToDisplay": "popover",
+                    "popOverTriggeredBy": "click",
+                    "popOverDirection": "bottom"
+                },
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.claim.CWH_COLLISION_WITH_HUMAN} == 'CWH_PEDESTRIAN'"
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.au.descriptionRequired"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+                        "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+                    },
+                    {
+                        "type": "MIN_LENGTH",
+                        "value": "50",
+                        "errorMessage": "common.validation.au.descriptionMinLength"
+                    },
+                    {
+                        "type": "MAX_LENGTH",
+                        "value": "1000",
+                        "errorMessage": "common.validation.au.descriptionMaxLength"
+                    }
+                ]
+            }
+        ]
+    }
+}

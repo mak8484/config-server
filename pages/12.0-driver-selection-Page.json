@@ -1,0 +1,78 @@
+{
+    "pageId": "driver-selection",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "driver-selection.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.DS_DRIVER",
+                "label": "driver-selection.subtitleText",
+                "type": "RADIO",
+                "retrieveOptionsFromValueProviderService": true,
+                "retrieveOptionsExpression": "$.claim.bffContractDetails.driversList",
+                "options": [],
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "id": "claim.DS_ALCOHOL",
+                "label": "driver-selection.ALCOHOL.label",
+                "type": "CIRCLE_BUTTONS",
+                "options": {
+                    "buttons": [
+                        {
+                            "id": "DS_ALCOHOL_YES",
+                            "icon": "product-icon-yes",
+                            "label": ""
+                        },
+                        {
+                            "id": "DS_ALCOHOL_NO",
+                            "icon": "product-icon-no",
+                            "label": ""
+                        }
+                    ],
+                    "multiSelection": false
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "id": "claim.DS_ALCOHOL_COMMENT",
+                "label": "common.pleaseSpecify*",
+                "type": "TEXT_AREA",
+                "maxLength": 198,
+                "hideComponentConditions": [
+                    {
+                        "expression": "{$.claim.DS_ALCOHOL} != 'DS_ALCOHOL_YES'"
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+                        "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+                    }
+                ]
+            }
+        ]
+    }
+}

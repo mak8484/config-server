@@ -1,0 +1,433 @@
+{
+  "pageId": "disclosure",
+  "updateStateValues": [
+    {
+      "key": "$.claim.DIS_CANCELLED",
+      "operation": "remove",
+      "conditions": [
+        {
+          "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_FINE_DEFAULTS",
+      "operation": "remove",
+      "conditions": [
+        {
+          "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_CONVICTED",
+      "operation": "remove",
+      "conditions": [
+        {
+          "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_CONVICTED_COMMENT",
+      "operation": "remove",
+      "conditions": [
+        {
+          "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_DECLINED",
+      "operation": "remove",
+      "conditions": [
+        {
+          "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_DECLINED_COMMENT",
+      "operation": "remove",
+      "conditions": [
+        {
+          "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_GST",
+      "value": "$.claim.bffContractDetails.extTaxIdentification.gstRegistered",
+      "conditions": [
+        {
+          "expression": "{$.claim.bffContractDetails.extTaxIdentification} && !{$.claim.DIS_GST}"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_GST_TAX",
+      "value": "$.claim.bffContractDetails.extTaxIdentification.gstInputTaxCreditPercent",
+      "conditions": [
+        {
+          "expression": "{$.claim.bffContractDetails.extTaxIdentification} && !{$.claim.DIS_GST_TAX}"
+        }
+      ]
+    },
+    {
+      "key": "$.claim.DIS_GST_ABN",
+      "value": "$.claim.bffContractDetails.extTaxIdentification.australianBusinessNumber",
+      "conditions": [
+        {
+          "expression": "{$.claim.bffContractDetails.extTaxIdentification} && !{$.claim.DIS_GST_ABN}"
+        }
+      ]
+    }
+  ],
+  "dynamicFormPageConfig": {
+    "columnSize": "12,12,8,5",
+    "titleConfig": [
+      {
+        "id": "TITLE",
+        "headerOption": "page",
+        "headerType": "h2",
+        "label": "disclosure.titleText",
+        "type": "HEADLINE",
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ]
+      },
+      {
+        "id": "TITLE_GST",
+        "headerOption": "page",
+        "headerType": "h2",
+        "label": "disclosure.titleTextGST",
+        "type": "HEADLINE",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ]
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DIS_CANCELLED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "disclosure.CANCELLED.label",
+        "options": {
+          "buttons": [
+            {
+              "id": "DIS_CANCELLED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DIS_CANCELLED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_FINE_DEFAULTS",
+        "type": "CIRCLE_BUTTONS",
+        "label": "disclosure.FINE_DEFAULTS.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_CANCELLED} == 'DIS_CANCELLED_YES'"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DIS_FINE_DEFAULTS_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DIS_FINE_DEFAULTS_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_FINE_DEFAULTS_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.pleaseSpecify*",
+        "maxLength": 198,
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_CANCELLED} == 'DIS_CANCELLED_YES' && {$.claim.DIS_FINE_DEFAULTS} == 'DIS_FINE_DEFAULTS_NO'"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.details"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_CONVICTED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "disclosure.CONVICTED.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_FINE_DEFAULTS} || {$.claim.DIS_CANCELLED} == 'DIS_CANCELLED_NO'"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DIS_CONVICTED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DIS_CONVICTED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_CONVICTED_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.pleaseSpecify*",
+        "maxLength": 198,
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_CONVICTED} == 'DIS_CONVICTED_YES'"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.details"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_DECLINED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "disclosure.DECLINED.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_CONVICTED}"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DIS_DECLINED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DIS_DECLINED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_DECLINED_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.pleaseSpecify*",
+        "maxLength": 198,
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_DECLINED} == 'DIS_DECLINED_YES'"
+          }
+        ],
+        "hideComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' )"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.details"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_GST_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "disclosure.GST.label",
+        "type": "HEADLINE",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_DECLINED} || ({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' ))"
+          }
+        ],
+        "infoIcon": {
+          "infoText": "disclosure.GST.popup",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "disclosure.GST.label"
+        }
+      },
+      {
+        "id": "claim.DIS_GST",
+        "type": "CIRCLE_BUTTONS",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_DECLINED} || ({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' ))"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DIS_GST_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DIS_GST_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_GST_TAX",
+        "label": "disclosure.TAX.label",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_DECLINED} || ({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' ))"
+          },
+          {
+            "expression": "{$.claim.DIS_GST} == 'DIS_GST_YES'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^([0-9]|[1-9][0-9]|100)$",
+            "errorMessage": "disclosure.TAX.error"
+          },
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.DIS_GST_ABN",
+        "label": "disclosure.ABN.label",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DIS_DECLINED} || ({$.claim.DAMAGE_TYPE} == 'WINDSCREEN_DAMAGE' || ( {$.claim.DAMAGE_TYPE} == 'WEATHER_DAMAGE' && {$.bffWeatherEvents.length} > 1 && {$.claim.WE_EVENT_SELECTED.value} != 'other' ))"
+          },
+          {
+            "expression": "{$.claim.DIS_GST} == 'DIS_GST_YES'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED"
+          },
+          {
+            "type": "ABN",
+            "errorMessage": "disclosure.ABN.error"
+          }
+        ]
+      }
+    ]
+  }
+}

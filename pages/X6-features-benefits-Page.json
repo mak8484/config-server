@@ -1,0 +1,81 @@
+{
+  "pageId": "features-benefits",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "FB_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "features-benefits.titleText",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "FB_SUBTITLE",
+        "label": "features-benefits.subtitleText",
+        "headerOption": "subsection-large",
+        "headerType": "h2",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "title": "features-benefits.infoTitle",
+          "infoText": "features-benefits.infoText",
+          "componentToDisplay": "popover",
+          "popOverDirection": "bottom",
+          "popOverTriggeredBy": "click"
+        }
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.FB_FEATURES_BENEFITS",
+        "type": "CIRCLE_BUTTONS",
+        "label": "features-benefits.question",
+        "options": {
+          "buttons": [
+            {
+              "id": "FB_FEATURES_BENEFITS_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "FB_FEATURES_BENEFITS_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.FB_AMOUNT",
+        "label": "features-benefits.amount",
+        "type": "INPUT",
+        "inputType": "text",
+        "inputPrefix": "$",
+        "infoIcon": {
+          "infoText": "features-benefits.amount.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom"
+        },
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.FB_FEATURES_BENEFITS} == 'FB_FEATURES_BENEFITS_YES'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^([0-9]{0,8}|[0-9]{0,6}\\.[0-9]{0,2})$",
+            "errorMessage": "features-benefits.amount.error"
+          }
+        ]
+      }
+    ]
+  }
+}

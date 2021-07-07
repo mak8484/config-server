@@ -1,0 +1,14 @@
+  {
+    "pageId": "error-csc-page",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "errorPageConfig": {
+      "titleConfig": {
+        "titleText": "error-page.title"
+      },
+      "subtitleConfig": {
+        "subtitleText": "error-csc-page.subtitle"
+      },
+      "text": "error-csc-page.phoneTitle"
+    }
+  }

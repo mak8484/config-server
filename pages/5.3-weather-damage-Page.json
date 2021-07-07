@@ -1,0 +1,106 @@
+{
+  "pageId": "weather-damage",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "WD_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "weather-damage.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DAMAGE_SUB_TYPE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "",
+        "options": {
+          "buttons": [
+            {
+              "id": "WD_HAIL",
+              "label": "WD_HAIL",
+              "icon": "product-car-d-1"
+            },
+            {
+              "id": "WD_STORM",
+              "label": "WD_STORM",
+              "icon": "product-storm-cyclon"
+            },
+            {
+              "id": "WD_WATER",
+              "label": "WD_WATER",
+              "icon": "product-flood"
+            },
+            {
+              "id": "WD_FLOOD",
+              "label": "WD_FLOOD",
+              "icon": "product-flood"
+            },
+            {
+              "id": "WD_FIRE",
+              "label": "WD_FIRE",
+              "icon": "product-bushfire"
+            },
+            {
+              "id": "WD_OTHER",
+              "label": "WD_OTHER",
+              "icon": "product-other"
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "label": "common.au.moreDetails",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "id": "WD_COMMENT_TITLE",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "claim.WD_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.whatHappened",
+        "maxLength": 1000,
+        "hint": {
+          "text": "common.au.min50chars",
+          "links": []
+        },
+        "infoIcon": {
+          "infoText": "common.au.incidentDescription.infoIcon.text",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom"
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.au.descriptionRequired"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+          },
+          {
+            "type": "MIN_LENGTH",
+            "value": "50",
+            "errorMessage": "common.validation.au.descriptionMinLength"
+          },
+          {
+            "type": "MAX_LENGTH",
+            "value": "1000",
+            "errorMessage": "common.validation.au.descriptionMaxLength"
+          }
+        ]
+      }
+    ]
+  }
+}

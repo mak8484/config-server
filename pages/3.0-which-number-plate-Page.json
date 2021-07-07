@@ -1,0 +1,31 @@
+{
+    "pageId": "which-number-plate",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "which-number-plate.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.NP_VEHICLE",
+                "label": "which-number-plate.affectedPlatenumber",
+                "type": "RADIO",
+                "retrieveOptionsFromValueProviderService": true,
+                "retrieveOptionsExpression": "$.claim.bffContracts",
+                "options": [],
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            }
+        ]
+    }
+}

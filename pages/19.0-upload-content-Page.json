@@ -1,0 +1,77 @@
+{
+  "pageId": "upload-content",
+  "updateStateValues": [
+    {
+      "key": "$.uploadId",
+      "value": "$.claim.uploadId"
+    },
+    {
+      "key": "$.claim.TP_CONTAINER",
+      "value": "$.TP_CONTAINER"
+    }
+  ],
+  "fileUploadPageConfig": {
+    "titleConfig": {
+      "titleText": "upload-content.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "upload-content.subtitleText"
+    },
+    "fileUploadLibraryConfig": {
+      "file_document_size_max": 4.98,
+      "file_identifying_field": "filename",
+      "file_dropzone_hidden": false,
+      "file_hide_thumbnails": false,
+      "file_retrieve_thumbnails_on_init": true,
+      "file_allowed_file_types": [
+        "jpg",
+        "jpeg",
+        "jpe",
+        "jfif",
+        "bmp",
+        "dib",
+        "gif",
+        "tif",
+        "tiff",
+        "png",
+        "pdf",
+        "doc",
+        "docx",
+        "xls",
+        "xlsx"
+      ],
+      "file_image_after_compression_max_size": 4.98,
+      "file_max_number_of_files_allowed": 5,
+      "one_file_per_upload": true,
+      "file_category_config": {
+        "title_label": "upload-content.categories.title",
+        "subtitle_label": "upload-content.categories.subtitle",
+        "next_button_label": "next_button",
+        "cancel_button_label": "common.CANCEL",
+        "form_label": "upload-content.categories.form-label",
+        "file_categories": [
+          {
+            "label": "Photo",
+            "value": "FU_PHOTO"
+          },
+          {
+            "label": "Repair quote",
+            "value": "FU_REPAIR_QUOTE"
+          },
+          {
+            "label": "Repair invoice",
+            "value": "FU_REPAIR_INVOICE"
+          },
+          {
+            "label": "Ownership document",
+            "value": "FU_OWNER_DOC"
+          },
+          {
+            "label": "Other",
+            "value": "FU_OTHER"
+          }
+        ]
+      }
+    }
+  }
+}

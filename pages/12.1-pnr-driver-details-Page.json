@@ -1,0 +1,173 @@
+{
+    "pageId": "pnr-driver-details",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "driver-selection.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "label": "common.firstName*",
+                "id": "claim.PNR_DRIVER.firstName",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "pnr-driver.validation.firstName"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            },
+            {
+                "label": "common.lastName*",
+                "id": "claim.PNR_DRIVER.lastName",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "pnr-driver.validation.lastName"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            },
+            {
+                "label": "common.birthDate*",
+                "id": "claim.PNR_DRIVER.birthDate",
+                "type": "DATE",
+                "nonStrictParsing": false,
+                "parseFormat": [
+                    "DDMMYYYY",
+                    "DD/MM/YYYY",
+                    "DD-MM-YYYY",
+                    "DD.MM.YYYY",
+                    "DD MM YYYY",
+                    "DDMMMYYYY",
+                    "DD/MMM/YYYY",
+                    "DD-MMM-YYYY",
+                    "DD.MMM.YYYY",
+                    "DD MMM YYYY",
+                    "DMMMYYYY",
+                    "D/MMM/YYYY",
+                    "D-MMM-YYYY",
+                    "D.MMM.YYYY",
+                    "D MMM YYYY"
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.date"
+                    },
+                    {
+                        "type": "MIN_AGE",
+                        "value": 16,
+                        "date": "$.claim.AYI_DATE",
+                        "errorMessage": "common.validation.driver.dob"
+                    },
+                    {
+                        "type": "MAX_AGE",
+                        "value": 99,
+                        "date": "$.claim.AYI_DATE",
+                        "errorMessage": "common.validation.driver.dob"
+                    }
+                ],
+                "hint": "ddmmyyyy",
+                "invalidFormatErrorMessage": "common.validation.date",
+                "patchOutputValue": "YYYY-MM-DD"
+            },
+            {
+                "label": "pnr-driver-details.DRIVER_LICENSE_NO",
+                "id": "claim.PNR_DRIVER.licenseNumber",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^[a-zA-Z0-9 ]{1,10}$",
+                        "errorMessage": "pnr-driver-details.driverLicense.error"
+                    }
+                ]
+            },
+            {
+                "label": "pnr-driver-details.YEARS_LICENSE",
+                "id": "claim.PNR_DRIVER.yearsLicense",
+                "type": "INPUT",
+                "inputType": "number",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "pnr-driver-details.yearsLicense.valid"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "(\\s*\\d\\s*){1,2}",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            },
+            {
+                "id": "claim.DS_ALCOHOL",
+                "label": "driver-selection.ALCOHOL.label",
+                "type": "CIRCLE_BUTTONS",
+                "options": {
+                    "buttons": [
+                        {
+                            "id": "DS_ALCOHOL_YES",
+                            "icon": "product-icon-yes",
+                            "label": ""
+                        },
+                        {
+                            "id": "DS_ALCOHOL_NO",
+                            "icon": "product-icon-no",
+                            "label": ""
+                        }
+                    ],
+                    "multiSelection": false
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "id": "claim.DS_ALCOHOL_COMMENT",
+                "label": "pnr-driver-details.pleaseSpecify",
+                "type": "TEXT_AREA",
+                "maxLength": 198,
+                "hideComponentConditions": [
+                    {
+                        "expression": "{$.claim.DS_ALCOHOL} != 'DS_ALCOHOL_YES'"
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+                        "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+                    }
+                ]
+            }
+        ]
+    }
+}

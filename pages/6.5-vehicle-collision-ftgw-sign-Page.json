@@ -1,0 +1,84 @@
+{
+  "pageId": "vehicle-collision-failure-to-give-way-sign",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_GWSS_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-FTGW-sign.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_GWSS_QUESTIONS.GWSS_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-FTGW-sign.GWSS_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-FTGW-sign.GWSS_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-FTGW-sign.GWSS_FAULT.label"
+    }
+      },
+      {
+        "id": "claim.VC_GWSS_QUESTIONS.GWSS_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "GWSS_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "GWSS_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_GWSS_QUESTIONS.GWSS_ROADWAY",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-FTGW-sign.GWSS_ROADWAY.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_GWSS_QUESTIONS.GWSS_FAULT} == 'GWSS_FAULT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "GWSS_ROADWAY_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "GWSS_ROADWAY_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

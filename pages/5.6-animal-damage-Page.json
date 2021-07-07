@@ -1,0 +1,315 @@
+{
+  "pageId": "animal-damage",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "TITLE",
+        "headerOption": "page",
+        "headerType": "h2",
+        "label": "animal-damage.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "label": "common.au.moreDetails",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "id": "AD_COMMENT_TITLE",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "claim.AD_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.whatHappened",
+        "maxLength": 1000,
+        "hint": {
+          "text": "common.au.min50chars",
+          "links": []
+        },
+        "infoIcon": {
+          "infoText": "common.au.incidentDescription.infoIcon.text",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom"
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.au.descriptionRequired"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+          },
+          {
+            "type": "MIN_LENGTH",
+            "value": "50",
+            "errorMessage": "common.validation.au.descriptionMinLength"
+          },
+          {
+            "type": "MAX_LENGTH",
+            "value": "1000",
+            "errorMessage": "common.validation.au.descriptionMaxLength"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_ANIMAL_OWNER",
+        "type": "CIRCLE_BUTTONS",
+        "label": "animal-damage.AD_OWNER.label",
+        "options": {
+          "buttons": [
+            {
+              "id": "AD_ANIMAL_OWNER_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "AD_ANIMAL_OWNER_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "AD_OWNER_DATA_TITLE",
+        "label": "animal-damage.AD_OWNER_DETAILS.label",
+        "type": "HEADLINE",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_GENDER",
+        "label": "",
+        "type": "RADIO",
+        "horizontalLayout": true,
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "options": [
+          {
+            "value": "1",
+            "label": "common.mrs"
+          },
+          {
+            "value": "2",
+            "label": "common.mr"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_FIRST_NAME",
+        "label": "common.firstName",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+            "errorMessage": "common.validation.name"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_LAST_NAME",
+        "label": "common.lastName",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+            "errorMessage": "common.validation.name"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_PHONE",
+        "label": "common.phone",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "[0-9 ]{1,12}$",
+            "errorMessage": "common.validation.phone"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_EMAIL",
+        "label": "common.email",
+        "type": "INPUT",
+        "inputType": "email",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+(\\.[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+)*@[A-Za-z0-9]+(-[A-Za-z0-9]+)*(\\.[A-Za-z0-9]+(-[A-Za-z0-9]+)*)*\\.([A-Za-z0-9]{2,}|[A-Za-z0-9]+(-[A-Za-z0-9]+)+)$",
+            "errorMessage": "common.validation.email"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_ADDRESS",
+        "label": "common.streetAddress",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,50}$",
+            "errorMessage": "common.validation.address"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_SUBURB",
+        "label": "common.suburb",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+            "errorMessage": "common.validation.name"
+          }
+        ]
+      },
+      {
+        "label": "common.state",
+        "id": "claim.AD_OWNER_STATE",
+        "type": "DROPDOWN",
+        "options": [
+          {
+            "label": "NSW",
+            "value": "NSW"
+          },
+          {
+            "label": "SA",
+            "value": "SA"
+          },
+          {
+            "label": "VIC",
+            "value": "VIC"
+          },
+          {
+            "label": "QLD",
+            "value": "QLD"
+          },
+          {
+            "label": "TAS",
+            "value": "TAS"
+          },
+          {
+            "label": "NT",
+            "value": "NT"
+          },
+          {
+            "label": "WA",
+            "value": "WA"
+          },
+          {
+            "label": "ACT",
+            "value": "ACT"
+          }
+        ],
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^(NSW|SA|VIC|QLD|TAS|NT|WA|ACT|nsw|sa|vic|qld|tas|nt|wa|act)$",
+            "errorMessage": "common.validation.state-au"
+          }
+        ]
+      },
+      {
+        "id": "claim.AD_OWNER_POSTCODE",
+        "label": "common.zipCode",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.AD_ANIMAL_OWNER",
+            "operator": "==",
+            "value2Expression": "AD_ANIMAL_OWNER_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[0-9]{4}$",
+            "errorMessage": "common.validation.zip"
+          }
+        ]
+      }
+    ]
+  }
+}

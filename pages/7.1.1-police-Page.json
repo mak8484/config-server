@@ -1,0 +1,72 @@
+{
+    "pageId": "police",
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "PO_TITLE",
+                "headerOption": "page",
+                "headerType": "h1",
+                "label": "police.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.PO_POLICE_RECORD",
+                "type": "CIRCLE_BUTTONS",
+                "label": "police.POLICE_RECORD.label",
+                "options": {
+                    "buttons": [
+                        {
+                            "id": "PO_POLICE_RECORD_YES",
+                            "icon": "product-icon-yes",
+                            "label": ""
+                        },
+                        {
+                            "id": "PO_POLICE_RECORD_NO",
+                            "icon": "product-icon-no",
+                            "label": ""
+                        }
+                    ],
+                    "multiSelection": false
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "label": "police.POLICE_RECORD_NUMBER.label",
+                "headerOption": "subsection-medium",
+                "headerType": "h3",
+                "id": "PO_POLICE_RECORD_TITLE",
+                "type": "HEADLINE",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.claim.PO_POLICE_RECORD} == 'PO_POLICE_RECORD_YES'"
+                    }
+                ]
+            },
+            {
+                "id": "claim.PO_POLICE_RECORD_NUMBER",
+                "type": "INPUT",
+                "inputType": "text",
+                "label": "police.POLICE_RECORD_NUMBER.placeholder",
+                "value": "",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.claim.PO_POLICE_RECORD} == 'PO_POLICE_RECORD_YES'"
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*?&\/\\\\!?#@\":%+]{0,20}$",
+                        "errorMessage": "police.validation"
+                    }
+                ]
+            }
+        ]
+    }
+}

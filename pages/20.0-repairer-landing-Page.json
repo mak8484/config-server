@@ -1,0 +1,31 @@
+{
+    "pageId": "repairer-landing",
+    "hideNextButton": true,
+    "hideBackButton": false,
+    "linkBackButton": true,
+    "navigationOptionsLargePageConfig": {
+      "titleConfig": {
+        "titleText": "repairer-landing.titleText"
+      },
+      "subtitleConfig": {
+        "subtitleText": "repairer-landing.subtitleText"
+      },
+      "navigationOptions": {
+        "id": "repairLanding",
+        "options": [
+          {
+            "icon": "assets/images/settlement-NormalDriveIn.png",
+            "hideHeader": true,
+            "hasBorder": true,
+            "preferred": true,
+            "title": "repairer-landing.option.title",
+            "description": "repairer-landing.option.htmlContent",
+            "nxNextType": "primary",
+            "nxNextLabel": "repairer-landing.option.button.label",
+            "nxNextAction": "repairer-landing.internal",
+            "hasWhiteBackground": false
+          }
+        ]
+      }
+    }
+  }

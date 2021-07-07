@@ -1,0 +1,133 @@
+{
+    "pageId": "about-other-driver",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "about-other-driver.titleText",
+                "type": "HEADLINE"
+            },
+            {
+                "id": "SUB_TITLE",
+                "headerOption": "subsection-small",
+                "headerType": "h3",
+                "label": "about-other-driver.subtitleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "label": "common.firstName*",
+                "id": "claim.AOD_FIRSTNAME",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            },
+            {
+                "label": "common.lastName*",
+                "id": "claim.AOD_LASTNAME",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            },
+            {
+                "label": "common.birthDate*",
+                "id": "claim.AOD_BIRTHDAY",
+                "type": "DATE",
+                "nonStrictParsing": false,
+                "parseFormat": [
+                    "DDMMYYYY",
+                    "DD/MM/YYYY",
+                    "DD-MM-YYYY",
+                    "DD.MM.YYYY",
+                    "DD MM YYYY",
+                    "DDMMMYYYY",
+                    "DD/MMM/YYYY",
+                    "DD-MMM-YYYY",
+                    "DD.MMM.YYYY",
+                    "DD MMM YYYY",
+                    "DMMMYYYY",
+                    "D/MMM/YYYY",
+                    "D-MMM-YYYY",
+                    "D.MMM.YYYY",
+                    "D MMM YYYY"
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.date"
+                    },
+                    {
+                        "type": "MIN_AGE",
+                        "value": 16,
+                        "date": "$.claim.AYI_DATE",
+                        "errorMessage": "common.validation.driver.dob"
+                    },
+                    {
+                        "type": "MAX_AGE",
+                        "value": 99,
+                        "date": "$.claim.AYI_DATE",
+                        "errorMessage": "common.validation.driver.dob"
+                    }
+                ],
+                "hint": "ddmmyyyy",
+                "invalidFormatErrorMessage": "common.validation.date",
+                "patchOutputValue": "YYYY-MM-DD"
+            },
+            {
+                "label": "about-other-driver.AOD_DRIVER_LICENSE_NO",
+                "id": "claim.AOD_DRIVER_LICENSE_NO",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^.{0,10}$",
+                        "errorMessage": "about-other-driver.driverLicense.error"
+                    }
+                ]
+            },
+            {
+                "label": "about-other-driver.AOD_YEARS_LICENSE",
+                "id": "claim.AOD_YEARS_LICENSE",
+                "type": "INPUT",
+                "inputType": "number",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "(\\s*\\d\\s*){1,2}",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            }
+        ]
+    }
+}

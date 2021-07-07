@@ -1,0 +1,303 @@
+{
+  "pageId": "windscreen-damage",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "TITLE",
+        "headerOption": "page",
+        "headerType": "h2",
+        "label": "windscreen-damage.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.WSD_ALREADY_REPAIRED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "windscreen-damage.WSD_ALREADY_REPAIRED.label",
+        "options": {
+          "buttons": [
+            {
+              "id": "WSD_ALREADY_REPAIRED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "WSD_ALREADY_REPAIRED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_THIRD_PARTY",
+        "type": "CIRCLE_BUTTONS",
+        "label": "windscreen-damage.WSD_THIRD_PARTY.label",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_ALREADY_REPAIRED",
+            "operator": "==",
+            "value2Expression": "WSD_ALREADY_REPAIRED_YES"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "WSD_THIRD_PARTY_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "WSD_THIRD_PARTY_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "WSD_THIRD_PARTY_DETAILS_TITLE",
+        "label": "windscreen-damage.thirdPartyDetails.title",
+        "type": "HEADLINE",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_THIRD_PARTY_DETAILS_GENDER",
+        "label": "",
+        "type": "RADIO",
+        "horizontalLayout": true,
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "options": [
+          {
+            "value": "1",
+            "label": "common.mrs"
+          },
+          {
+            "value": "2",
+            "label": "common.mr"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_FIRST_NAME",
+        "label": "windscreen-damage.thirdPartyDetails.WSD_FIRST_NAME.label",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+            "errorMessage": "common.validation.name"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_LAST_NAME",
+        "label": "windscreen-damage.thirdPartyDetails.WSD_LAST_NAME.label",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+            "errorMessage": "common.validation.name"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_PHONE",
+        "label": "windscreen-damage.thirdPartyDetails.WSD_PHONE.label",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "[0-9 ]{1,12}$",
+            "errorMessage": "common.validation.phone"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_EMAIL",
+        "label": "windscreen-damage.thirdPartyDetails.WSD_EMAIL.label",
+        "type": "INPUT",
+        "inputType": "email",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+(\\.[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+)*@[A-Za-z0-9]+(-[A-Za-z0-9]+)*(\\.[A-Za-z0-9]+(-[A-Za-z0-9]+)*)*\\.([A-Za-z0-9]{2,}|[A-Za-z0-9]+(-[A-Za-z0-9]+)+)$",
+            "errorMessage": "common.validation.email"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_ADDRESS",
+        "label": "common.streetAddress",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,50}$",
+            "errorMessage": "common.validation.address"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_SUBURB",
+        "label": "windscreen-damage.thirdPartyDetails.WSD_SUBURB.label",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+            "errorMessage": "common.validation.name"
+          }
+        ]
+      },
+      {
+        "label": "common.state",
+        "id": "claim.WSD_COUNTRY",
+        "type": "DROPDOWN",
+        "options": [
+          {
+            "label": "NSW",
+            "value": "NSW"
+          },
+          {
+            "label": "SA",
+            "value": "SA"
+          },
+          {
+            "label": "VIC",
+            "value": "VIC"
+          },
+          {
+            "label": "QLD",
+            "value": "QLD"
+          },
+          {
+            "label": "TAS",
+            "value": "TAS"
+          },
+          {
+            "label": "NT",
+            "value": "NT"
+          },
+          {
+            "label": "WA",
+            "value": "WA"
+          },
+          {
+            "label": "ACT",
+            "value": "ACT"
+          }
+        ],
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^(NSW|SA|VIC|QLD|TAS|NT|WA|ACT|nsw|sa|vic|qld|tas|nt|wa|act)$",
+            "errorMessage": "common.validation.state-au"
+          }
+        ]
+      },
+      {
+        "id": "claim.WSD_POSTCODE",
+        "label": "common.zipCode",
+        "type": "INPUT",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.WSD_THIRD_PARTY",
+            "operator": "==",
+            "value2Expression": "WSD_THIRD_PARTY_YES"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[0-9]{4}$",
+            "errorMessage": "common.validation.zip"
+          }
+        ]
+      }
+    ]
+  }
+}

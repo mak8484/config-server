@@ -1,0 +1,121 @@
+  {
+    "pageId": "other-damage",
+    "dynamicFormPageConfig": {
+      "titleConfig": [
+        {
+          "id": "OD_TITLE",
+          "headerOption": "page",
+          "headerType": "h1",
+          "label": "other-damage.titleText",
+          "type": "HEADLINE"
+        }
+      ],
+      "formFields": [
+        {
+          "id": "claim.DAMAGE_SUB_TYPE",
+          "type": "CIRCLE_BUTTONS",
+          "label": "",
+          "options": {
+            "buttons": [
+              {
+                "id": "OD_LOST_LOAD_MY_VEHICLE",
+                "label": "OD_LOST_LOAD_MY_VEHICLE",
+                "icon": "product-car-c-3"
+              },
+              {
+                "id": "OD_LOST_LOAD_OTHER_PARTY",
+                "label": "OD_LOST_LOAD_OTHER_PARTY",
+                "icon": "product-lost-load-other-party"
+              },
+              {
+                "id": "OD_LOSTCONTROL_NO_TP",
+                "label": "OD_LOSTCONTROL_NO_TP",
+                "icon": "product-lost-control_white"
+              },
+              {
+                "id": "OD_TIPPING",
+                "label": "OD_TIPPING",
+                "icon": "product-tipping"
+              },
+              {
+                "id": "OD_MECHANICAL_FAILURE",
+                "label": "OD_MECHANICAL_FAILURE",
+                "icon": "product-mechanical-failure"
+              },
+              {
+                "id": "OD_FIRE",
+                "label": "OD_FIRE",
+                "icon": "product-car-e-4"
+              },
+              {
+                "id": "OD_SUBMERGED",
+                "label": "OD_SUBMERGED",
+                "icon": "product-submerged-vehicle_black"
+              },
+              {
+                "id": "OD_PARK_BRAKE",
+                "label": "OD_PARK_BRAKE",
+                "icon": "product-park-brake_black"
+              },
+              {
+                "id": "OD_UNKNOWN",
+                "label": "OD_UNKNOWN",
+                "icon": "product-other"
+              }
+            ],
+            "multiSelection": false
+          },
+          "validators": [
+            {
+              "type": "REQUIRED",
+              "errorMessage": "common.validation.required"
+            }
+          ]
+        },
+        {
+          "label": "common.au.moreDetails",
+          "headerOption": "subsection-medium",
+          "headerType": "h3",
+          "id": "OD_COMMENT_TITLE",
+          "type": "HEADLINE"
+        },
+        {
+          "id": "claim.OD_COMMENT",
+          "type": "TEXT_AREA",
+          "label": "common.whatHappened",
+          "maxLength": 1000,
+          "hint": {
+            "text": "common.au.min50chars",
+            "links": []
+          },
+          "infoIcon": {
+            "infoText": "common.au.incidentDescription.infoIcon.text",
+            "componentToDisplay": "popover",
+            "popOverTriggeredBy": "click",
+            "popOverDirection": "bottom"
+          },
+          "validators": [
+            {
+              "type": "REQUIRED",
+              "errorMessage": "common.validation.au.descriptionRequired"
+            },
+            {
+              "type": "PATTERN",
+              "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+              "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+            },
+            {
+              "type": "MIN_LENGTH",
+              "value": "50",
+              "errorMessage": "common.validation.au.descriptionMinLength"
+            },
+            {
+              "type": "MAX_LENGTH",
+              "value": "1000",
+              "errorMessage": "common.validation.au.descriptionMaxLength"
+            }
+          ]
+        }
+      ]
+    }
+  }

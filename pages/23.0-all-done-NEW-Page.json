@@ -1,0 +1,87 @@
+{
+  "pageId": "all-done-NEW",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "ALL_DONE_TITLE",
+        "headerOption": "page",
+        "headerType": "h2",
+        "label": "all-done.titleText",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "ALL_DONE_SUBTITLE",
+        "headerOption": "section",
+        "headerType": "h2",
+        "label": "all-done.subtitleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "ALL_DONE_SENT",
+        "label": "all-done.sentText",
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      },
+      {
+        "id": "ALL_DONE_EMAIL",
+        "label": "$.claim.SUBMIT_EMAIL",
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      },
+      {
+        "id": "ALL_DONE_CLAIMREF",
+        "label": "all-done.claimReferenceText",
+        "type": "HEADLINE",
+        "headerOption": "subsection-small",
+        "headerType": "h4"
+      },
+      {
+        "id": "ALL_DONE_CLAIMNUMBER",
+        "label": "$.claim.bffSubmitClaim.claimNumber",
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      },
+      {
+        "id": "ALL_DONE_EXCESS_TITLE",
+        "label": "all-done.textSection.title",
+        "type": "HEADLINE",
+        "headerOption": "subsection-small",
+        "headerType": "h4"
+      },
+      {
+        "id": "ALL_DONE_EXCESS_TEXT",
+        "label": "all-done.textSection.notAtFault",
+        "type": "PARAGRAPH"
+      },
+      {
+        "id": "ALL_DONE_CALL_QUESTION",
+        "label": "all-done.callUs.callUsQuestion",
+        "type": "HEADLINE",
+        "headerOption": "subsection-small",
+        "headerType": "h4"
+      },
+      {
+        "id": "ALL_DONE_CALL_LINK",
+        "label": {
+          "text": "all-done.callUs.call",
+          "links": [
+            {
+              "label": "all-done.callUs.callLinkText",
+              "link": "tel:131013"
+            }
+          ]
+        },
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      },
+      {
+        "id": "ALL_DONE_CALL_OPEN",
+        "label": "all-done.callUs.popUpText",
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      }
+    ]
+  }
+}

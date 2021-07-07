@@ -1,0 +1,45 @@
+{
+  "pageId": "all-done-windscreen-not-at-fault",
+  "hideBackButton": true,
+  "hideNextButton": true,
+  "allDonePageConfig": {
+    "titleConfig": {
+      "titleText": "all-done.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "all-done.subtitleText"
+    },
+    "contactFieldExpression": "",
+    "confirmIcon": "./assets/images/icon_checked.svg",
+    "sentText": "all-done.sentText",
+    "claimReferenceText": "all-done.claimReferenceText",
+    "claimReferenceExpression": "$.claim.bffSubmitClaim.claimNumber",
+    "claimErrorMessage": "all-done.claimError",
+    "textSection": [
+      {
+        "isBold": true,
+        "text": "all-done.textSection.title"
+      },
+      {
+        "isBold": false,
+        "text": "all-done.textSection.windscreenNotAtFault"
+      }
+    ],
+    "whatsNext": {
+      "title": "",
+      "text": "",
+      "hidden": false
+    },
+    "callUs": {
+      "callUsQuestion": "all-done.callUs.callUsQuestion",
+      "callUsConfig": {
+        "label": "all-done.callUs.label",
+        "popUpTitle": "all-done.callUs.popUpTitle",
+        "popUpText": "all-done.callUs.popUpText",
+        "popUpCallIcon": "./assets/images/phone.svg",
+        "popUpdPhoneNumber": "all-done.callUs.popUpdPhoneNumber",
+        "popUpCallText": "all-done.callUs.popUpCallText"
+      }
+    }
+  }
+}

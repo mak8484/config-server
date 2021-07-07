@@ -1,0 +1,95 @@
+{
+  "pageId": "unattended-damage",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "unattended-damage.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DAMAGE_SUB_TYPE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "",
+        "options": {
+          "buttons": [
+            {
+              "id": "UD_HIT_WHILE_PARKED",
+              "label": "UD_HIT_WHILE_PARKED",
+              "icon": "product-car-e-1"
+            },
+            {
+              "id": "UD_MALICIOUS_VANDALISM",
+              "label": "UD_MALICIOUS_VANDALISM",
+              "icon": "product-car-e-2"
+            },
+            {
+              "id": "UD_ARSON_FIRE",
+              "label": "UD_ARSON_FIRE",
+              "icon": "product-arson-fire"
+            },
+            {
+              "id": "UD_OTHER",
+              "label": "UD_OTHER",
+              "icon": "product-other"
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "label": "common.au.moreDetails",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "id": "UD_COMMENT_TITLE",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "claim.UD_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.whatHappened",
+        "maxLength": 1000,
+        "hint": {
+          "text": "common.au.min50chars",
+          "links": []
+        },
+        "infoIcon": {
+          "infoText": "common.au.incidentDescription.infoIcon.text",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom"
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.au.descriptionRequired"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+          },
+          {
+            "type": "MIN_LENGTH",
+            "value": "50",
+            "errorMessage": "common.validation.au.descriptionMinLength"
+          },
+          {
+            "type": "MAX_LENGTH",
+            "value": "1000",
+            "errorMessage": "common.validation.au.descriptionMaxLength"
+          }
+        ]
+      }
+    ]
+  }
+}

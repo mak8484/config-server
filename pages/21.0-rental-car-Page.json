@@ -1,0 +1,174 @@
+{
+  "pageId": "rental-car",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "RENTAL_CAR_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "rental-car.titleText",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "RENTAL_CAR_SUBTITLE",
+        "headerOption": "subsection-medium",
+        "headerType": "h2",
+        "label": "rental-car.subtitleText",
+        "type": "HEADLINE",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR'"
+          }
+        ]
+      },
+      {
+        "id": "RENTAL_CAR_SUBTITLE",
+        "headerOption": "subsection-medium",
+        "headerType": "h2",
+        "label": "rental-car-free.subtitleText",
+        "type": "HEADLINE",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+          }
+        ]
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.RENTAL_CAR",
+        "type": "CIRCLE_BUTTONS",
+        "label": "rental-car.question",
+        "options": {
+          "buttons": [
+            {
+              "id": "RENTAL_CAR_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RENTAL_CAR_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' && {$.bffConfiguration.authScope[0]} != 'process_pnr'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]        
+      },
+      {
+        "id": "claim.RENTAL_CAR",
+        "type": "CIRCLE_BUTTONS",
+        "label": "rental-car.question",
+        "options": {
+          "buttons": [
+            {
+              "id": "RENTAL_CAR_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RENTAL_CAR_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR' && {$.bffConfiguration.authScope[0]} == 'process_pnr'"
+          }
+        ]
+      },      
+      {
+        "id": "claim.RENTAL_CAR_FREE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "rental-car-free.question",
+        "options": {
+          "buttons": [
+            {
+              "id": "RENTAL_CAR_FREE_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RENTAL_CAR_FREE_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false         
+        },
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE' && {$.bffConfiguration.authScope[0]} != 'process_pnr'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.RENTAL_CAR_FREE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "rental-car-free.question",
+        "options": {
+          "buttons": [
+            {
+              "id": "RENTAL_CAR_FREE_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RENTAL_CAR_FREE_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE' && {$.bffConfiguration.authScope[0]} == 'process_pnr'"
+          }
+        ]
+      },
+      {
+        "id": "RENTAL_CAR_DISCLOSURE",
+        "label": "rental-car-free.policyText",
+        "type": "HEADLINE",
+        "headerOption": "subsection-small",
+        "headerType": "h4",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_CREDIT_HIRE'"
+          }
+        ]
+      },
+      {
+        "id": "RENTAL_CAR_DISCLOSURE",
+        "label": "rental-car.policyText",
+        "type": "HEADLINE",
+        "headerOption": "subsection-small",
+        "headerType": "h4",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffBenefitsEntitlements[0]} == 'OPTION_RENTAL_CAR'"
+          }
+        ]
+      }
+    ]
+  }
+}

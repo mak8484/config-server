@@ -1,0 +1,276 @@
+{
+    "pageId": "submit",
+    "updateStateValues": [
+      {
+        "key": "$.claim.FF_FLATFROG",
+        "value": "$.FF_FLATFROG"
+      },
+      {
+        "key": "$.claim.TP_CONTAINER",
+        "value": "$.TP_CONTAINER"
+      },
+      {
+        "key": "$.claim.poiRepairShop",
+        "value": "$.poiRepairShop"
+      }
+    ],
+    "nxNextText": "submit.nextText",
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "SUBMIT_TITLE",
+                "headerOption": "page",
+                "headerType": "h1",
+                "label": "submit.titleText",
+                "type": "HEADLINE"
+            },
+            {
+                "id": "SUBMIT_SUB_TITLE",
+                "headerOption": "subsection-small",
+                "headerType": "h2",
+                "label": "submit.claimDetailsTitle",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "SUB_HEADLINE_MOTOR",
+                "label": "submit.motorVehicleInsuranceClaim",
+                "type": "HEADLINE",
+                "headerOption": "subsection-xsmall",
+                "headerType": "h2"
+            },
+            {
+                "id": "SUB_CLAIM_DATA",
+                "label": "<strong>Vehicle:</strong><br>%jsonPath%$.claim.NP_VEHICLE_SELECTED.label%jsonPath%<br>%jsonPath%$.claim.DAMAGE_TYPE%jsonPath% - %jsonPath%$.claim.DAMAGE_SUB_TYPE%jsonPath% - %jsonPath%$.claim.VC_FTGW_TYPES%jsonPath%<br>%jsonPath%$.claim.AYI_DATE_DISPLAY%jsonPath%",
+                "type": "PARAGRAPH",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.claim.VC_FTGW_TYPES}"
+                    }
+                ]
+            },
+            {
+                "id": "SUB_CLAIM_DATA",
+                "label": "<strong>Vehicle:</strong><br>%jsonPath%$.claim.NP_VEHICLE_SELECTED.label%jsonPath%<br>%jsonPath%$.claim.DAMAGE_TYPE%jsonPath% - %jsonPath%$.claim.CWH_COLLISION_WITH_HUMAN%jsonPath%<br>%jsonPath%$.claim.AYI_DATE_DISPLAY%jsonPath%",
+                "type": "PARAGRAPH",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.claim.DAMAGE_TYPE} == 'COLLISION_HUMAN'"
+                    }
+                ]
+            },
+            {
+                "id": "SUB_CLAIM_DATA",
+                "label": "<strong>Vehicle:</strong><br>%jsonPath%$.claim.NP_VEHICLE_SELECTED.label%jsonPath%<br>%jsonPath%$.claim.DAMAGE_TYPE%jsonPath% - %jsonPath%$.claim.DAMAGE_SUB_TYPE%jsonPath%<br>%jsonPath%$.claim.AYI_DATE_DISPLAY%jsonPath%",
+                "type": "PARAGRAPH",
+                "showComponentConditions": [
+                    {
+                        "expression": "! {$.claim.VC_FTGW_TYPES} && ! {$.claim.CC_FTGW_TYPES}"
+                    },
+                    {
+                        "expression": "{$.claim.DAMAGE_SUB_TYPE}"
+                    },
+                    {
+                        "expression": "{$.claim.DAMAGE_TYPE} != 'COLLISION_HUMAN'"
+                    }
+                ]
+            },
+            {
+                "id": "SUB_CLAIM_DATA",
+                "label": "<strong>Vehicle:</strong><br>%jsonPath%$.claim.NP_VEHICLE_SELECTED.label%jsonPath%<br>%jsonPath%$.claim.DAMAGE_TYPE%jsonPath%<br>%jsonPath%$.claim.AYI_DATE_DISPLAY%jsonPath%",
+                "type": "PARAGRAPH",
+                "showComponentConditions": [
+                    {
+                        "expression": "! {$.claim.VC_FTGW_TYPES} && ! {$.claim.CC_FTGW_TYPES}"
+                    },
+                    {
+                        "expression": "{$.claim.DAMAGE_TYPE} != 'COLLISION_HUMAN'"
+                    },
+                    {
+                        "expression": "! {$.claim.DAMAGE_SUB_TYPE}"
+                    }
+                ]
+            },
+            {
+                "id": "submit.notifier.contactDetails",
+                "type": "HEADLINE",
+                "label": "submit.contactDetails",
+                "headerOption": "subsection-xsmall",
+                "headerType": "h2"
+            },
+            {
+                "id": "submit.broker.title",
+                "type": "HEADLINE",
+                "label": "submit.broker",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.userRole} == 'broker'"
+                    }
+                ],
+                "headerOption": "subsection-medium",
+                "headerType": "h4"
+            },
+            {
+                "label": "common.email",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.userRole} == 'broker'"
+                    }
+                ],
+                "id": "claim.SUBMIT_EMAIL_BROKER",
+                "type": "INPUT",
+                "inputType": "email",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+(\\.[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+)*@[A-Za-z0-9]+(-[A-Za-z0-9]+)*(\\.[A-Za-z0-9]+(-[A-Za-z0-9]+)*)*\\.([A-Za-z0-9]{2,}|[A-Za-z0-9]+(-[A-Za-z0-9]+)+)$",
+                        "errorMessage": "common.validation.email"
+                    },
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "submit.validation.required"
+                    }
+                ]
+            },
+            {
+                "label": "common.phone_short",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.userRole} == 'broker'"
+                    }
+                ],
+                "id": "claim.SUBMIT_PHONE_BROKER",
+                "type": "INPUT",
+                "inputType": "tel",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*",
+                        "errorMessage": "common.validation.phone"
+                    },
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "submit.validation.required"
+                    }
+                ]
+            },
+            {
+                "id": "submit.notifier.title",
+                "type": "HEADLINE",
+                "label": "submit.notifier",
+                "headerOption": "subsection-medium",
+                "headerType": "h4",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.userRole} == 'broker'"
+                    }
+                ]
+            },
+            {
+                "label": "common.fullName",
+                "id": "claim.SUBMIT_FULLNAME",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,60}$",
+                        "errorMessage": "common.validation.name"
+                    },
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "submit.validation.name"
+                    }
+                ],
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.userRole} == 'customer'"
+                    }
+                ]
+            },
+            {
+                "label": "common.email",
+                "id": "claim.SUBMIT_EMAIL",
+                "type": "INPUT",
+                "inputType": "email",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+(\\.[A-Za-z0-9!#$%&'*+\\-\/=?^_`{|}~]+)*@[A-Za-z0-9]+(-[A-Za-z0-9]+)*(\\.[A-Za-z0-9]+(-[A-Za-z0-9]+)*)*\\.([A-Za-z0-9]{2,}|[A-Za-z0-9]+(-[A-Za-z0-9]+)+)$",
+                        "errorMessage": "common.validation.email"
+                    },
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "submit.validation.required"
+                    }
+                ]
+            },
+            {
+                "label": "common.mobile_short",
+                "id": "claim.SUBMIT_MOBILE",
+                "type": "INPUT",
+                "inputType": "tel",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "\\s*0\\s*4\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*",
+                        "errorMessage": "common.validation.phone"
+                    },
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "submit.validation.required"
+                    }
+                ]
+            },
+            {
+                "label": "common.preferred",
+                "id": "claim.SUBMIT_PREFERRED_CHANNEL",
+                "type": "RADIO",
+                "horizontalLayout": true,
+                "options": [
+                    {
+                        "value": "SUBMIT_PREFERRED_EMAIL",
+                        "label": "common.email_short"
+                    },
+                    {
+                        "value": "SUBMIT_PREFERRED_MOBILE",
+                        "label": "common.sms"
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "value": "true",
+                        "errorMessage": "common.validation.required"
+                    }
+                ]
+            },
+            {
+                "id": "SUB_NOTE",
+                "label": "submit.confirmation",
+                "type": "PARAGRAPH"
+            },
+            {
+                "id": "claim.submitConfirmTOS",
+                "type": "CHECKBOX",
+                "label": {
+                    "text": "submit.tos.text",
+                    "links": [
+                        {
+                            "label": "submit.tos.linkText",
+                            "link": "submit.tos.url",
+                            "target": "_blank"
+                        }
+                    ]
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "value": "true"
+                    }
+                ]
+            }
+        ]
+    }
+}

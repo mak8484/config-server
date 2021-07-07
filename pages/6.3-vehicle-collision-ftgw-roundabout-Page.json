@@ -1,0 +1,114 @@
+{
+  "pageId": "vehicle-collision-failure-to-give-way-roundabout",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_RA_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-FTGW-roundabout.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_RA_QUESTIONS.RA_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-FTGW-roundabout.RA_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-FTGW-roundabout.RA_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-FTGW-roundabout.RA_FAULT.label"
+        }
+      },
+      {
+        "id": "claim.VC_RA_QUESTIONS.RA_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "RA_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RA_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_RA_QUESTIONS.RA_BEFORE_OTHER",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-FTGW-roundabout.RA_BEFORE_OTHER.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_RA_QUESTIONS.RA_FAULT} == 'RA_FAULT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "RA_BEFORE_OTHER_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RA_BEFORE_OTHER_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_RA_QUESTIONS.RA_OTHER_RIGHT",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-FTGW-roundabout.RA_OTHER_RIGHT.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_RA_QUESTIONS.RA_BEFORE_OTHER} == 'RA_BEFORE_OTHER_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "RA_OTHER_RIGHT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "RA_OTHER_RIGHT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

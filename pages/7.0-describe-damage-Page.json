@@ -1,0 +1,261 @@
+{
+  "pageId": "describe-damage",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "TITLE",
+        "headerOption": "page",
+        "headerType": "h2",
+        "label": "describe-damage.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DD_CLAIM_TO_MY_VEHICLE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "describe-damage.DD_CLAIM_TO_MY_VEHICLE.label",
+        "options": {
+          "buttons": [
+            {
+              "id": "DD_CLAIM_TO_MY_VEHICLE_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DD_CLAIM_TO_MY_VEHICLE_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DD_DRIVABLE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "describe-damage.DD_DRIVABLE.label",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.DD_CLAIM_TO_MY_VEHICLE",
+            "operator": "==",
+            "value2Expression": "DD_CLAIM_TO_MY_VEHICLE_YES"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DD_DRIVABLE_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DD_DRIVABLE_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DD_TOWED_AWAY",
+        "type": "CIRCLE_BUTTONS",
+        "label": "describe-damage.DD_TOWED_AWAY.label",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.DD_DRIVABLE",
+            "operator": "!=",
+            "value2Expression": "undefined"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DD_TOWED_AWAY_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DD_TOWED_AWAY_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DD_ARRANGE_TOW",
+        "type": "CIRCLE_BUTTONS",
+        "label": "describe-damage.DD_ARRANGE_TOW.label",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.DD_TOWED_AWAY",
+            "operator": "==",
+            "value2Expression": "DD_TOWED_AWAY_NO"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DD_ARRANGE_TOW_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DD_ARRANGE_TOW_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "DD_TOW_LOCATION_TITLE",
+        "label": "describe-damage.DD_TOW_LOCATION.title",
+        "type": "HEADLINE",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.DD_ARRANGE_TOW",
+            "operator": "==",
+            "value2Expression": "DD_ARRANGE_TOW_YES"
+          }
+        ]
+      },
+      {
+        "id": "claim.DD_TOW_LOCATION",
+        "type": "GOOGLE_ADDRESS",
+        "label": "describe-damage.DD_TOW_LOCATION.label",
+        "showComponentConditions": [
+          {
+            "value1Expression": "$.claim.DD_ARRANGE_TOW",
+            "operator": "==",
+            "value2Expression": "DD_ARRANGE_TOW_YES"
+          }
+        ],
+        "types": [
+          "address"
+        ],
+        "onlySuggestionsValidator": {
+          "type": "ONLY_SUGGESTIONS",
+          "errorMessage": "common.validation.address.suggestion"
+        },
+        "nameFormat": [
+          {
+            "addressComponent": "administrativeArea1",
+            "format": "short_name"
+          }
+        ],
+        "countryCodes": [
+          "AU"
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "when-and-where.address.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DD_SPEED_LIMIT",
+        "type": "CIRCLE_BUTTONS",
+        "label": "describe-damage.DD_SPEED_LIMIT.label",
+        "showComponentConditions": {
+          "operator": "OR",
+          "conditions": [
+            {
+              "value1Expression": "$.claim.DD_TOWED_AWAY",
+              "operator": "==",
+              "value2Expression": "DD_TOWED_AWAY_YES"
+            },
+            {
+              "value1Expression": "$.claim.DD_ARRANGE_TOW",
+              "operator": "!=",
+              "value2Expression": "undefined"
+            }
+          ]
+        },
+        "options": {
+          "buttons": [
+            {
+              "id": "DD_SPEED_LIMIT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DD_SPEED_LIMIT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.DD_AIRBAG",
+        "type": "CIRCLE_BUTTONS",
+        "label": "describe-damage.DD_AIRBAG.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DD_SPEED_LIMIT}"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "DD_AIRBAG_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "DD_AIRBAG_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      }
+    ]
+  }
+}

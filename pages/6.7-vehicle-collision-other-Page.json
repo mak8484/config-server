@@ -1,0 +1,54 @@
+{
+  "pageId": "vehicle-collision-other",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_OTH_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-other.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.OTH_QUESTIONS.OTH_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-other.OTH_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-other.OTH_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-other.OTH_FAULT.label"
+        }
+      },
+      {
+        "id": "claim.OTH_QUESTIONS.OTH_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "OTH_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "OTH_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

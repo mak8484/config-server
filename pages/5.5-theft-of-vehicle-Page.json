@@ -1,0 +1,101 @@
+{
+  "pageId": "theft-of-vehicle",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "TOV_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "theft-of-vehicle.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DAMAGE_SUB_TYPE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "",
+        "options": {
+          "buttons": [
+            {
+              "id": "TOV_VEHICLE_NOT_FOUND",
+              "label": "TOV_VEHICLE_NOT_FOUND",
+              "icon": "product-car-f-theft"
+            },
+            {
+              "id": "TOV_VEHICLE_FOUND",
+              "label": "TOV_VEHICLE_FOUND",
+              "icon": "product-vehicle-found"
+            },
+            {
+              "id": "TOV_VEHICLE_BURNT_OUT",
+              "label": "TOV_VEHICLE_BURNT_OUT",
+              "icon": "product-vehicle-burnt-out"
+            },
+            {
+              "id": "TOV_THEFT_FROM_VEHICLE",
+              "label": "TOV_THEFT_FROM_VEHICLE",
+              "icon": "product-theft-from-vehicle"
+            },
+            {
+              "id": "TOV_STOLEN_OR_LOST_KEYS",
+              "label": "TOV_STOLEN_OR_LOST_KEYS",
+              "icon": "product-theft-from-vehicle-stolen-or-lost-keys"
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "label": "common.au.moreDetails",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "id": "TOV_COMMENT_TITLE",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "claim.TOV_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.whatHappened",
+        "maxLength": 1000,
+        "hint": {
+          "text": "common.au.min50chars",
+          "links": []
+        },
+        "infoIcon": {
+          "infoText": "common.au.incidentDescription.infoIcon.text",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom"
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.au.descriptionRequired"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+          },
+          {
+            "type": "MIN_LENGTH",
+            "value": "50",
+            "errorMessage": "common.validation.au.descriptionMinLength"
+          },
+          {
+            "type": "MAX_LENGTH",
+            "value": "1000",
+            "errorMessage": "common.validation.au.descriptionMaxLength"
+          }
+        ]
+      }
+    ]
+  }
+}

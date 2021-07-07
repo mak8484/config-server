@@ -1,0 +1,156 @@
+{
+    "pageId": "when-and-where",
+    "updateStateValues": [
+      {
+        "key": "$.poiRepairShop",
+        "value": "$.claim.poiRepairShop",
+        "conditions": [
+          {
+            "expression": "{$.claim.poiRepairShop}"
+          }
+        ]
+      }
+    ],
+    "hideBackButton": true,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "when-and-where.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.AYI_DATE",
+                "label": "when-and-where.datePicker.label",
+                "type": "DATE_AUSTRALIA",
+                "hint": "ddmmyyyy",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.date"
+                    },
+                    {
+                        "type": "DAYS_FROM_TODAY_UPPER_LIMIT",
+                        "value": "0",
+                        "errorMessage": "common.validation.datePast"
+                    }
+                ],
+                "invalidFormatErrorMessage": "common.validation.date",
+                "nonStrictParsing": false,
+                "parseFormat": [
+                    "DDMMYYYY",
+                    "DD/MM/YYYY",
+                    "DD-MM-YYYY",
+                    "DD.MM.YYYY",
+                    "DD MM YYYY",
+                    "DDMMMYYYY",
+                    "DD/MMM/YYYY",
+                    "DD-MMM-YYYY",
+                    "DD.MMM.YYYY",
+                    "DD MMM YYYY",
+                    "DMMMYYYY",
+                    "D/MMM/YYYY",
+                    "D-MMM-YYYY",
+                    "D.MMM.YYYY",
+                    "D MMM YYYY"
+                ],
+                "patchOutputValue": "YYYY-MM-DD",
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.authScope[0]} != 'process_pnr'"
+                    }
+                ]
+            },
+            {
+                "id": "claim.AYI_DATE",
+                "label": "when-and-where.datePicker.label",
+                "type": "DATE_AUSTRALIA",
+                "hint": "ddmmyyyy",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.date"
+                    },
+                    {
+                        "type": "DAYS_FROM_TODAY_UPPER_LIMIT",
+                        "value": "0",
+                        "errorMessage": "common.validation.datePast"
+                    }
+                ],
+                "invalidFormatErrorMessage": "common.validation.date",
+                "nonStrictParsing": false,
+                "parseFormat": [
+                    "DDMMYYYY",
+                    "DD/MM/YYYY",
+                    "DD-MM-YYYY",
+                    "DD.MM.YYYY",
+                    "DD MM YYYY",
+                    "DDMMMYYYY",
+                    "DD/MMM/YYYY",
+                    "DD-MMM-YYYY",
+                    "DD.MMM.YYYY",
+                    "DD MMM YYYY",
+                    "DMMMYYYY",
+                    "D/MMM/YYYY",
+                    "D-MMM-YYYY",
+                    "D.MMM.YYYY",
+                    "D MMM YYYY"
+                ],
+                "patchOutputValue": "YYYY-MM-DD",
+                "disabled": true,
+                "showComponentConditions": [
+                    {
+                        "expression": "{$.bffConfiguration.authScope[0]} == 'process_pnr'"
+                    }
+                ]
+            },
+            {
+                "id": "claim.AYI_TIME",
+                "type": "TIME_AUSTRALIA",
+                "label": "when-and-where.datePicker.time.label",
+                "hint": "hh:mm",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.time"
+                    }
+                ],
+                "disabled": true,
+                "errorMessage": "common.validation.time",
+                "twelveHourFormat": true
+            },
+            {
+                "id": "claim.AYI_LOCATION",
+                "type": "GOOGLE_ADDRESS",
+                "label": "when-and-where.location.label",
+                "hint": "when-and-where.location.hint",
+                "types": [
+                    "address"
+                ],
+                "onlySuggestionsValidator": {
+                    "type": "ONLY_SUGGESTIONS",
+                    "errorMessage": "when-and-where.address.suggested"
+                },
+                "nameFormat": [
+                    {
+                        "addressComponent": "administrativeArea1",
+                        "format": "short_name"
+                    }
+                ],
+                "countryCodes": [
+                    "AU"
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "when-and-where.address.required"
+                    }
+                ]
+            }
+        ]
+    }
+}

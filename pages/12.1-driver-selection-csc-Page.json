@@ -1,0 +1,223 @@
+{
+    "pageId": "driver-selection-csc",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "driver-selection.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.DS_DRIVER",
+                "label": "driver-selection.subtitleText",
+                "type": "RADIO",
+                "retrieveOptionsFromValueProviderService": true,
+                "retrieveOptionsExpression": "$.claim.bffContractDetails.driversList",
+                "options": [],
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "label": "common.firstName*",
+                "id": "claim.AOD_FIRSTNAME",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ],
+                "showComponentConditions": [
+                  {
+                    "expression": "{$.claim.DS_DRIVER} == 'other'"
+                  }
+                ]
+            },
+            {
+                "label": "common.lastName*",
+                "id": "claim.AOD_LASTNAME",
+                "type": "INPUT",
+                "inputType": "text",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*]{0,30}$",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ],
+                "showComponentConditions": [
+                  {
+                    "expression": "{$.claim.DS_DRIVER} == 'other'"
+                  }
+                ]
+            },
+            {
+                "label": "common.birthDate*",
+                "id": "claim.AOD_BIRTHDAY",
+                "type": "DATE",
+                "nonStrictParsing": false,
+                "parseFormat": [
+                    "DDMMYYYY",
+                    "DD/MM/YYYY",
+                    "DD-MM-YYYY",
+                    "DD.MM.YYYY",
+                    "DD MM YYYY",
+                    "DDMMMYYYY",
+                    "DD/MMM/YYYY",
+                    "DD-MMM-YYYY",
+                    "DD.MMM.YYYY",
+                    "DD MMM YYYY",
+                    "DMMMYYYY",
+                    "D/MMM/YYYY",
+                    "D-MMM-YYYY",
+                    "D.MMM.YYYY",
+                    "D MMM YYYY"
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.date"
+                    },
+                    {
+                        "type": "MIN_AGE",
+                        "value": 16,
+                        "date": "$.claim.AYI_DATE",
+                        "errorMessage": "common.validation.driver.dob"
+                    },
+                    {
+                        "type": "MAX_AGE",
+                        "value": 99,
+                        "date": "$.claim.AYI_DATE",
+                        "errorMessage": "common.validation.driver.dob"
+                    }
+                ],
+                "hint": "ddmmyyyy",
+                "invalidFormatErrorMessage": "common.validation.date",
+                "patchOutputValue": "YYYY-MM-DD",
+                "showComponentConditions": [
+                  {
+                    "expression": "{$.claim.DS_DRIVER} == 'other'"
+                  }
+                ]
+            },
+            {
+                "label": "about-other-driver.AOD_DRIVER_LICENSE_NO",
+                "id": "claim.AOD_DRIVER_LICENSE_NO",
+                "type": "INPUT",
+                "inputType": "text",
+                "showComponentConditions": [
+                  {
+                    "expression": "{$.claim.DS_DRIVER} == 'other'"
+                  }
+                ],
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "value": "^[a-zA-Z0-9 ]{1,10}$",
+                        "errorMessage": "about-other-driver.driverLicense.error"
+                    }
+                ]
+            },
+            {  "label": "about-other-driver.AOD_YEARS_LICENSE",
+                "id": "claim.AOD_YEARS_LICENSE",
+                "type": "INPUT",
+                "inputType": "number",
+                "showComponentConditions": [
+                  {
+                    "expression": "{$.claim.DS_DRIVER} == 'other'"
+                  }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "(\\s*\\d\\s*){1,2}",
+                        "errorMessage": "common.validation.answer"
+                    }
+                ]
+            },
+            {
+                "id": "claim.driverDetailsCheckFlag",
+                "type": "CHECKBOX",
+                "label": {
+                    "text": "driver-selection-csc.checkDeclaration.text"
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "value": "true"
+                    }
+                ]
+            },
+            {
+                "id": "claim.DS_ALCOHOL",
+                "label": "driver-selection.ALCOHOL.label",
+                "type": "CIRCLE_BUTTONS",
+                "options": {
+                    "buttons": [
+                        {
+                            "id": "DS_ALCOHOL_YES",
+                            "icon": "product-icon-yes",
+                            "label": ""
+                        },
+                        {
+                            "id": "DS_ALCOHOL_NO",
+                            "icon": "product-icon-no",
+                            "label": ""
+                        }
+                    ],
+                    "multiSelection": false
+                },
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            },
+            {
+                "id": "claim.DS_ALCOHOL_COMMENT",
+                "label": "common.pleaseSpecify*",
+                "type": "TEXT_AREA",
+                "maxLength": 198,
+                "hideComponentConditions": [
+                    {
+                        "expression": "{$.claim.DS_ALCOHOL} != 'DS_ALCOHOL_YES'"
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "common.validation.answer"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+                        "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+                    }
+                ]
+            }
+        ]
+    }
+}

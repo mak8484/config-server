@@ -1,0 +1,54 @@
+{
+  "pageId": "vehicle-collision-changing-lanes",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_CL_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-changing-lanes.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_CL_QUESTIONS.CL_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-changing-lanes.CL_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-changing-lanes.CL_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-changing-lanes.CL_FAULT.label"
+        }
+      },
+      {
+        "id": "claim.VC_CL_QUESTIONS.CL_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "CL_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "CL_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

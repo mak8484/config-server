@@ -1,0 +1,83 @@
+{
+  "pageId": "what-happened",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "WH_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "what-happened.titleText",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "WH_SUBTITLE",
+        "headerOption": "section",
+        "headerType": "h2",
+        "label": "what-happened.subtitleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DAMAGE_TYPE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "",
+        "options": {
+          "buttons": [
+            {
+              "id": "VEHICLE_COLLISION",
+              "label": "VEHICLE_COLLISION",
+              "icon": "product-vehicle-collision"
+            },
+            {
+              "id": "COLLISION_OBJECT",
+              "label": "COLLISION_OBJECT",
+              "icon": "product-vehicle-collision-with-object"
+            },
+            {
+              "id": "WINDSCREEN_DAMAGE",
+              "label": "WINDSCREEN_DAMAGE",
+              "icon": "product-car-c-windscreen"
+            },
+            {
+              "id": "WEATHER_DAMAGE",
+              "label": "WEATHER_DAMAGE",
+              "icon": "product-weather-damage"
+            },
+            {
+              "id": "UNATTENDED_DAMAGE",
+              "label": "UNATTENDED_DAMAGE",
+              "icon": "product-car-e-unattended"
+            },
+            {
+              "id": "THEFT_OF_VEHICLE",
+              "label": "THEFT_OF_VEHICLE",
+              "icon": "product-car-f-theft"
+            },
+            {
+              "id": "ANIMAL_DAMAGE",
+              "label": "ANIMAL_DAMAGE",
+              "icon": "product-kangaroo"
+            },
+            {
+              "id": "COLLISION_HUMAN",
+              "label": "COLLISION_HUMAN",
+              "icon": "product-car-h-person"
+            },
+            {
+              "id": "OTHER_INCIDENT",
+              "label": "OTHER_INCIDENT",
+              "icon": "product-other"
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

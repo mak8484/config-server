@@ -1,0 +1,35 @@
+{
+  "pageId": "all-done-pnr",
+  "hideBackButton": true,
+  "hideNextButton": true,
+  "allDonePageConfig": {
+    "titleConfig": {
+      "titleText": "all-done.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "all-done-pnr.subtitleText"
+    },
+    "contactFieldExpression": "",
+    "confirmIcon": "./assets/images/icon_checked.svg",
+    "sentText": "all-done-pnr.sentText",
+    "claimReferenceText": "all-done-pnr.referenceText",
+    "claimReferenceExpression": "$.claim.bffSubmitClaim.claimNumber",
+    "claimErrorMessage": "all-done.claimError",
+    "whatsNext": {
+      "title": "",
+      "text": "",
+      "hidden": false
+    },
+    "callUs": {
+      "callUsQuestion": "all-done.callUs.callUsQuestion",
+      "callUsConfig": {
+        "label": "all-done.callUs.label",
+        "popUpTitle": "all-done.callUs.popUpTitle",
+        "popUpText": "all-done.callUs.popUpText",
+        "popUpCallIcon": "./assets/images/phone.svg",
+        "popUpdPhoneNumber": "all-done.callUs.popUpdPhoneNumber",
+        "popUpCallText": "all-done.callUs.popUpCallText"
+      }
+    }
+  }
+}

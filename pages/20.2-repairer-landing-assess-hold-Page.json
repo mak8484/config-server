@@ -1,0 +1,31 @@
+{
+    "pageId": "repairer-landing-assess-hold",
+    "hideNextButton": true,
+    "hideBackButton": false,
+    "linkBackButton": true,
+    "navigationOptionsLargePageConfig": {
+      "titleConfig": {
+        "titleText": "repairer-landing-assess-hold.titleText"
+      },
+      "subtitleConfig": {
+        "subtitleText": ""
+      },
+      "navigationOptions": {
+        "id": "repairLandingHold",
+        "options": [
+          {
+            "icon": "assets/images/settlement-NormalDriveIn.png",
+            "hideHeader": true,
+            "hasBorder": true,
+            "preferred": true,
+            "title": "repairer-landing-assess-hold.subtitleText",
+            "description": "repairer-landing-assess-hold.option.htmlContent",
+            "nxNextType": "primary",
+            "nxNextLabel": "next_button",
+            "nxNextAction": "repairer-landing.internal",
+            "hasWhiteBackground": false
+          }
+        ]
+      }
+    }
+  }

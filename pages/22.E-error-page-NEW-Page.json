@@ -1,0 +1,69 @@
+{
+  "pageId": "error-page-NEW",
+  "hideNextButton": true,
+  "hideBackButton": true,
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "ERROR_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "error-page.title",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "ERROR_SUB_TITLE",
+        "label": "error-page.subtitle",
+        "type": "HEADLINE",
+        "headerOption": "subsection-medium",
+        "headerType": "h2"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "ERROR_TEXT_LINK",
+        "label": "error-page.linkDescription",
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      },
+      {
+        "id": "ERROR_LINK",
+        "type": "PARAGRAPH",
+        "copytextOption": "large",
+        "label": {
+          "text": "error-page.linkText",
+          "links": [
+            {
+              "label": "error-page.linkUrlText",
+              "link": "error-page.linkUrl"
+            }
+          ]
+        }
+      },
+      {
+        "id": "ERROR_TEXT_PHONE",
+        "label": "error-page.phoneTitle",
+        "type": "PARAGRAPH",
+        "copytextOption": "large"
+      },
+      {
+        "id": "ERROR_LINK",
+        "copytextOption": "large",
+        "label": {
+          "text": " $link$",
+          "links": [
+            {
+              "label": "13 10 13",
+              "link": "tel:131013"
+            }
+          ]
+        },
+        "icon": {
+          "name": "phone-o",
+          "size": "s"
+        },
+        "type": "PARAGRAPH"
+      }
+    ]
+  }
+}

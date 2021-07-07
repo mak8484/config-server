@@ -1,0 +1,156 @@
+{
+    "pageId": "pnr-vehicle-details",
+    "updateStateValues": [
+      {
+        "key": "$.claim.bffContractDetails.branchAbbreviation",
+        "value": "AAL",
+        "conditions": [
+          {
+            "expression": "{$.bffConfiguration.brand} == 'allianz'"
+          }
+        ]
+      },
+      {
+        "key": "$.claim.bffContractDetails.branchAbbreviation",
+        "value": "TIO",
+        "conditions": [
+          {
+            "expression": "{$.bffConfiguration.brand} == 'tio'"
+          }
+        ]
+      }
+    ],
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "pnr-vehicle-details.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+              "id": "claim.PNR_VEHICLE.vehicleType",
+              "type": "CIRCLE_BUTTONS",
+              "label": "flatfrog.vehicleSelector.label",
+              "options": {
+                "buttons": [
+                  {
+                    "id": "CAR_WITH_WHEELS",
+                    "icon": "product-car",
+                    "label": "Car"
+                  },
+                  {
+                    "id": "MOTORBIKE_WITH_WHEELS",
+                    "icon": "product-motorbike",
+                    "label": "Motorcycle"
+                  },
+                  {
+                    "id": "CAMPER_WITH_WHEELS",
+                    "icon": "product-car-trailer",
+                    "label": "Caravan/trailer"
+                  }
+                ],
+                "multiSelection": false
+              },
+              "validators": [
+                {
+                  "type": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "label": "Vehicle registration",
+              "id": "claim.PNR_VEHICLE.licensePlateNumber",
+              "type": "INPUT",
+              "inputType": "text",
+              "validators": [
+                {
+                  "type": "REQUIRED",
+                  "errorMessage": "pnr-vehicle-details.vehicleRegistration.required"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "^[A-Za-z0-9]{1,7}$",
+                  "errorMessage": "pnr-vehicle-details.vehicleRegistration.required"
+                }
+              ],
+              "showComponentConditions": [
+                {
+                  "expression": "{$.claim.PNR_VEHICLE.vehicleType} == 'CAR_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'MOTORBIKE_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'CAMPER_WITH_WHEELS'"
+                }
+              ]
+            },
+            {
+              "label": "Year of manufacture",
+              "id": "claim.PNR_VEHICLE.yearOfManufacture",
+              "type": "INPUT",
+              "inputType": "text",
+              "validators": [
+                {
+                  "type": "REQUIRED",
+                  "errorMessage": "pnr-vehicle-details.yearOfManufacture.valid"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "^(19|20)\\d{2}$",
+                  "errorMessage": "pnr-vehicle-details.yearOfManufacture.valid"
+                }
+              ],
+              "showComponentConditions": [
+                {
+                  "expression": "{$.claim.PNR_VEHICLE.vehicleType} == 'CAR_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'MOTORBIKE_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'CAMPER_WITH_WHEELS'"
+                }
+              ]
+            },
+            {
+              "label": "Vehicle make",
+              "id": "claim.PNR_VEHICLE.manufacturer",
+              "type": "INPUT",
+              "inputType": "text",
+              "validators": [
+                {
+                  "type": "REQUIRED",
+                  "errorMessage": "pnr-vehicle-details.manufacturer.valid"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "^[A-Za-z0-9 .\\-\\(\\)]{0,20}$",
+                  "errorMessage": "pnr-vehicle-details.manufacturer.valid"
+                }
+              ],
+              "showComponentConditions": [
+                {
+                  "expression": "{$.claim.PNR_VEHICLE.vehicleType} == 'CAR_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'MOTORBIKE_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'CAMPER_WITH_WHEELS'"
+                }
+              ]
+            },
+            {
+              "label": "Vehicle model",
+              "id": "claim.PNR_VEHICLE.vehicleModel",
+              "type": "INPUT",
+              "inputType": "text",
+              "validators": [
+                {
+                  "type": "REQUIRED",
+                  "errorMessage": "pnr-vehicle-details.vehicleModel.valid"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "^[A-Za-z0-9 .\\-\\(\\)]{0,20}$",
+                  "errorMessage": "pnr-vehicle-details.vehicleModel.valid"
+                }
+              ],
+              "showComponentConditions": [
+                {
+                  "expression": "{$.claim.PNR_VEHICLE.vehicleType} == 'CAR_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'MOTORBIKE_WITH_WHEELS' || {$.claim.PNR_VEHICLE.vehicleType} == 'CAMPER_WITH_WHEELS'"
+                }
+              ]
+            }
+        ]
+    }
+}

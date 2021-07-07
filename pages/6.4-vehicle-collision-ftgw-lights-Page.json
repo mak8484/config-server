@@ -1,0 +1,144 @@
+{
+  "pageId": "vehicle-collision-failure-to-give-way-lights",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_LI_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-FTGW-lights.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_LI_QUESTIONS.LI_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-FTGW-lights.LI_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-FTGW-lights.LI_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-FTGW-lights.LI_FAULT.label"
+        }
+      },
+      {
+        "id": "claim.VC_LI_QUESTIONS.LI_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "LI_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "LI_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_LI_QUESTIONS.LI_GREEN",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-FTGW-lights.LI_GREEN.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_LI_QUESTIONS.LI_FAULT} == 'LI_FAULT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "LI_GREEN_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "LI_GREEN_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_LI_QUESTIONS.LI_TURN_RIGHT",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-FTGW-lights.LI_TURN_RIGHT.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_LI_QUESTIONS.LI_GREEN}"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "LI_TURN_RIGHT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "LI_TURN_RIGHT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_LI_QUESTIONS.LI_OTHER_TURN_RIGHT",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-FTGW-lights.LI_OTHER_TURN_RIGHT.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_LI_QUESTIONS.LI_TURN_RIGHT}"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "LI_OTHER_TURN_RIGHT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "LI_OTHER_TURN_RIGHT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

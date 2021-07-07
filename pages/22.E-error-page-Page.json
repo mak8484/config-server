@@ -1,0 +1,19 @@
+  {
+    "pageId": "error-page",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "errorPageConfig": {
+      "titleConfig": {
+        "titleText": "error-page.title"
+      },
+      "subtitleConfig": {
+        "subtitleText": "error-page.subtitle"
+      },
+      "text": "error-page.text",
+      "phoneConfig": {
+        "phone": "error-page.phoneNumber",
+        "phoneSubtitle": "error-page.phoneSubtitle",
+        "phoneTitle": "error-page.phoneTitle"
+      }
+    }
+  }

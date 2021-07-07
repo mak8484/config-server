@@ -1,0 +1,283 @@
+{
+  "pageId": "flatfrog",
+  "updateStateValues": [
+    {
+      "key": "$.FF_FLATFROG",
+      "value": "$.claim.FF_FLATFROG",
+      "conditions": [
+        {
+          "expression": "!{$.FF_FLATFROG} && {$.claim.FF_FLATFROG}"
+        }
+      ]
+    },
+    {
+      "key": "$.claims.FF_FLATFROG",
+      "operation": "remove"
+    }
+  ],
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "FF_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "flatfrog.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.FF_VEHICLE_TYPE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "flatfrog.vehicleSelector.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffContractDetails.vehicleType} != 'CAMPER_WITH_WHEELS' && {$.claim.bffContractDetails.vehicleType} != 'MOTORBIKE_WITH_WHEELS'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "CAR_WITH_WHEELS",
+              "icon": "product-cartype-1",
+              "label": "flatfrog.vehicleSelector.CAR_WITH_WHEELS.label"
+            },
+            {
+              "id": "VAN_WITH_WHEELS",
+              "icon": "product-cartype-2",
+              "label": "flatfrog.vehicleSelector.VAN_WITH_WHEELS.label"
+            },
+            {
+              "id": "UTE_WITH_WHEELS",
+              "icon": "product-cartype-3",
+              "label": "flatfrog.vehicleSelector.UTILITY_WITH_WHEELS.label"
+            },
+            {
+              "id": "4X4_WITH_WHEELS",
+              "icon": "product-cartype-1",
+              "label": "flatfrog.vehicleSelector.CAR_WITH_WHEELS_4x4.label"
+            },
+            {
+              "id": "CAR2_WITH_WHEELS",
+              "icon": "product-other",
+              "label": "flatfrog.vehicleSelector.OTHER.label"
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "FF_FLATFROG_TITLE",
+        "type": "HEADLINE",
+        "label": "flatfrog.damageSelector.label",
+        "headerOption": "subsection-small",
+        "headerType": "h2"
+      },
+      {
+        "id": "FF_FLATFROG",
+        "type": "FNOL_FLAT_FROG",
+        "label": "flatfrog.damageSelector.label",
+        "carTypeExpression": "$.claim.FF_VEHICLE_TYPE",
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "conditions": [
+              {
+                "expression": "! ({$.claim.FF_EXTRA_INFO.FF_BURNT} || {$.claim.FF_EXTRA_INFO.FF_ENGINE} || {$.claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE} || {$.claim.FF_EXTRA_INFO.FF_INTERIOR} || {$.claim.FF_EXTRA_INFO.FF_STRIPPED})"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FF_EXTRA_INFO_TITLE",
+        "type": "HEADLINE",
+        "label": "flatfrog.extraInfo.title",
+        "headerOption": "subsection-small",
+        "headerType": "h2"
+      },
+      {
+        "id": "claim.FF_EXTRA_INFO.FF_BURNT",
+        "label": "flatfrog.extraInfo.burnt",
+        "type": "CHECKBOX",
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "conditions": [
+              {
+                "expression": "! ({$.FF_FLATFROG} || {$.claim.FF_EXTRA_INFO.FF_ENGINE} || {$.claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE} || {$.claim.FF_EXTRA_INFO.FF_INTERIOR} || {$.claim.FF_EXTRA_INFO.FF_STRIPPED})"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "claim.FF_EXTRA_INFO.FF_ENGINE",
+        "label": "flatfrog.extraInfo.engine",
+        "type": "CHECKBOX",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffContractDetails.vehicleType} != 'CAMPER_WITH_WHEELS'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "conditions": [
+              {
+                "expression": "! ({$.FF_FLATFROG} || {$.claim.FF_EXTRA_INFO.FF_BURNT} || {$.claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE} || {$.claim.FF_EXTRA_INFO.FF_INTERIOR} || {$.claim.FF_EXTRA_INFO.FF_STRIPPED})"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE",
+        "label": "flatfrog.extraInfo.undercarriage",
+        "type": "CHECKBOX",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffContractDetails.vehicleType} != 'MOTORBIKE_WITH_WHEELS'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "conditions": [
+              {
+                "expression": "! ({$.FF_FLATFROG} || {$.claim.FF_EXTRA_INFO.FF_BURNT} || {$.claim.FF_EXTRA_INFO.FF_ENGINE} || {$.claim.FF_EXTRA_INFO.FF_INTERIOR} || {$.claim.FF_EXTRA_INFO.FF_STRIPPED})"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "claim.FF_EXTRA_INFO.FF_INTERIOR",
+        "label": "flatfrog.extraInfo.interior",
+        "type": "CHECKBOX",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.bffContractDetails.vehicleType} != 'MOTORBIKE_WITH_WHEELS'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "conditions": [
+              {
+                "expression": "! ({$.FF_FLATFROG} || {$.claim.FF_EXTRA_INFO.FF_BURNT} || {$.claim.FF_EXTRA_INFO.FF_ENGINE} || {$.claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE} || {$.claim.FF_EXTRA_INFO.FF_STRIPPED})"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "claim.FF_EXTRA_INFO.FF_STRIPPED",
+        "label": "flatfrog.extraInfo.stripped",
+        "type": "CHECKBOX",
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "conditions": [
+              {
+                "expression": "! ({$.FF_FLATFROG} || {$.claim.FF_EXTRA_INFO.FF_BURNT} || {$.claim.FF_EXTRA_INFO.FF_ENGINE} || {$.claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE} || {$.claim.FF_EXTRA_INFO.FF_INTERIOR})"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FF_SEPARATOR",
+        "type": "SEPARATOR",
+        "separatorType": "SPACE",
+        "spaceSize": "xl2",
+        "label": ""
+      },
+      {
+        "id": "claim.FF_ALREADY_REPAIRED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "flatfrog.additionalQuestions.alreadyRepaired",
+        "showComponentConditions": [
+          {
+            "expression": "{$.FF_FLATFROG} || {$.claim.FF_EXTRA_INFO.FF_BURNT} || {$.claim.FF_EXTRA_INFO.FF_ENGINE} || {$.claim.FF_EXTRA_INFO.FF_UNDERCARRIAGE} || {$.claim.FF_EXTRA_INFO.FF_INTERIOR} || {$.claim.FF_EXTRA_INFO.FF_STRIPPED}"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "FF_ALREADY_REPAIRED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "FF_ALREADY_REPAIRED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.PO_POLICE_RECORD",
+        "type": "CIRCLE_BUTTONS",
+        "label": "flatfrog.additionalQuestions.policeAttend",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.FF_ALREADY_REPAIRED} && {$.claim.DAMAGE_TYPE} != 'WEATHER_DAMAGE'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "PO_POLICE_RECORD_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "PO_POLICE_RECORD_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.PO_POLICE_RECORD_NUMBER",
+        "type": "INPUT",
+        "label": "flatfrog.additionalQuestions.policeRecordNumber",
+        "inputType": "text",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.FF_ALREADY_REPAIRED} && {$.claim.DAMAGE_TYPE} != 'WEATHER_DAMAGE' && {$.claim.PO_POLICE_RECORD} == 'PO_POLICE_RECORD_YES'"
+          }
+        ],
+        "validators": [
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9 .,_'\\-\\(\\)*?&/\\\\!?#@\":%+]{0,20}$",
+            "errorMessage": "police.validation"
+          }
+        ]
+      }
+    ]
+  }
+}

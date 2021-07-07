@@ -1,0 +1,114 @@
+{
+  "pageId": "vehicle-collision-reversing",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_REV_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-reversing.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_REV_QUESTIONS.REV_FAULT_TITLE",
+        "headerOption": "subsection-small",
+        "headerType": "h3",
+        "label": "vehicle-collision-reversing.REV_FAULT.label",
+        "type": "HEADLINE",
+        "infoIcon": {
+          "infoText": "vehicle-collision-reversing.REV_FAULT.info",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom",
+          "title": "vehicle-collision-reversing.REV_FAULT.label"
+        }
+      },
+      {
+        "id": "claim.VC_REV_QUESTIONS.REV_FAULT",
+        "type": "CIRCLE_BUTTONS",
+        "options": {
+          "buttons": [
+            {
+              "id": "REV_FAULT_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "REV_FAULT_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_REV_QUESTIONS.REV_SAME_TIME",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-reversing.REV_SAME_TIME.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_REV_QUESTIONS.REV_FAULT} == 'REV_FAULT_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "REV_SAME_TIME_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "REV_SAME_TIME_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_REV_QUESTIONS.REV_OTHER_PARTY_REVERSE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-reversing.REV_OTHER_PARTY_REVERSE.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_REV_QUESTIONS.REV_SAME_TIME} == 'REV_SAME_TIME_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "REV_OTHER_PARTY_REVERSE_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "REV_OTHER_PARTY_REVERSE_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

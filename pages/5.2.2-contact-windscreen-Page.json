@@ -1,0 +1,47 @@
+{
+    "pageId": "contact-windscreen",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "nxNextText": "contact-windscreen.nextButtonText",
+    "navigationOptionsLargePageConfig": {
+      "titleConfig": {
+        "titleText": "contact-windscreen.titleText"
+      },
+      "subtitleConfig": {
+        "subtitleText": "contact-windscreen.subtitleText"
+      },
+      "navigationOptions": {
+        "id": "contactWindscreenOptions",
+        "options": [
+          {
+            "icon": "",
+            "hideHeader": true,
+            "hasBorder": true,
+            "title": "contact-windscreen.option1.title",
+            "headerText": "",
+            "description": "contact-windscreen.option1.text",
+            "nxLinkLabel": "contact-windscreen.option1.link",
+            "nxLinkDestination": "contact-windscreen.option1.url",
+            "nxNextAction": "",
+            "nxNextLabel": "",
+            "nxNextType": "",
+            "hasWhiteBackground": true
+          },
+          {
+            "icon": "",
+            "hideHeader": true,
+            "hasBorder": true,
+            "title": "contact-windscreen.option2.title",
+            "headerText": "",
+            "description": "contact-windscreen.option2.text",
+            "nxLinkLabel": "contact-windscreen.option2.link",
+            "nxLinkDestination": "contact-windscreen.option2.url",
+            "nxNextAction": "",
+            "nxNextLabel": "",
+            "nxNextType": "",
+            "hasWhiteBackground": true
+          }          
+        ]
+      }
+    }
+}

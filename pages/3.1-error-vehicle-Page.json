@@ -1,0 +1,18 @@
+  {
+    "pageId": "error-vehicle",
+    "hideNextButton": true,
+    "hideBackButton": false,
+    "errorPageConfig": {
+      "titleConfig": {
+        "titleText": "error-vehicle.title"
+      },
+      "subtitleConfig": {
+        "subtitleText": ""
+      },
+      "text": "error-vehicle.text",
+      "linkConfig": {
+        "linkUrlText": "error-vehicle.link",
+        "linkUrl": "error-vehicle.url"
+      }
+    }
+  }

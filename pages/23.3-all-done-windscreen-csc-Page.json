@@ -1,0 +1,60 @@
+{
+  "pageId": "all-done-windscreen-not-at-fault-csc",
+  "hideBackButton": true,
+  "hideNextButton": true,
+  "allDonePageConfig": {
+    "titleConfig": {
+      "titleText": "all-done.titleText"
+    },
+    "subtitleConfig": {
+      "subtitleText": "all-done.subtitleText"
+    },
+    "contactFieldExpression": "",
+    "confirmIcon": "./assets/images/icon_checked.svg",
+    "sentText": "all-done.sentText",
+    "claimReferenceText": "all-done.claimReferenceText",
+    "claimReferenceExpression": "$.claim.bffSubmitClaim.claimNumber",
+    "claimErrorMessage": "all-done.claimError",
+    "textSection": [
+      {
+        "isBold": true,
+        "text": "all-done.textSection.title"
+      },
+      {
+        "isBold": false,
+        "text": "all-done.textSection.windscreenNotAtFault"
+      },
+      {
+        "isBold": true,
+        "text": "%jsonPath%$.claim.bffSubmitClaim.bpmTasksHeader%jsonPath%"
+      },
+      {
+        "isBold": false,
+        "text": "%jsonPath%$.claim.bffSubmitClaim.bpmTasks%jsonPath%"
+      }
+    ],
+    "additionalLinks": [
+      {
+        "label": "Click here to view BPM tasks",
+        "linkExpression": "$.claim.bffSubmitClaim.bpmLink",
+        "isInternal": false
+      }
+    ],
+    "whatsNext": {
+      "title": "",
+      "text": "",
+      "hidden": true
+    },
+    "callUs": {
+      "callUsQuestion": "all-done.callUs.callUsQuestion",
+      "callUsConfig": {
+        "label": "all-done.callUs.label",
+        "popUpTitle": "all-done.callUs.popUpTitle",
+        "popUpText": "all-done.callUs.popUpText",
+        "popUpCallIcon": "./assets/images/phone.svg",
+        "popUpdPhoneNumber": "all-done.callUs.popUpdPhoneNumber",
+        "popUpCallText": "all-done.callUs.popUpCallText"
+      }
+    }
+  }
+}

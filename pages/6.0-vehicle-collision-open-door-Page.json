@@ -1,0 +1,131 @@
+{
+  "pageId": "vehicle-collision-open-door",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "VC_OD_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision-open-door.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.VC_OD_QUESTIONS.OPND_OPEN_INTO_PATH",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-open-door.OD_OPEN_INTO_PATH.label",
+        "options": {
+          "buttons": [
+            {
+              "id": "OPND_OPEN_INTO_PATH_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "OPND_OPEN_INTO_PATH_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_OD_QUESTIONS.OPND_ALREADY_OPEN",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-open-door.OD_ALREADY_OPEN.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_OD_QUESTIONS.OPND_OPEN_INTO_PATH} == 'OPND_OPEN_INTO_PATH_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "OPND_ALREADY_OPEN_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "OPND_ALREADY_OPEN_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_OD_QUESTIONS.OPND_OTHER_PARTY_OPEN",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-open-door.OD_OTHER_PARTY_OPEN.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_OD_QUESTIONS.OPND_ALREADY_OPEN} == 'OPND_ALREADY_OPEN_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "OPND_OTHER_PARTY_OPEN_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "OPND_OTHER_PARTY_OPEN_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "id": "claim.VC_OD_QUESTIONS.OPND_OTHER_PARTY_ALREADY_OPENED",
+        "type": "CIRCLE_BUTTONS",
+        "label": "vehicle-collision-open-door.OD_OTHER_PARTY_ALREADY_OPENED.label",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.VC_OD_QUESTIONS.OPND_OTHER_PARTY_OPEN} == 'OPND_OTHER_PARTY_OPEN_NO'"
+          }
+        ],
+        "options": {
+          "buttons": [
+            {
+              "id": "OPND_OTHER_PARTY_ALREADY_OPENED_YES",
+              "icon": "product-icon-yes",
+              "label": ""
+            },
+            {
+              "id": "OPND_OTHER_PARTY_ALREADY_OPENED_NO",
+              "icon": "product-icon-no",
+              "label": ""
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      }
+    ]
+  }
+}

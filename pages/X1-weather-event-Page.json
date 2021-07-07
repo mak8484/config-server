@@ -1,0 +1,32 @@
+{
+    "pageId": "weather-event",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "dynamicFormPageConfig": {
+        "titleConfig": [
+            {
+                "id": "TITLE",
+                "headerOption": "page",
+                "headerType": "h2",
+                "label": "weather-event.titleText",
+                "type": "HEADLINE"
+            }
+        ],
+        "formFields": [
+            {
+                "id": "claim.WE_EVENT",
+                "label": "weather-event.majorWeatherEvent",
+                "type": "RADIO",
+                "retrieveOptionsFromValueProviderService": true,
+                "retrieveOptionsExpression": "$.bffWeatherEvents",
+                "options": [],
+                "validators": [
+                    {
+                        "type": "REQUIRED"
+                    }
+                ]
+            }
+        ]
+    }
+
+}

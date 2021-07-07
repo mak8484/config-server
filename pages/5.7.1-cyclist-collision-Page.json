@@ -1,0 +1,139 @@
+{
+  "pageId": "cyclist-collision",
+  "dynamicFormPageConfig": {
+    "titleConfig": [
+      {
+        "id": "CC_TITLE",
+        "headerOption": "page",
+        "headerType": "h1",
+        "label": "vehicle-collision.titleText",
+        "type": "HEADLINE"
+      }
+    ],
+    "formFields": [
+      {
+        "id": "claim.DAMAGE_SUB_TYPE",
+        "type": "CIRCLE_BUTTONS",
+        "label": "",
+        "options": {
+          "buttons": [
+            {
+              "id": "CC_REAR_END_COLLISION",
+              "label": "VC_REAR_END_COLLISION",
+              "icon": "product-car-a-collision"
+            },
+            {
+              "id": "CC_REVERSING",
+              "label": "VC_REVERSING",
+              "icon": "product-car-a-1"
+            },
+            {
+              "id": "CC_FAILURE_TO_GIVE_WAY",
+              "label": "VC_FAILURE_TO_GIVE_WAY",
+              "icon": "product-car-a-3"
+            },
+            {
+              "id": "CC_CHANGING_LANES",
+              "label": "VC_CHANGING_LANES",
+              "icon": "product-car-a-4"
+            },
+            {
+              "id": "CC_OPENING_DOOR",
+              "label": "VC_OPENING_DOOR",
+              "icon": "product-open-car-door"
+            },
+            {
+              "id": "CC_OTHER",
+              "label": "VC_OTHER",
+              "icon": "product-other"
+            }
+          ],
+          "multiSelection": false
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.required"
+          }
+        ]
+      },
+      {
+        "id": "claim.CC_FTGW_TYPES",
+        "label": "vehicle-collision.VC_TITLE2.label",
+        "type": "RADIO",
+        "showComponentConditions": [
+          {
+            "expression": "{$.claim.DAMAGE_SUB_TYPE} == 'CC_FAILURE_TO_GIVE_WAY'"
+          }
+        ],
+        "options": [
+          {
+            "label": "VC_FTGW_ROUNDABOUT",
+            "value": "CC_FTGW_ROUNDABOUT"
+          },
+          {
+            "label": "VC_FTGW_SET_LIGHTS",
+            "value": "CC_FTGW_SET_LIGHTS"
+          },
+          {
+            "label": "VC_FTGW_GIVE_WAY",
+            "value": "CC_FTGW_GIVE_WAY"
+          },
+          {
+            "label": "VC_FTGW_OTHER_GIVE_WAY",
+            "value": "CC_FTGW_OTHER_GIVE_WAY"
+          }
+        ],
+        "validators": [
+          {
+            "type": "REQUIRED"
+          }
+        ]
+      },
+      {
+        "label": "common.au.moreDetails",
+        "headerOption": "subsection-medium",
+        "headerType": "h3",
+        "id": "CC_COMMENT_TITLE",
+        "type": "HEADLINE"
+      },
+      {
+        "id": "claim.CC_COMMENT",
+        "type": "TEXT_AREA",
+        "label": "common.whatHappened",
+        "maxLength": 1000,
+        "hint": {
+          "text": "common.au.min50chars",
+          "links": []
+        },
+        "infoIcon": {
+          "infoText": "common.au.incidentDescription.infoIcon.text",
+          "componentToDisplay": "popover",
+          "popOverTriggeredBy": "click",
+          "popOverDirection": "bottom"
+        },
+        "validators": [
+          {
+            "type": "REQUIRED",
+            "errorMessage": "common.validation.au.descriptionRequired"
+          },
+          {
+            "type": "PATTERN",
+            "value": "^[A-Za-z0-9\\s\\r\\n .,&!()?*#@%+$-\\/\\\\:;\\'‘’`\"“”]*$",
+            "errorMessage": "common.validation.au.descriptionInvalidCharacters"
+          },
+          {
+            "type": "MIN_LENGTH",
+            "value": "50",
+            "errorMessage": "common.validation.au.descriptionMinLength"
+          },
+          {
+            "type": "MAX_LENGTH",
+            "value": "1000",
+            "errorMessage": "common.validation.au.descriptionMaxLength"
+          }
+        ]
+      }
+    ]
+  }
+}
