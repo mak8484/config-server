@@ -1,0 +1,333 @@
+[
+    {
+        "id": "landingDirect",
+        "title": "landing.modal.title",
+        "description": "landing.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "completeExample",
+        "icon": "product-money-suitcase",
+        "title": "Key for the title here",
+        "description": "Key for the description here",
+        "bulletPoints": [
+            "bullet1",
+            "bullet2"
+        ],
+        "closeButton": "Key for close button"
+    },
+    {
+        "id": "businessInformation",
+        "icon": "product-money-suitcase",
+        "title": "businessAditionalInformation.modal.title",
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "activitiesDirect",
+        "icon": "product-money-suitcase",
+        "title": "activities.modal.title",
+        "description": "activities.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "addressDirect",
+        "icon": "product-repair",
+        "title": "address.modal.title",
+        "description": "address.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "employeesDirect",
+        "icon": "product-stars-sky-galaxy",
+        "title": "employees.modal.title",
+        "description": "employees.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "turnoverDirect",
+        "icon": "product-balance-scale",
+        "title": "turnover.modal.title",
+        "description": "turnover.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "businessValueDirect",
+        "icon": "product-info-sheet",
+        "title": "businessValue.modal.title",
+        "description": "businessValue.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "businessBuildingOptionsDirect",
+        "icon": "product-watering-can",
+        "title": "businessBuildingOptions.modal.title",
+        "description": "businessBuildingOptions.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "packageSelectionDirect",
+        "icon": "product-mouse",
+        "title": "packageSelectionDirect.modal.title",
+        "description": "packageSelectionDirect.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "summaryDirect",
+        "icon": "product-mouse",
+        "title": "summaryDirect.modal.title",
+        "description": "summaryDirect.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "personalInfoDirect",
+        "icon": "product-house-fire",
+        "title": "personalInfoDirect.modal.title",
+        "description": "personalInfoDirect.modal.description",
+        "closeButton": "modal.close",
+        "contactSectionReference": "defaultContactSection"
+    },
+    {
+        "id": "activityTitle",
+        "title": "businessAditionalInformation.modal.activityTitle",
+        "description": "businessInformation.modal.activities.description"
+    },
+    {
+        "id": "companyInfo",
+        "title": "companyInfo.modal.title"
+    },
+    {
+        "id": "businessAdditionalInfo",
+        "title": "businessAditionalInformation.title",
+        "description": "businessAditionalInformation.description"
+    },
+    {
+        "id": "packageSelection",
+        "title": "packageSelection.title",
+        "description": "packageSelection.description"
+    },
+    {
+        "id": "personalInfo",
+        "title": "personalInfo.title",
+        "description": "personalInfo.description"
+    },
+    {
+        "id": "summaryPage",
+        "title": "summaryPage.modal.title",
+        "description": "summaryPage.modal.description"
+    },
+    {
+        "id": "packages.cover1",
+        "title": "packageSelection.item.cover1.modal.title",
+        "description": "packageSelection.item.cover1.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover1.modal.example.description"
+        },
+        "bulletPoints": [
+            "packageSelection.item.cover1.modal.bulletPoints.1",
+            "packageSelection.item.cover1.modal.bulletPoints.2",
+            "packageSelection.item.cover1.modal.bulletPoints.3",
+            "packageSelection.item.cover1.modal.bulletPoints.4"
+        ],
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "summaryPageInformation",
+        "title": "summary.header.title",
+        "description": "This page contains the summary of all selections. For more information contact us on ********"
+    },
+    {
+        "id": "packages.cover2",
+        "title": "packageSelection.item.cover2.modal.title",
+        "description": "packageSelection.item.cover2.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover2.modal.example.description"
+        },
+        "bulletPoints": [
+            "packageSelection.item.cover2.modal.bulletPoints.1",
+            "packageSelection.item.cover2.modal.bulletPoints.2",
+            "packageSelection.item.cover2.modal.bulletPoints.3",
+            "packageSelection.item.cover2.modal.bulletPoints.4"
+        ],
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover3",
+        "title": "packageSelection.item.cover3.modal.title",
+        "description": "packageSelection.item.cover3.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover3.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover4",
+        "title": "packageSelection.item.cover4.modal.title",
+        "description": "packageSelection.item.cover4.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover4.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover5",
+        "title": "packageSelection.item.cover5.modal.title",
+        "description": "packageSelection.item.cover5.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover5.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover6",
+        "title": "packageSelection.item.cover6.modal.title",
+        "description": "packageSelection.item.cover6.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover6.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover7",
+        "title": "packageSelection.item.cover7.modal.title",
+        "description": "packageSelection.item.cover7.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover7.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover8",
+        "title": "packageSelection.item.cover8.modal.title",
+        "description": "packageSelection.item.cover8.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover8.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover9",
+        "title": "packageSelection.item.cover9.modal.title",
+        "description": "packageSelection.item.cover9.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover9.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover10",
+        "title": "packageSelection.item.cover10.modal.title",
+        "description": "packageSelection.item.cover10.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover10.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover11",
+        "title": "packageSelection.item.cover11.modal.title",
+        "description": "packageSelection.item.cover11.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover11.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover12",
+        "title": "packageSelection.item.cover12.modal.title",
+        "description": "packageSelection.item.cover12.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover12.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cover13",
+        "title": "packageSelection.item.cover13.modal.title",
+        "description": "packageSelection.item.cover13.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover13.modal.example.description"
+        },
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "packages.cost1",
+        "description": "packageSelection.item.cover2.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover2.modal.example.description"
+        },
+        "bulletPoints": [
+            "packageSelection.item.cover2.modal.bulletPoints.1",
+            "packageSelection.item.cover2.modal.bulletPoints.2",
+            "packageSelection.item.cover2.modal.bulletPoints.3",
+            "packageSelection.item.cover2.modal.bulletPoints.4"
+        ],
+        "closeButton": "close"
+    },
+    {
+        "id": "packages.cost2",
+        "description": "packageSelection.item.cover2.modal.description",
+        "example": {
+            "title": "modal.example.title",
+            "description": "packageSelection.item.cover2.modal.example.description"
+        },
+        "bulletPoints": [
+            "packageSelection.item.cover2.modal.bulletPoints.1",
+            "packageSelection.item.cover2.modal.bulletPoints.2",
+            "packageSelection.item.cover2.modal.bulletPoints.3",
+            "packageSelection.item.cover2.modal.bulletPoints.4"
+        ],
+        "closeButton": "close"
+    },
+    {
+        "id": "employeesTitleBlock",
+        "icon": "product-money-suitcase",
+        "title": "businessInformation.modal.employees.title",
+        "description": "businessInformation.modal.employees.description",
+        "closeButton": "modal.close"
+    },
+    {
+        "id": "turnoverTitleBlock",
+        "icon": "product-money-suitcase",
+        "title": "businessInformation.modal.turnover.title",
+        "description": "businessInformation.modal.turnover.description",
+        "closeButton": "close"
+    },
+    {
+        "id": "agentBrokerInfo",
+        "title": "agentBrokerPage.subheadline",
+        "description": "agentBrokerPage.subheadline.infoIconContent"
+    },
+    {
+        "id": "agentBrokerListCompanies",
+        "title": "agentBrokerPage.companySearchList.modal.title",
+        "description": "agentBrokerPage.companySearchList.modal.description"
+    },
+    {
+        "id": "consultancy",
+        "title": "consultancyPage.modal.title",
+        "description": "consultancyPage.modal.description"
+    }
+]

@@ -1,0 +1,77 @@
+{
+    "defaultContactSection": {
+        "headline": "modal.contactSection.headline",
+        "users": [
+            "direct"
+        ],
+        "additionalText": "modal.contactSection.additionalText",
+        "hotlineService": {
+            "icon": "product-headset-support",
+            "title": "modal.hotlineService.title",
+            "phoneNumber": "modal.hotlineService.phoneNumber",
+            "additionalInformation": "modal.hotlineService.additionalinformation"
+        },
+        "titleExpansionPanel": "contactSectionPanel.title",
+        "buttonExpansionPanel": "contactSectionPanel.button",
+        "showExtandableSection": true,
+        "extendableSection": [
+            {
+                "id": "name",
+                "type": "INPUT",
+                "label": "contactSectionPanel.name",
+                "inputType": "text",
+                "hint": "contactSectionPanel.name.example",
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "contactSectionPanel.name.error1"
+                    },
+                    {
+                        "type": "PATTERN",
+                        "value": "[a-zA-Z\\- \\ ]*$",
+                        "errorMessage": "contactSectionPanel.name.error2"
+                    }
+                ]
+            },
+            {
+                "id": "phone",
+                "type": "INPUT",
+                "label": "contactSectionPanel.phone",
+                "inputType": "text",
+                "hint": "contactSectionPanel.phone.example",
+                "validators": [
+                    {
+                        "type": "PATTERN",
+                        "errorMessage": "contactSectionPanel.phone.error2",
+                        "value": "^\\+?[0-9]*$"
+                    }
+                ]
+            },
+            {
+                "id": "timePreferredSelector",
+                "type": "DROPDOWN",
+                "label": "timePreferredSelector.time",
+                "options": [
+                    {
+                        "label": "timePreferredSelector.time.first",
+                        "value": 1
+                    },
+                    {
+                        "label": "timePreferredSelector.time.second",
+                        "value": 2
+                    },
+                    {
+                        "label": "timePreferredSelector.time.third",
+                        "value": 3
+                    }
+                ],
+                "validators": [
+                    {
+                        "type": "REQUIRED",
+                        "errorMessage": "timePreferredSelector.time.error1"
+                    }
+                ]
+            }
+        ]
+    }
+}

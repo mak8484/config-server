@@ -1,0 +1,308 @@
+[
+  {
+    "businessClusterId": "generalOffice",
+    "activities": [
+      "KG00003",
+      "KGH1005",
+      "KGD1033",
+      "KGB1028",
+      "KG00043",
+      "KGG0016",
+      "KGD0036",
+      "KGD0005",
+      "KGD0012",
+      "KG00077",
+      "KGD1042",
+      "KGD0014",
+      "KG00091",
+      "KGD0009",
+      "KGD0006",
+      "KGD0030",
+      "KG00106",
+      "KGD1050",
+      "KGS0002",
+      "KGD0029",
+      "KG00123",
+      "KGD0013",
+      "KGS0001",
+      "KGD1051",
+      "KG00133",
+      "KGD0032",
+      "KGG1126",
+      "KGD0033",
+      "KGD1054",
+      "KGD0028",
+      "KGD0042",
+      "KGD1055",
+      "KGD0043",
+      "KGD1029",
+      "KG00166",
+      "KGD1056",
+      "KGD0034",
+      "KG00183",
+      "KGD0007",
+      "KGD1065",
+      "KGD1066",
+      "KGD1067"
+    ]
+  },
+  {
+    "businessClusterId": "beautyServices",
+    "activities": []
+  },
+  {
+    "businessClusterId": "restaurant",
+    "activities": [
+      "KGR1005",
+      "KHG1006",
+      "KGR0001",
+      "KGG0002",
+      "KGR1009",
+      "KGD0031"
+    ]
+  },
+  {
+    "businessClusterId": "interiorConstruction",
+    "activities": [
+      "KGB0011",
+      "KGB0014",
+      "KGB1007",
+      "KGG0013",
+      "KGB0007",
+      "KGB0008",
+      "KG00065",
+      "KGG0014",
+      "KGB0017",
+      "KG00190",
+      "KG00191",
+      "KGD0001",
+      "KGB0010",
+      "KGG1078",
+      "KGG1085",
+      "KGG0010",
+      "KGG0011",
+      "KGF0021",
+      "KGG0018",
+      "KGG0015",
+      "KGG0019",
+      "KG00141",
+      "KGD0016",
+      "KGG1142",
+      "KGG1143",
+      "KGG1153",
+      "KGB1038",
+      "KGB1025"
+    ]
+  },
+  {
+    "businessClusterId": "exteriorConstruction",
+    "activities": [
+      "KG00016",
+      "KGB0005",
+      "KGB0003",
+      "KGB0001",
+      "KGB0016",
+      "KGB0004",
+      "KGG0017",
+      "KGB1031",
+      "KGB0015",
+      "KGB1016",
+      "KGG1176",
+      "KGB0002",
+      "KGB1020"
+    ]
+  },
+  {
+    "businessClusterId": "foodShop",
+    "activities": [
+      "KGG1007",
+      "KGD1072",
+      "KGF1027",
+      "KGG1032",
+      "KGF0007",
+      "KG00114",
+      "KGF1071"
+    ]
+  },
+  {
+    "businessClusterId": "healthcareServices",
+    "activities": [
+      "KGD0038",
+      "KGD1034",
+      "KGD0035",
+      "KGD0037",
+      "KGD0041",
+      "KGM0010",
+      "KG00127",
+      "KGD1009",
+      "KG00111",
+      "KG00120",
+      "KGD0040",
+      "KGD0044"
+    ]
+  },
+  {
+    "businessClusterId": "craftsmen",
+    "activities": [
+      "KGD0001",
+      "KGG1078",
+      "KGG1085",
+      "KGF0021",
+      "KGG0018",
+      "KGG0015",
+      "KGG0019",
+      "KG00141",
+      "KGD0016",
+      "KGG1153"
+    ]
+  },
+  {
+    "businessClusterId": "hotel",
+    "activities": [
+      "KGH1004",
+      "KHG1008",
+      "KHG1007",
+      "KG00162"
+    ]
+  },
+  {
+    "businessClusterId": "doctorsOffice",
+    "activities": [
+      "KGM0002",
+      "KGM0003",
+      "KGM0004",
+      "KGM0005",
+      "KGM0006",
+      "KGM0011",
+      "KGM0007",
+      "KGM0008",
+      "KGM0009",
+      "KGD1007",
+      "KGD1047",
+      "KGM0001",
+      "KGM1027"
+    ]
+  },
+  {
+    "businessClusterId": "manufacturing",
+    "activities": [
+      "KGD0011",
+      "KGG0004",
+      "KGG0006",
+      "KGG0007",
+      "KGG0005",
+      "KGG0008",
+      "KGG0001",
+      "KG00113",
+      "KGG0009",
+      "KGD0010",
+      "KGG1119",
+      "KGG0012"
+    ]
+  },
+  {
+    "businessClusterId": "sport",
+    "activities": [
+      "KGD0031",
+      "KGD0027",
+      "KGD0017",
+      "KGD0018",
+      "KGS1010",
+      "KGD0022",
+      "KGD0023",
+      "KGD0046",
+      "KGD0019",
+      "KGD0020",
+      "KGD0024",
+      "KGD0025",
+      "KGD0021",
+      "KGD0026"
+    ]
+  },
+  {
+    "businessClusterId": "bar",
+    "activities": [
+      "KGR1007"
+    ]
+  },
+  {
+    "businessClusterId": "shopGeneral",
+    "activities": [
+      "KG00013",
+      "KGF1005",
+      "KGF0046",
+      "KGF0012",
+      "KGF0017",
+      "KG00076",
+      "KGF0049",
+      "KGF0022",
+      "KGF0019",
+      "KGF0020",
+      "KGF0004",
+      "KGF0028",
+      "KGF0027",
+      "KGF0014",
+      "KGF0035",
+      "KGF0033",
+      "KGF0044",
+      "KGF0001",
+      "KGF0009",
+      "KGF0031",
+      "KGF1099",
+      "KGG1100",
+      "KGG1184",
+      "KGF0050",
+      "KGF0010",
+      "KGF0032",
+      "KGG0003",
+      "KGF0034",
+      "KGB0006",
+      "KGF0015",
+      "KGG1190",
+      "KGF0051"
+    ]
+  },
+  {
+    "businessClusterId": "clothesShop",
+    "activities": [
+      "KGF0038",
+      "KGF0039",
+      "KGF0037"
+    ]
+  },
+  {
+    "businessClusterId": "riskGeneralVisualization",
+    "activities": [
+      "KGD0031",
+      "KGD0027",
+      "KGD0017",
+      "KGD0018",
+      "KGS1010",
+      "KGD1042",
+      "KGD0014",
+      "KGD0022",
+      "KGD0023",
+      "KGD0030",
+      "KGD0046",
+      "KGD0029",
+      "KGD0013",
+      "KGD0032",
+      "KGG1126",
+      "KGD0024",
+      "KGD0033",
+      "KGD0028",
+      "KGD0025",
+      "KGD0021",
+      "KGD0043",
+      "KGD1029",
+      "KGD0034",
+      "KGD0026"
+    ]
+  },
+  {
+    "businessClusterId": "hairdresser",
+    "activities": [
+      "KGD0039"
+    ]
+  }
+]

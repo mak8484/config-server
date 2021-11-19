@@ -1,0 +1,821 @@
+{
+  "generalOffice": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/office_picture.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.generalOffice.title.1",
+          "description": "riskAssessmentPage.generalOffice.description.1",
+          "footnote": "riskAssessmentPage.generalOffice.footnote.1",
+          "bulletPoints": [
+            "riskAssessmentPage.generalOffice.bulletpoint.1.a",
+            "riskAssessmentPage.generalOffice.bulletpoint.1.b",
+            "riskAssessmentPage.generalOffice.bulletpoint.1.c"
+          ],
+          "positionX": 90,
+          "positionY": 92
+        },
+        {
+          "title": "riskAssessmentPage.generalOffice.title.2",
+          "description": "riskAssessmentPage.generalOffice.description.2",
+          "positionX": 30,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 45,
+          "positionY": 25
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 30,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 80,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 15,
+          "positionY": 47
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 55,
+          "positionY": 60
+        }
+      ]
+    }
+  },
+  "beautyServices": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/beauty.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.1",
+          "positionX": 15,
+          "positionY": 45
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.2",
+          "positionX": 28,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 41,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.1",
+          "positionX": 65,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.1",
+          "positionX": 80,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.1",
+          "positionX": 93,
+          "positionY": 20
+        }
+      ]
+    }
+  },
+  "healthcareServices": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/health.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 45,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 15,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 15,
+          "positionY": 15
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 40,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 85,
+          "positionY": 25
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 80,
+          "positionY": 50
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 18,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "otherOffice": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/office_picture.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 90,
+          "positionY": 92
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 30,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 45,
+          "positionY": 25
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 30,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 80,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 15,
+          "positionY": 47
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 55,
+          "positionY": 60
+        }
+      ]
+    }
+  },
+  "manufacturing": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/manufacturer_picture.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 50,
+          "positionY": 95
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 77,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 90,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 80,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 45,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 15,
+          "positionY": 45
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 60,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "craftsmen": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/manufacturer_picture.svg"
+    },
+    "iconConfig": {}
+  },
+  "shopGeneral": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/Shop_general.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 20,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 80,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 65,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 30,
+          "positionY": 60
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 20,
+          "positionY": 20
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 92,
+          "positionY": 50
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 52,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "clothesShop": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/Shop_clothing.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 10,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 30,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 55,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 38,
+          "positionY": 60
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 90,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 91,
+          "positionY": 50
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 55,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "interiorConstruction": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/Interior_construction.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 32,
+          "positionY": 95
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 70,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 10,
+          "positionY": 20
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 35,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 35,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 85,
+          "positionY": 45
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 65,
+          "positionY": 30
+        }
+      ]
+    }
+  },
+  "exteriorConstruction": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/Exterior_construction.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 70,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 20,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 38,
+          "positionY": 60
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 10,
+          "positionY": 40
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 87,
+          "positionY": 50
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 65,
+          "positionY": 30
+        }
+      ]
+    }
+  },
+  "doctorsOffice": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/doctors_office.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 20,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 50,
+          "positionY": 20
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 40,
+          "positionY": 40
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 10,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 85,
+          "positionY": 45
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 62,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "hotel": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/hotel.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 70,
+          "positionY": 95
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 40,
+          "positionY": 75
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 15,
+          "positionY": 15
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 95,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 35,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "restaurant": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/restaurant_picture.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 35,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 85,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 50,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 5,
+          "positionY": 60
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 15,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 85,
+          "positionY": 45
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 73,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "foodShop": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/Shop_food.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 30,
+          "positionY": 95
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 80,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 85,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 75,
+          "positionY": 55
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 60,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 96,
+          "positionY": 50
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 25,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "riskGeneralVisualization": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/office_picture.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.1",
+          "positionX": 7,
+          "positionY": 70
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "footnote": "riskAssessmentPage.imageWithInfoIcons.footnote.1",
+          "positionX": 16,
+          "positionY": 12
+        }
+      ]
+    }
+  },
+  "bar": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/bar.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 90,
+          "positionY": 95
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 10,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 80,
+          "positionY": 10
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 47,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 55,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 20,
+          "positionY": 10
+        }
+      ]
+    }
+  },
+  "sport": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/sport.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 62,
+          "positionY": 95
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 15,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 15,
+          "positionY": 15
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 25,
+          "positionY": 60
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 30,
+          "positionY": 25
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 85,
+          "positionY": 45
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 15,
+          "positionY": 40
+        }
+      ]
+    }
+  },
+  "hairdresser": {
+    "pictureConfig": {
+      "picturePath": "assets/riskAssessmentImages/hairdresser_picture.svg"
+    },
+    "iconConfig": {
+      "icons": [
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.1",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.1",
+          "positionX": 70,
+          "positionY": 90
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.2",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.2",
+          "positionX": 30,
+          "positionY": 80
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.3",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.3",
+          "positionX": 10,
+          "positionY": 15
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.4",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.4",
+          "positionX": 34,
+          "positionY": 30
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.5",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.5",
+          "positionX": 75,
+          "positionY": 20
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.6",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.6",
+          "positionX": 20,
+          "positionY": 50
+        },
+        {
+          "title": "riskAssessmentPage.imageWithInfoIcons.title.7",
+          "description": "riskAssessmentPage.imageWithInfoIcons.description.7",
+          "positionX": 47,
+          "positionY": 40
+        }
+      ]
+    }
+  }
+}
