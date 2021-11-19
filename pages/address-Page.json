@@ -62,7 +62,7 @@
             "types": [
               "address"
             ],
-            "required": true,
+            "required": false,
             "requiredMessage": "addressPage.address.mandatory",
             "requiredFields": [
               {
