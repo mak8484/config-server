@@ -1,0 +1,29 @@
+{
+  "defaultLang": "en",
+  "userStateExpression": "userInputState",
+  "i18nResourceLocations": [
+    "${apiGateway}/config/files/${tenantId}/${applicationId}/i18n/",
+    "${apiGateway}/config/files/${tenantId}/${applicationId}/i18n/${userType}/"
+  ],
+  "errorPageForcedUsers": [
+    "direct"
+  ],
+  "currencyFormat": {
+    "prefix": "€",
+    "suffix": "",
+    "includeThousandsSeparator": true,
+    "thousandsSeparatorSymbol": ".",
+    "allowDecimal": true,
+    "decimalSymbol": ",",
+    "decimalLimit": null,
+    "integerLimit": null,
+    "allowNegative": true,
+    "allowLeadingZeroes": true
+  },
+  "additionalHeaders": [
+    {
+      "name": "userType",
+      "source": "$.userType"
+    }
+  ]
+}

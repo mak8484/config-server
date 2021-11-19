@@ -1,0 +1,735 @@
+{
+    "errorPageID": "errorPage",
+    "firstPage": {
+        "nextOptionList": [
+            {
+                "nextPageId": "errorPage",
+                "conditions": [
+                    {
+                        "value1Expression": "$.userType",
+                        "operator": "==",
+                        "value2Expression": "undefined"
+                    }
+                ]
+            },
+            {
+                "nextPageId": "landingDirect",
+                "conditions": [
+                    {
+                        "value1Expression": "$.userType",
+                        "operator": "===",
+                        "value2Expression": "direct"
+                    }
+                ]
+            },
+            {
+                "nextPageId": "agentBroker",
+                "conditions": [
+                    {
+                        "value1Expression": "$.userType",
+                        "operator": "!=",
+                        "value2Expression": "direct"
+                    }
+                ]
+            },
+            {
+                "nextPageId": "errorPage",
+                "conditions": [
+                    {
+                        "value1Expression": "true"
+                    }
+                ]
+            }
+        ]
+    },
+    "serviceActivators": {
+        "paymentStatus":{
+            "serviceActivatorID": "packages/changestatus",
+            "async": true,
+            "serviceActivatorMethod": "PUT",
+            "conditions": [
+                {
+                    "value1Expression": "$.contractId",
+                    "operator": "!=",
+                    "value2Expression": "undefined"
+                }
+            ],
+            "requestDataMapping": [
+                {
+                    "stateKeyExpression": "$.contractId",
+                    "requestDataExpression": "$.contractId"
+                },
+                {
+                    "stateKeyExpression": "$.nextStatusId",
+                    "requestDataExpression": "$.nextStatusId"
+                }
+            ]
+        }
+    },
+    "pages": [
+        {
+            "pageId": "landingDirect",
+            "nextOptionList": [
+                {
+                    "nextPageId": "activities"
+                }
+            ]
+        },
+        {
+            "pageId": "activities",
+            "backOptionList": [
+                {
+                    "nextPageId": "landingDirect"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "address"
+                }
+            ],
+            "onPageEnterServiceActivators": [
+                {
+                    "asyncResolveBeforePageIds": [
+                        "activities"
+                    ],
+                    "serviceActivatorID": "activities",
+                    "async": true,
+                    "serviceActivatorMethod": "GET",
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.activitiesArray",
+                            "responseDataExpression": "$"
+                        },
+                        {
+                            "stateKeyExpression": "$.validationErrorData",
+                            "responseDataExpression": "$[0].message"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "pageId": "address",
+            "backOptionList": [
+                {
+                    "nextPageId": "activities"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "employees"
+                }
+            ]
+        },
+        {
+            "pageId": "employees",
+            "backOptionList": [
+                {
+                    "nextPageId": "address"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "turnover"
+                }
+            ]
+        },
+        {
+            "pageId": "turnover",
+            "backOptionList": [
+                {
+                    "nextPageId": "employees"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "businessValue"
+                }
+            ]
+        },
+        {
+            "pageId": "businessValue",
+            "backOptionList": [
+                {
+                    "nextPageId": "turnover"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "businessBuildingOptions",
+                    "conditions":[{
+                        "value1Expression": "$.userInputState['businessValue']['additional']",
+                        "operator": "!==",
+                        "value2Expression": "true"
+                      }]
+                },
+                {
+                    "nextPageId": "companyBuildingValue",
+                    "conditions":[{
+                        "value1Expression": "$.userInputState['businessValue']['additional']",
+                        "operator": "===",
+                        "value2Expression": "true"
+                      }]
+                }
+            ]
+        },
+        {
+            "pageId": "companyBuildingValue",
+            "backOptionList": [
+                {
+                    "nextPageId": "businessValue"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "businessBuildingOptions"
+                }
+            ]
+        },
+        {
+            "pageId": "businessBuildingOptions",
+            "backOptionList": [
+                {
+                    "nextPageId": "businessValue",
+                    "conditions":[{
+                        "value1Expression": "$.userInputState['businessValue']['additional']",
+                        "operator": "!==",
+                        "value2Expression": "true"
+                      }]
+                },
+
+                {
+                    "nextPageId": "companyBuildingValue",
+                    "conditions":[{
+                        "value1Expression": "$.userInputState['businessValue']['additional']",
+                        "operator": "===",
+                        "value2Expression": "true"
+                      }]
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "packageSelection"
+                }
+            ]
+        },
+        {
+            "pageId": "agentBroker",
+            "nextOptionList": [
+                {
+                    "nextPageId": "companyInfo",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.selectedCompanyData.status",
+                            "operator": "==",
+                            "value2Expression": "null"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "summary",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.selectedCompanyData.status",
+                            "operator": "==",
+                            "value2Expression": "offer"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "personalInfo",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.selectedCompanyData.status",
+                            "operator": "===",
+                            "value2Expression": "application"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "consultancy",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.selectedCompanyData",
+                            "operator": "==",
+                            "value2Expression": "null"
+                        },
+                        {
+                            "value1Expression": "$.userType",
+                            "operator": "===",
+                            "value2Expression": "agent"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "vatSearch",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.userType",
+                            "operator": "===",
+                            "value2Expression": "broker"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "errorPage"
+                }
+            ],
+            "onPageEnterServiceActivators": [
+                {
+                    "serviceActivatorID": "accountManager/accountManager",
+                    "async": false,
+                    "serviceActivatorMethod": "GET",
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.agentNumbers",
+                            "responseDataExpression": "$"
+                        },
+                        {
+                            "stateKeyExpression": "$.validationErrorData",
+                            "responseDataExpression": "$[0].message"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "value1Expression": "$.userInputState['userType']",
+                            "operator": "!=",
+                            "value2Expression": "direct"
+                        },
+                        {
+                            "value1Expression": "$.agentNumbers",
+                            "operator": "==",
+                            "value2Expression": "undefined"
+                        }
+                    ]
+                }
+            ],
+            "onPageLeaveServiceActivators": [
+                {
+                    "asyncResolveBeforePageIds": [
+                        "companyInfo"
+                    ],
+                    "serviceActivatorID": "company/info",
+                    "async": false,
+                    "serviceActivatorMethod": "POST",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.selectedCompanyData.status",
+                            "operator": "==",
+                            "value2Expression": "null"
+                        }
+                    ],
+                    "requestDataMapping": [
+                        {
+                            "stateKeyExpression": "$.selectedCompanyData.name",
+                            "requestDataExpression": "$.companyName"
+                        },
+                        {
+                            "stateKeyExpression": "$.selectedCompanyData.address.formattedAddress",
+                            "requestDataExpression": "$.street"
+                        }
+                    ],
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.companies",
+                            "responseDataExpression": "$"
+                        },
+                        {
+                            "stateKeyExpression": "$.validationErrorData",
+                            "responseDataExpression": "$[0].message"
+                        }
+                    ]
+                }, {
+                    "serviceActivatorID": "reentry/offer",
+                    "serviceActivatorMethod":"GET",
+                    "async":false,
+                    "conditions": [{
+                        "value1Expression": "$.selectedCompanyData.status",
+                        "operator": "==",
+                        "value2Expression": "offer"
+                    }],
+                    "requestDataMapping": [{
+                        "stateKeyExpression": "$.selectedCompanyData.id",
+                        "requestDataExpression": "$.companyId"
+                    },{
+                        "stateKeyExpression": "$.selectedCompanyData.existingContractId",
+                        "requestDataExpression": "$.contractId"
+                    }],
+                    "responseDataMapping":[{
+                        "stateKeyExpression": "$.userInputState.businessInformation.mainActivity",
+                        "responseDataExpression": "$.businessDetails.mainActivity"
+                    },{
+                        "stateKeyExpression": "$.userInputState.businessInformation.secondaryActivities",
+                        "responseDataExpression": "$.businessDetails.subActivity"
+                    },{
+                        "stateKeyExpression": "$.userInputState.businessInformation.employeesNumber",
+                        "responseDataExpression": "$.businessDetails.numberOfEmployees"
+                    },{
+                        "stateKeyExpression": "$.userInputState.businessAdditionalInfo.amount",
+                        "responseDataExpression": "$.businessDetails.businessValue"
+                    },{
+                        "stateKeyExpression": "$.userInputState.businessAdditionalInfo.buildings",
+                        "responseDataExpression": "$.buildingDetails.buildingValue"
+                    },{
+                        "stateKeyExpression": "$.userInputState.businessInformation.turnoverAmount",
+                        "responseDataExpression": "$.businessDetails.revenue"
+                    }]
+                }
+            ]
+        },
+        {
+            "pageId": "vatSearch",
+            "backOptionList": [
+                {
+                    "nextPageId": "consultancy",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.userType",
+                            "operator": "===",
+                            "value2Expression": "agent"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId":"agentBroker"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "companyInfo",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['companyName']",
+                            "operator": "!=",
+                            "value2Expression": "undefined"
+                        },
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['address']",
+                            "operator": "!=",
+                            "value2Expression": "undefined"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "businessInformation"
+                }
+            ],
+            "onPageLeaveServiceActivators": [
+                {
+                    "asyncResolveBeforePageIds": [
+                        "businessInformation"
+                    ],
+                    "serviceActivatorID": "company/info",
+                    "async": false,
+                    "serviceActivatorMethod": "POST",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['vatNumber']",
+                            "operator": "!=",
+                            "value2Expression": "undefined"
+                        },
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['companyName']",
+                            "operator": "==",
+                            "value2Expression": "undefined"
+                        },
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['address']",
+                            "operator": "==",
+                            "value2Expression": "undefined"
+                        }
+                    ],
+                    "requestDataMapping": [
+                        {
+                            "stateKeyExpression": "$.userInputState['vatSearch']['vatNumber']",
+                            "requestDataExpression": "$.vat"
+                        }
+                    ],
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.selectedCompanyData['address']['formattedAddress']",
+                            "responseDataExpression": "$[0].address.formattedAddress"
+                        },
+                        {
+                            "stateKeyExpression": "$.selectedCompanyData['name']",
+                            "responseDataExpression": "$[0].companyName"
+                        }
+                    ]
+                },
+                {
+                    "asyncResolveBeforePageIds": [
+                        "companyInfo"
+                    ],
+                    "serviceActivatorID": "company/info",
+                    "async": false,
+                    "serviceActivatorMethod": "POST",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['companyName']",
+                            "operator": "!=",
+                            "value2Expression": "undefined"
+                        },
+                        {
+                            "value1Expression": "$.userInputState['vatSearch']['address']",
+                            "operator": "!=",
+                            "value2Expression": "undefined"
+                        }
+                    ],
+                    "requestDataMapping": [
+                        {
+                            "stateKeyExpression": "$.userInputState['vatSearch']['companyName']",
+                            "requestDataExpression": "$.companyName"
+                        },
+                        {
+                            "stateKeyExpression": "$.userInputState['vatSearch']['address']['formattedAddress']",
+                            "requestDataExpression": "$.street"
+                        }
+                    ],
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.companies",
+                            "responseDataExpression": "$"
+                        },
+                        {
+                            "stateKeyExpression": "$.validationErrorData",
+                            "responseDataExpression": "$[0].message"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "pageId": "naturalSearch",
+            "nextOptionList": [
+                {
+                    "nextPageId": "companyInfo"
+                }
+            ]
+        },
+        {
+            "pageId": "businessInformation",
+            "nextOptionList": [
+                {
+                    "nextPageId": "riskAssessment",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.businessInfoToRiskNavigation",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "businessAdditionalInfo"
+                }
+            ],
+            "onPageEnterServiceActivators": [
+                {
+                    "asyncResolveBeforePageIds": [
+                        "businessInformation"
+                    ],
+                    "serviceActivatorID": "activities",
+                    "async": true,
+                    "serviceActivatorMethod": "GET",
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.activitiesArray",
+                            "responseDataExpression": "$"
+                        },
+                        {
+                            "stateKeyExpression": "$.validationErrorData",
+                            "responseDataExpression": "$[0].message"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "pageId": "consultancy",
+            "backOptionList": [
+                {
+                    "nextPageId": "agentBroker"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "vatSearch",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.consultancy",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "pageId": "companyInfo",
+            "nextOptionList": [
+                {
+                    "nextPageId": "businessInformation"
+                }
+            ],
+            "backOptionList": [
+                {
+                    "nextPageId": "vatSearch",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.vatSearch",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "naturalSearch",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.naturalSearch",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "agentBroker",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.agentBroker",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "pageId": "riskAssessment",
+            "backOptionList": [
+                {
+                    "nextPageId": "businessInformation",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.businessInfoToRiskNavigation",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "businessAdditionalInfo",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.businessAdditionalInfoToRiskNavigation",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "packageSelection",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.packaSelectionToRiskNavigation",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "pageId": "businessAdditionalInfo",
+            "backOptionList": [
+                {
+                    "nextPageId": "businessInformation"
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "riskAssessment",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.businessAdditionalInfoToRiskNavigation",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "packageSelection"
+                }
+            ]
+        },
+        {
+            "pageId": "packageSelection",
+            "onPageEnterServiceActivators": [
+                {
+                    "asyncResolveBeforePageIds": [
+                        "packageSelection"
+                    ],
+                    "serviceActivatorID": "packages",
+                    "async": true,
+                    "serviceActivatorMethod": "GET",
+                    "responseDataMapping": [
+                        {
+                            "stateKeyExpression": "$.packagesSelection",
+                            "responseDataExpression": "$.packagesSelection"
+                        },
+                        {
+                            "stateKeyExpression": "$.additionalCoverage",
+                            "responseDataExpression": "$.additionalCoverage"
+                        },
+                        {
+                            "stateKeyExpression": "$.switchers",
+                            "responseDataExpression": "$.switchers"
+                        }
+                    ]
+                }
+            ],
+            "nextOptionList": [
+                {
+                    "nextPageId": "riskAssessment",
+                    "conditions": [
+                        {
+                            "value1Expression": "$.packaSelectionToRiskNavigation",
+                            "operator": "==",
+                            "value2Expression": "true"
+                        }
+                    ]
+                },
+                {
+                    "nextPageId": "summary"
+                }
+            ]
+        },
+        {
+            "pageId": "summary",
+            "nextOptionList": [
+                {
+                    "nextPageId": "personalInfo"
+                }
+            ],
+            "backOptionList": [
+                {
+                    "nextPageId": "packageSelection"
+                }
+            ]
+        },
+        {
+            "pageId": "personalInfo",
+            "nextOptionList": [
+                {
+                    "nextPageId": "confirmation"
+                }
+            ]
+        },
+        {
+            "pageId": "confirmation",
+            "onPageEnterServiceActivators": [],
+            "backOptionList": [],
+            "nextOptionList": []
+        }
+    ]
+}
