@@ -1,0 +1,71 @@
+{
+    "pageId": "agentBroker",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "headerConfig": {
+        "id": "agentBrokerInfo",
+        "title": "app.title",
+        "subtitle": "agentBrokerPage.subheadline",
+        "linkText": "header.more.info.link",
+        "users": ["agent", "broker"]
+    },
+    "agentBrokerPage": {
+        "buttonLabel": "agentBrokerPage.button.label",
+        "consultancyStartTimeSource": "agentBrokerPage.consultancyStartTime",
+        "dropdownConfig": {
+            "id": "agentNumber",
+            "label": "agentBrokerPage.dropdown.label",
+            "dropdownSource": "$.agentNumbers"
+        },
+        "inputConfig": {
+            "id": "searchField",
+            "label": "agentBrokerPage.input.label",
+            "noResultsText": "agentBrokerPage.input.noResults.label"
+        },
+        "radioButtonConfig": {
+            "id": "clientType",
+            "options": [{
+                "id": "existing-customer",
+                "label": "agentBrokerPage.radio.label.left",
+                "showCompanyField": true
+            }, {
+                "id": "new-customer",
+                "label": "agentBrokerPage.radio.label.right",
+                "showCompanyField": false
+            }]
+        },
+        "companySearchListConfig": {
+            "id": "companyList",
+            "titleConfig": {
+                "id": "agentBrokerListCompanies",
+                "title": "agentBrokerPage.companySearch.title",
+                "linkText": "header.more.info.link",
+                "users": [
+                  "agent",
+                  "broker"
+                ]
+              },
+            "url": "company/search",
+            "companyNameSource": "$.userInputState['landingPage']['languageForm.company']",
+            "companyAddressSource": "$.userInputState['landingPage']['languageForm.address']",
+            "companyIdSource": "$.userInputState['companyInfoPage']['company.partyId']",
+            "externalProviderIdSource": "$.userInputState['externalProviderId']",
+            "existingContractIdSource": "$.userInputState['existingContractId']",
+            "companySmeAddressSource": "$.userInputState['landingPage']['languageForm.address.elastic']",
+            "listConfig": {
+                "statusKey": "agentBrokerPage.companySearchList.status"
+            }
+        },
+        "companySelectedEvent": "companyList.click",
+        "electronicCommunicationSrc": "user.electronic.communication",
+        "reopenModalConfig": {
+            "responseWarning": {
+                "buttonCloseLabel": "agentBroker.warningModal.new",
+                "buttonOkLabel": "agentBroker.warningModal.reopen",
+                "icon": "product-important-info",
+                "title": "agentBroker.warningModal.title",
+                "subtitle": "agentBroker.warningModal.subtitle"
+            }
+        }
+    }
+}

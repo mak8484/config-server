@@ -1,0 +1,337 @@
+{
+  "pageId": "businessInformation",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "headerConfig": {
+    "id": "businessInformation",
+    "title": "businessInformation.address.title",
+    "linkText": "header.more.info.link",
+    "users": ["agent", "broker"]
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0.5,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "updateStateValues": [
+    {
+      "key": "$.businessInfoToRiskNavigation",
+      "value": false
+    }
+  ],
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "ADDRESS_INFO",
+            "id": "addressInfo",
+            "zoom": 15,
+            "addressSrc": "$.selectedCompanyData['address']['formattedAddress']",
+            "companyNameSrc":"$.selectedCompanyData['name']",
+            "markerUrl":"./assets/map_marker.svg"
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "more_address",
+            "label": "businessInformation.address.additional",
+            "labelPosition": "right",
+            "switcher": true
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "GOOGLE_ADDRESS",
+            "id": "address",
+            "source": "$['address']",
+            "title": "addressPage.title",
+            "label": "addressPage.input.label",
+            "example": "addressPage.input.example",
+            "countryCodes": [
+              "DE"
+            ],
+            "types": [
+              "address"
+            ],
+            "required": true,
+            "requiredMessage": "addressPage.address.mandatory",
+            "requiredFields": [
+              {
+                "field": "streetNumber",
+                "errorMessage": "addressPage.address.houseNumber.error"
+              }
+            ],
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessInformation']['more_address']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE"
+          },
+          {
+            "type": "SME_HEADELINE_WITH_MORE_INFO",
+            "id": "activityTitle",
+            "title": "businessInformation.activity.title",
+            "linkText": "header.more.info.link"
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "title",
+            "label": "businessInformation.activity.main",
+            "copytextOption": "small"
+          },
+          {
+            "type": "DD_TAG_LIST",
+            "id": "mainActivity",
+            "source": "$['activitiesArray']",
+            "title": "activities.main.title",
+            "minTags": 1,
+            "autoOpen": false,
+            "errorMsgNoMatch": "activities.noMatch",
+            "required": true,
+            "dropdownsList": [
+              {
+                "id": "mainActivity",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": true
+              }
+            ],
+            "validators": [
+              {
+                "type": "REQUIRED",
+                "errorMessage": "This field is required"
+              }
+            ]
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "moreActivities",
+            "label": "businessInformation.activity.additional",
+            "labelPosition": "right",
+            "switcher": true
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "title",
+            "label": "businessInformation.activity.secondary",
+            "copytextOption": "small",
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessInformation']['moreActivities']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "DD_TAG_LIST",
+            "id": "secondaryActivities",
+            "source": "$['activitiesArray']",
+            "title": "businessConfirmationPage.subActivity.title",
+            "minTags": 0,
+            "autoOpen": false,
+            "errorMsgNoMatch": "activities.noMatch",
+            "required": false,
+            "canRepeatSelection": false,
+            "dropdownsList": [
+              {
+                "id": "subActivity_1",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_2",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_3",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_4",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_5",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_6",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_7",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_8",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_9",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              }
+            ],
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessInformation']['moreActivities']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE"
+          },
+          {
+            "type": "SME_HEADELINE_WITH_MORE_INFO",
+            "id": "employeesTitleBlock",
+            "title": "businessInformation.employees.title",
+            "linkText": "header.more.info.link"
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "employeesTitle",
+            "label": "businessInformation.employees.paragraph",
+            "copytextOption": "small"
+          },
+          {
+            "type": "NUMBER_STEPPER",
+            "id": "employeesNumber",
+            "nxSize": "normal",
+            "nxStep": 1,
+            "nxMax": 5,
+            "nxMin": 1,
+            "value": 1,
+            "leadingZero": false,
+            "validators": [
+              {
+                "type": "REQUIRED",
+                "errorMessage": "businessInformation.employees.error"
+              },
+              {
+                "type": "PATTERN",
+                "value": "^([1-5])$",
+                "errorMessage": "employees.number.error2"
+              }
+            ]
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE"
+          },
+          {
+            "type": "SME_HEADELINE_WITH_MORE_INFO",
+            "id": "turnoverTitleBlock",
+            "title": "businessInformation.turnover.title",
+            "linkText": "header.more.info.link"
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "turnoverTitle",
+            "label": "businessInformation.turnover.paragraph",
+            "icon": {
+              "name": "product-money-exchange",
+              "size": "s"
+            },
+            "copytextOption": "small"
+          },
+          {
+            "type": "SLIDER",
+            "id": "turnoverAmount",
+            "nxMin": 5000,
+            "nxMax": 1000000,
+            "nxStep": 5000,
+            "value": 5000,
+            "leftText": "businessInformation.min",
+            "rightText": "businessInformation.max",
+            "currencyFormat": {
+              "prefix": "€",
+              "suffix": "",
+              "includeThousandsSeparator": true,
+              "thousandsSeparatorSymbol": ".",
+              "allowDecimal": true,
+              "decimalSymbol": ","
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE",
+            "size": "64"
+          },
+          {
+            "type": "NAVIGATION",
+            "navigationId": "businessInfoToRiskNavigation",
+            "imageSrc": "./assets/risk_assessment.svg",
+            "width": "67%",
+            "maxWidth": "352px",
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessInformation']['mainActivity']",
+                "operator": "===",
+                "value2Expression": "undefined"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

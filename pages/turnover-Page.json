@@ -1,0 +1,63 @@
+{
+  "pageId": "turnover",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "bubbleConfig": {
+    "id":"turnoverDirect",
+    "linkText":"bubble.more.info.link",
+    "message": "turnover.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": ["direct"]
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0.66,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "PARAGRAPH",
+            "id": "turnover_title",
+            "label": "turnover.number.title",
+            "copytextOption": "small",
+            "icon": {
+              "name": "product-money-exchange",
+              "size": "s"
+            }
+          },
+          {
+            "type": "SLIDER",
+            "id": "amount",
+            "nxMin": 100,
+            "nxMax": 1000000,
+            "nxStep": 1,
+            "value": 100,
+            "leftText": "turnover.slider.min",
+            "rightText": "turnover.slider.max",
+            "currencyFormat": {
+              "prefix": "€",
+              "suffix": "",
+              "includeThousandsSeparator": true,
+              "thousandsSeparatorSymbol": ".",
+              "allowDecimal": true,
+              "decimalSymbol": ","
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,77 @@
+{
+  "pageId": "businessBuildingOptions",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "bubbleConfig": {
+    "id":"businessBuildingOptionsDirect",
+    "linkText":"bubble.more.info.link",
+    "message": "businessBuildingOptions.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": ["direct"]
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 1,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE",
+            "size": "40"
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "woodToggle",
+            "label": "businessBuildingOptions.wood",
+            "labelPosition": "right",
+            "switcher": true
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "moreThan10",
+            "label": "businessAditionalInformation.greater10",
+            "labelPosition": "right",
+            "switcher": true
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "inhabited",
+            "label": "businessBuildingOptions.inhabited",
+            "labelPosition": "right",
+            "switcher": true
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          }
+        ]
+      }
+    ]
+  }
+}
+

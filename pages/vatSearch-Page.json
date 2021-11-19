@@ -1,0 +1,64 @@
+{
+  "pageId": "vatSearch",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "vatSearchPage": {
+    "subtitle": "vatSearch.subtitle",
+    "vatSection": {
+      "layout": "ONE_COLUMN",
+      "items": [
+        {
+          "type": "INPUT",
+          "id": "vatNumber",
+          "source": "$['vatNumber']",
+          "label": "vatSearch.vatSection.input.label",
+          "example": "vatSearch.vatSection.input.example",
+          "hint": "vatSearch.vatSection.input.hint",
+          "validators": [
+            {
+              "type": "REQUIRED",
+              "errorMessage": "This field is required"
+            }
+          ]
+        }
+      ]
+    },
+    "vatNotAvailableLinkLabel": "vatSearch.notAvailable.link",
+    "vatNotAvailableTitle": "vatSearch.notAvailable.title",
+    "vatNotAvailableSection": {
+      "id":"vatNotAvailableSection",
+      "layout": "ONE_COLUMN",
+      "items": [
+        {
+          "type": "INPUT",
+          "id": "companyName",
+          "source": "$['companyName']",
+          "label": "vatSearch.notAvailable.company.label",
+          "hint": "vatSearch.notAvailable.company.hint",
+          "validators": [
+            {
+              "type": "REQUIRED",
+              "errorMessage": "This field is required"
+            }
+          ]
+        },
+        {
+          "type": "GOOGLE_ADDRESS",
+          "id": "address",
+          "source": "$['address']",
+          "label": "vatSearch.notAvailable.address.label",
+          "example": "vatSearch.notAvailable.address.example",
+          "countryCodes": ["DE"],
+          "types": ["address"],
+          "required": true,
+          "requiredMessage": "addressPage.address.mandatory",
+          "requiredFields": [{
+            "field": "streetNumber",
+            "errorMessage": "addressPage.address.houseNumber.error"
+          }]
+        }
+      ]
+    }
+  }
+}
+

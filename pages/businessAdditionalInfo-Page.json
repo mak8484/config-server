@@ -1,0 +1,201 @@
+{
+  "pageId": "businessAdditionalInfo",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "headerConfig": {
+    "id": "businessAdditionalInfo",
+    "title": "businessAditionalInformation.title",
+    "linkText": "header.more.info.link",
+    "users": ["agent", "broker"]
+
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 1,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "updateStateValues": [
+    {
+      "key": "$.businessAdditionalInfoToRiskNavigation",
+      "value": false
+    }
+  ],
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "PARAGRAPH",
+            "id": "business_value_title",
+            "label": "businessAditionalInformation.title.items",
+            "copytextOption": "small",
+            "icon": {
+              "name": "product-couch",
+              "size": "s"
+            }
+          },
+          {
+            "type": "SLIDER",
+            "id": "amount",
+            "nxMin": 500,
+            "nxMax": 500000,
+            "nxStep": 500,
+            "value": 500,
+            "leftText": "businessAditionalInformation.min",
+            "rightText": "businessAditionalInformation.max",
+            "currencyFormat": {
+              "prefix": "€",
+              "suffix": "",
+              "includeThousandsSeparator": true,
+              "thousandsSeparatorSymbol": ".",
+              "allowDecimal": true,
+              "decimalSymbol": ","
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SME_SWITCHER_INFO",
+            "id": "additional",
+            "label": "businessAditionalInformation.additional",
+            "value":false,
+            "smeInfoIconConfig": {
+              "xtraCustomInfoIconModalConfig": {
+                "infoText": "businessAditionalInformation.additional.infoText",
+                "componentToDisplay": "modal"
+              }
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "business_buildings_title",
+            "label": "businessAditionalInformation.title.buildings",
+            "copytextOption": "small",
+            "icon": {
+              "name": "product-city",
+              "size": "s"
+            },
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessAdditionalInfo']['additional']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "SLIDER",
+            "id": "buildings",
+            "nxMin": 5000,
+            "nxMax": 3000000,
+            "nxStep": 5000,
+            "value": 5000,
+            "leftText": "businessAditionalInformation.min",
+            "rightText": "businessAditionalInformation.max",
+            "currencyFormat": {
+              "prefix": "€",
+              "suffix": "",
+              "includeThousandsSeparator": true,
+              "thousandsSeparatorSymbol": ".",
+              "allowDecimal": true,
+              "decimalSymbol": ","
+            },
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessAdditionalInfo']['additional']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE",
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['businessAdditionalInfo']['additional']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "SME_SWITCHER_INFO",
+            "id": "wood",
+            "label": "businessAditionalInformation.wood",
+            "value": false,
+            "smeInfoIconConfig": {
+              "xtraCustomInfoIconModalConfig": {
+                "infoText": "businessAditionalInformation.wood.infoText",
+                "componentToDisplay": "modal"
+              }
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SME_SWITCHER_INFO",
+            "id": "older10",
+            "label": "businessAditionalInformation.greater10",
+            "value": false,
+            "smeInfoIconConfig": {
+              "xtraCustomInfoIconModalConfig": {
+                "infoText": "businessAditionalInformation.older10.infoText",
+                "componentToDisplay": "modal"
+              }
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SME_SWITCHER_INFO",
+            "id": "inhabitate",
+            "label": "businessAditionalInformation.inhabitate",
+            "value": false,
+            "smeInfoIconConfig": {
+              "xtraCustomInfoIconModalConfig": {
+                "infoText": "businessAditionalInformation.inhabitate.infoText",
+                "componentToDisplay": "modal"
+              }
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE",
+            "size": "64"
+          },
+          {
+            "type": "NAVIGATION",
+            "navigationId": "businessAdditionalInfoToRiskNavigation",
+            "maxWidth": "352px",
+            "imageSrc": "./assets/risk_assessment.svg",
+            "width": "67%"
+          }
+        ]
+      }
+    ]
+  }
+}
+

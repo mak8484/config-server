@@ -1,0 +1,24 @@
+{
+  "pageId": "companyInfo",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "additionalInformation": "companyInfo.information",
+  "headerConfig": {
+    "id": "companyInfo",
+    "title": "companyInfo.title",
+    "linkText": "companyInfo.titleLink",
+    "users": ["agent", "broker"]
+  },
+  "companyInfoPage": {
+    "maxNumShown": 5,
+    "ownCompanyTitle": "companyInfo.own.company.title",
+    "listConfig": {
+      "hideStreet": false,
+      "selectedIcon": "check"
+    },
+    "crifCompaniesSource": "$.companies",
+    "companyNameSource": "$.userInputState['vatSearch']['companyName']",
+    "companySmeAddressSource": "$.userInputState['vatSearch']['address']"
+  }
+}
+

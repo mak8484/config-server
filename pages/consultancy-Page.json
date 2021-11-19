@@ -1,0 +1,99 @@
+{
+  "pageId": "consultancy",
+  "hideNextButton": true,
+  "hideBackButton": true,
+  "headerConfig": {
+    "id": "consultancy",
+    "title": "consultancyPage.title",
+    "linkText": "header.more.info.link",
+    "users": ["agent", "broker"]
+  },
+  "consultancyPage": {
+    "backButton":"back_button",
+    "nextButton":"next_button",
+    "errorText": "consultancyPage.errorText",
+    "section":
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SME_RADIO",
+            "id": "radio1",
+            "label": "consultancyPage.radio1.label",
+            "pageId": "consultancy",
+            "neededToNext":true,
+            "validators": [
+              {
+                "type": "REQUIRED"
+              }
+            ],
+            "yesOption": {
+              "label": "consultancyPage.yesOptionLabel",
+              "value": "consultancyPage.yesOptionValue"
+            },
+            "noOption": {
+              "label": "consultancyPage.noOptionLabel",
+              "value": "consultancyPage.noOptionValue"
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SME_RADIO",
+            "id": "radio2",
+            "neededToNext":false,
+            "label": "consultancyPage.radio2.label",
+            "pageId": "consultancy",
+            "validators": [
+              {
+                "type": "REQUIRED"
+              }
+            ],
+            "yesOption": {
+              "label": "consultancyPage.yesOptionLabel",
+              "value": "consultancyPage.yesOptionValue"
+            },
+            "noOption": {
+              "label": "consultancyPage.noOptionLabel",
+              "value": "consultancyPage.noOptionValue"
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "SME_RADIO",
+            "id": "radio3",
+            "neededToNext":true,
+            "label": "consultancyPage.radio3.label",
+            "pageId": "consultancy",
+            "validators": [
+              {
+                "type": "REQUIRED"
+              }
+            ],
+            "yesOption": {
+              "label": "consultancyPage.yesOptionLabel",
+              "value": "consultancyPage.yesOptionValue"
+            },
+            "noOption": {
+              "label": "consultancyPage.noOptionLabel",
+              "value": "consultancyPage.noOptionValue"
+            }
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          }
+        ]
+      }
+  }
+}
+

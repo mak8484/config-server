@@ -1,0 +1,62 @@
+{
+  "pageId": "employees",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "bubbleConfig": {
+    "id":"employeesDirect",
+    "linkText":"bubble.more.info.link",
+    "message": "employees.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": ["direct"]
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0.5,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "PARAGRAPH",
+            "id": "number_title",
+            "label": "employees.number.title",
+            "copytextOption": "small"
+          },
+          {
+            "type": "NUMBER_STEPPER",
+            "id": "number",
+            "nxSize": "normal",
+            "nxStep": 1,
+            "nxMax": 5,
+            "nxMin": 1,
+            "value": 1,
+            "leadingZero": false,
+            "validators": [
+              {
+                "type": "REQUIRED",
+                "errorMessage": "employees.number.error"
+              },
+              {
+                "type": "PATTERN",
+                "value": "^([1-5])$",
+                "errorMessage": "employees.number.error2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

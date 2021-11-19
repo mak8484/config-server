@@ -1,0 +1,10 @@
+{
+    "pageId": "errorPage",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "errorPage": {
+        "title": "errorPage.title",
+        "description": "errorPage.description",
+        "image": "./assets/error_500_icon.svg"
+    }
+}

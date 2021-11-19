@@ -1,0 +1,20 @@
+{
+    "pageId": "landingDirect",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "backgroundColor": "#007AB3",
+    "landingDirectPage": {
+        "bubbleConfig": {
+            "id": "landingDirect",
+            "linkText": "landing.direct.bubble.link",
+            "message": "landing.direct.bubble.message",
+            "color": "#C3E8E7",
+            "img": "./assets/consultant.svg",
+            "users": [
+                "direct"
+            ],
+            "principalPageMode": true
+        },
+        "buttonLabel": "landing.direct.button.label"
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "pageId": "companyBuildingValue",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "bubbleConfig": {
+      "id":"companyBuildingValue",
+      "linkText":"bubble.more.info.link",
+      "message": "businessValue.bubble.bottom",
+      "color": "#C3E8E7",
+      "img": "./assets/consultant.svg",
+      "users": ["direct"]
+    },
+    "stepperConfig": {
+      "totalSteps": 4,
+      "currentStepIndex": 0,
+      "currentProgress": 0.83,
+      "currentStepLabel": "stepper.currentStepLabel",
+      "stepsLabels": [
+        "stepper.companyStep",
+        "stepper.packageStep",
+        "stepper.conclusionStep",
+        "stepper.confirmationStep"
+      ]
+    },
+    "basicDynamicFormPage": {
+      "forms": [
+        {
+          "layout": "ONE_COLUMN",
+          "items": [
+            {
+              "type": "PARAGRAPH",
+              "id": "business_buildings_title",
+              "label": "businessValue.title.buildings",
+              "copytextOption": "small",
+              "icon": {
+                "name": "product-city",
+                "size": "s"
+              }
+            },
+            {
+              "type": "SLIDER",
+              "id": "buildings",
+              "nxMin": 100,
+              "nxMax": 3000,
+              "nxStep": 1,
+              "value": 100,
+              "leftText": "business.value.min",
+              "rightText": "business.value.max",
+              "currencyFormat": {
+                "prefix": "€",
+                "suffix": "",
+                "includeThousandsSeparator": true,
+                "thousandsSeparatorSymbol": ".",
+                "allowDecimal": true,
+                "decimalSymbol": ","
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
+  

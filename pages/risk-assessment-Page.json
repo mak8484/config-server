@@ -1,0 +1,10 @@
+{
+    "pageId": "riskAssessment",
+    "hideNextButton": true,
+    "nxBackText": "riskAssessment.button.back",
+    "riskAssessmentPage": {
+        "title": "riskAssessment.title",
+        "activityIdSrc": "$.userInputState['businessInformation']['mainActivity'][0]['valueId']",
+        "defaultCluster": "riskGeneralVisualization"
+    }
+}

@@ -1,0 +1,342 @@
+{
+    "pageId": "summary",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "additionalInformation": "summaryOfferPage.information",
+    "priceFooter": {
+        "packageLabel": "priceFooter.packageName",
+        "visibleUpFrequency": "monthly",
+        "visibleDownFrequency": "annually"
+    },
+    "headerConfig": {
+        "id": "summaryPage",
+        "title": "summary.header.title",
+        "linkText": "header.more.info.link",
+        "users": [
+            "agent",
+            "broker"
+        ]
+    },
+    "bubbleConfig": {
+        "id": "summaryDirect",
+        "linkText": "bubble.more.info.link",
+        "message": "summary.header.title",
+        "color": "#C3E8E7",
+        "img": "./assets/consultant.svg",
+        "users": [
+            "direct"
+        ]
+    },
+    "stepperConfig": {
+        "totalSteps": 4,
+        "currentStepIndex": 1,
+        "currentProgress": 1,
+        "currentStepLabel": "stepper.currentStepLabel",
+        "stepsLabels": [
+            "stepper.companyStep",
+            "stepper.packageStep",
+            "stepper.conclusionStep",
+            "stepper.confirmationStep"
+        ]
+    },
+    "summaryPage": {
+        "direct": [
+            "companyConfigDR",
+            "productPackages",
+            "downloadOffer",
+            "emailOffer"
+        ],
+        "broker": [
+            "maps",
+            "companyConfig",
+            "productPackages",
+            "additionalProductPackages",
+            "productConfigValues",
+            "downloadOffer",
+            "emailOffer"
+        ],
+        "agent": [
+            "maps",
+            "companyConfig",
+            "productPackages",
+            "additionalProductPackages",
+            "productConfigValues",
+            "downloadOffer",
+            "emailOffer"
+        ],
+        "templateMapping": {
+            "maps": {
+                "type": "ADDRESS_INFO",
+                "id": "addressInfo",
+                "zoom": 15,
+                "addressSrc": "$.selectedCompanyData.address.formattedAddress",
+                "companyNameSrc": "$.selectedCompanyData['name']",
+                "operationalAddress": "$.userInputState.businessInformation.address.formattedAddress",
+                "markerUrl": "./assets/map_marker.svg"
+            },
+            "companyConfigDR": {
+                "type": "GRID",
+                "colWrapper": "12,12,8,8",
+                "title": "summary.company.details",
+                "rows": [
+                    {
+                        "columns": [
+                            {
+                                "label": "addressPage.input.label",
+                                "$value": "$.userInputState.address.address.formattedAddress"
+                            }
+                        ]
+                    },
+                    {
+                        "columns": [
+                            {
+                                "label": "employees.number.title",
+                                "$value": "$.userInputState.employees.number"
+                            },
+                            {
+                                "label": "company.sum.of.business",
+                                "$value": "$.userInputState.businessValue.amount",
+                                "isCurrency": true
+                            },
+                            {
+                                "label": "activities.main.title",
+                                "$value": "$.userInputState.activities.main_activity",
+                                "filterMapping": {
+                                    "source": "$.activitiesArray",
+                                    "prop": "label"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "columns": [
+                            {
+                                "label": "turnover.number.title",
+                                "$value": "$.userInputState.turnover.amount",
+                                "isCurrency": true
+                            },
+                            {
+                                "$condition": "$.userInputState.businessValue.additional",
+                                "label": "businessValue.title.buildings",
+                                "$value": "$.userInputState.companyBuildingValue.buildings",
+                                "isCurrency": true
+                            },
+                            {
+                                "$value": "$.userInputState.activities.secondary_activity",
+                                "label": "activities.secondary.title",
+                                "filterMapping": {
+                                    "source": "$.activitiesArray",
+                                    "prop": "label"
+                                },
+                                "$condition": "$.userInputState.activities.more_activities"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "companyConfig": {
+                "type": "GRID",
+                "colWrapper": "12,12,8,8",
+                "title": "summary.company.details",
+                "rows": [
+                    {
+                        "columns": [
+                            {
+                                "label": "employees.number.title",
+                                "$value": "$.userInputState.businessInformation.employeesNumber"
+                            },
+                            {
+                                "label": "company.sum.of.business",
+                                "$value": "$.userInputState.businessAdditionalInfo.amount",
+                                "isCurrency": true
+                            },
+                            {
+                                "label": "activities.main.title",
+                                "$value": "$.userInputState['businessInformation']['mainActivity']",
+                                "filterMapping": {
+                                    "source": "$.activitiesArray",
+                                    "prop": "label"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "columns": [
+                            {
+                                "label": "turnover.number.title",
+                                "$value": "$.userInputState.businessInformation.turnoverAmount",
+                                "isCurrency": true
+                            },
+                            {
+                                "$condition": "$.userInputState.businessAdditionalInfo.additional",
+                                "label": "businessValue.title.buildings",
+                                "$value": "$.userInputState.businessAdditionalInfo.buildings",
+                                "isCurrency": true
+                            },
+                            {
+                                "$value": "$.userInputState['businessInformation']['secondaryActivities']",
+                                "label": "activities.secondary.title",
+                                "filterMapping": {
+                                    "source": "$.activitiesArray",
+                                    "prop": "label"
+                                },
+                                "$condition": "$.userInputState.businessInformation.moreActivities"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "productPackages": {
+                "colWrapper": "12,12,8,8",
+                "type": "PRODUCT_PACKAGES",
+                "title": "summary.product.title",
+                "link": "see.examples.label",
+                "data": {
+                    "source": "$.productSummary",
+                    "mapping": {
+                        "icon": "info.icon",
+                        "label": "info.displayText",
+                        "id": "id",
+                        "description": "info.additionalTitle",
+                        "condition": "cell.value"
+                    }
+                }
+            },
+            "additionalProductPackages": {
+                "colWrapper": "12,12,8,8",
+                "type": "PRODUCT_PACKAGES",
+                "title": "packageSelection.additionalCoverage",
+                "link": "see.examples.label",
+                "data": {
+                    "source": "$.additionalCoverage",
+                    "mapping": {
+                        "costs": [
+                            {
+                                "icon": "icon",
+                                "label": "label",
+                                "id": "id",
+                                "description": "label",
+                                "condition": "selected"
+                            }
+                        ],
+                        "condition": "value",
+                        "id": "id"
+                    }
+                }
+            },
+            "productConfigValues": {
+                "type": "GRID",
+                "colWrapper": "12,12,8,8",
+                "title": "summary.product.config.title",
+                "rows": [
+                    {
+                        "columns": [
+                            {
+                                "label": "summary.liability.limit.title",
+                                "value": 5000000,
+                                "isCurrency": true
+                            },
+                            {
+                                "label": "summary.deductible.title",
+                                "value": 50,
+                                "isCurrency": true
+                            },
+                            {
+                                "label": "summary.discount.title",
+                                "$value": "$.packageSelection.discountModal.discount",
+                                "$condition": "$.packageSelection.discountModal"
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "source": "$.switchers",
+                            "mapping": {
+                                "label": "label",
+                                "value": "value"
+                            },
+                            "valueMapping": {
+                                "true": "boolean.yes.string",
+                                "false": "boolean.no.string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "downloadOffer": {
+                "type": "ACTION",
+                "label": "summary.download.offer",
+                "icon": "download",
+                "config": {
+                    "dataMapping": {
+                        "contractId": "V2A7A312CCA3C22"
+                    },
+                    "url": "documents/offer/summary",
+                    "action": "downloadOfferGET"
+                }
+            },
+            "emailOffer": {
+                "type": "ACTION",
+                "label": "summary.send.offer",
+                "class": "u-margin-bottom-lg",
+                "icon": "mail-o",
+                "config": {
+                    "action": "openSendOfferModal",
+                    "modalOptions": {
+                        "id": "sendQuoteConfig",
+                        "title": "sendQuote.title",
+                        "subtitle": "sendQuote.subtitle",
+                        "validationDays": "$.userInputState['packageSelectionPage']['selectedPackage']['validationDays']",
+                        "buttonLabel": "send.button.label",
+                        "closeButtonLabel": "close.button.label",
+                        "phoneInput": {
+                            "id": "sendQuote.phoneInput",
+                            "label": "phoneInput.label",
+                            "required": false,
+                            "maxLength": 100,
+                            "pattern": "^[+]?[0-9]{0,99}$",
+                            "backendId": "phoneNumber"
+                        },
+                        "emailInput": {
+                            "id": "sendQuote.emailInput",
+                            "label": "emailInput.label",
+                            "required": true,
+                            "pattern": "^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$",
+                            "backendId": "email"
+                        },
+                        "checkboxInput": {
+                            "id": "sendQuote.checkboxInput",
+                            "labels": [
+                                {
+                                    "prefix": "checboxInput.text1",
+                                    "linkLabel": "checboxInput.linklabel1",
+                                    "linkUrl": "https://www.allianz.at/marketingklausel/",
+                                    "suffix": "checboxInput.text2"
+                                }
+                            ],
+                            "required": false
+                        },
+                        "existingCustomerInput": {
+                            "id": "sendQuote.existingCustomer",
+                            "checkboxLabel": "summaryPage.existingCustomer",
+                            "required": false
+                        },
+                        "agentName": {
+                            "id": "sendQuote.inputId",
+                            "inputPlaceholder": "summaryPage.agentNameLabel",
+                            "pattern": "^[^ ]+.*[^ ]+$"
+                        },
+                        "dataMapping": {
+                            "contractNumber": "$.userInputState['packageSelectionPage']['selectedPackage']['contractNumber']",
+                            "contractId": "$.userInputState['packageSelectionPage']['selectedPackage']['contractId']",
+                            "partyId": "$.userInputState['companyInfoPage']['company.partyId']",
+                            "agentAndContractText": "sendQuote.agentAndContract.text",
+                            "contractText": "sendQuote.contractText.text"
+                        },
+                        "url": "documents/offer/email"
+                    }
+                }
+            }
+        }
+    }
+}

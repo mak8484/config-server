@@ -1,0 +1,77 @@
+{
+  "pageId": "naturalSearch",
+  "hideNextButton": false,
+  "hideBackButton": true,
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "naturalSearchPage": {
+    "naturalSearchItems": [
+      {
+        "type": "TEXT",
+        "text": "naturalLanguage.line1"
+      },
+      {
+        "type": "TEXT",
+        "text": "naturalLanguage.line2"
+      },
+      {
+        "type": "TEXT",
+        "text": "naturalLanguage.line3"
+      },
+      {
+        "type": "DYNAMIC",
+        "dynamicConfig": [
+          {
+            "id": "name",
+            "type": "INPUT",
+            "inputType": "text",
+            "validators": [
+              {
+                "type": "REQUIRED",
+                "errorMessage": "naturalLanguage.required.field"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "text": "naturalLanguage.line4"
+      },
+      {
+        "type": "TEXT",
+        "text": "naturalLanguage.line5"
+      },
+      {
+        "type": "DYNAMIC",
+        "dynamicConfig": [
+          {
+            "type": "GOOGLE_ADDRESS",
+            "id": "address",
+            "source": "$['address']",
+            "countryCodes": ["DE"],
+            "types": ["address"],
+            "required": true,
+            "requiredMessage": "naturalLanguage.required.field",
+            "requiredFields": [{
+              "field": "streetNumber",
+              "errorMessage": "naturalLanguage.address.houseNumber.error"
+            }]
+          }
+        ]
+  
+      }
+    ]
+  }
+}
+

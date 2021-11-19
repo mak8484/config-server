@@ -1,0 +1,78 @@
+{
+  "pageId": "address",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "bubbleConfig": {
+    "id": "activitiesDirect",
+    "linkText": "bubble.more.info.link",
+    "message": "address.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": [
+      "direct"
+    ]
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0.33,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE"
+          },
+          {
+            "id": "companyName",
+            "type": "INPUT",
+            "label": "addressPage.company.label",
+            "hint": "addressPage.company.hint",
+            "inputType": "text",
+            "validators": [
+              {
+                "type": "REQUIRED",
+                "errorMessage": "addressPage.company.mandatory"
+              },
+              {
+                "type": "PATTERN",
+                "errorMessage": "addressPage.company.max.length",
+                "value": "^.{1,30}$"
+            }
+            ]
+          },
+          {
+            "type": "GOOGLE_ADDRESS",
+            "id": "address",
+            "source": "$['address']",
+            "title": "addressPage.title",
+            "label": "addressPage.input.label",
+            "example": "addressPage.input.example",
+            "countryCodes": ["DE"],
+            "types": [
+              "address"
+            ],
+            "required": true,
+            "requiredMessage": "addressPage.address.mandatory",
+            "requiredFields": [
+              {
+                "field": "streetNumber",
+                "errorMessage": "addressPage.address.houseNumber.error"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

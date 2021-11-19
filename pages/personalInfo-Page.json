@@ -1,0 +1,669 @@
+{
+    "pageId": "personalInfo",
+    "hideNextButton": false,
+    "hideBackButton": false,
+    "headerConfig": {
+        "id": "personalInfo",
+        "title": "personalInfo.title",
+        "linkText": "header.more.info.link",
+        "users": [
+            "agent",
+            "broker"
+        ]
+    },
+    "bubbleConfig": {
+        "id": "personalInfoDirect",
+        "linkText": "bubble.more.info.link",
+        "message": "personalInfo.bubble",
+        "color": "#C3E8E7",
+        "img": "./assets/consultant.svg",
+        "users": [
+            "direct"
+        ]
+    },
+    "priceFooter": {
+        "packageLabel": "priceFooter.packageName",
+        "visibleUpFrequency": "monthly",
+        "visibleDownFrequency": "annually"
+    },
+    "stepperConfig": {
+        "totalSteps": 4,
+        "currentStepIndex": 2,
+        "currentProgress": 1,
+        "currentStepLabel": "stepper.currentStepLabel",
+        "stepsLabels": [
+            "stepper.companyStep",
+            "stepper.packageStep",
+            "stepper.conclusionStep",
+            "stepper.confirmationStep"
+        ]
+    },
+    "personalInfoPage": {
+        "paymentFrequencyFormat": {
+            "paymentSectionId": "payment",
+            "paymentFrequencyId": "frequency",
+            "paymentsFrequenciesSrc": "$.userInputState['packageSelection']['selectedProduct']['costs']"
+        },
+        "initial": {
+            "contractDetails": {
+                "companyName": {
+                    "source": "$.selectedCompanyData['name']"
+                }
+            }
+        },
+        "sections": [
+            {
+                "id": "personalData",
+                "title": "personalInfo.data.title",
+                "layout": "ONE_COLUMN",
+                "items": [
+                    {
+                        "id": "name",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.name",
+                        "inputType": "text",
+                        "hint": "personalInfo.data.name.example",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.name.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "errorMessage": "personalInfo.data.name.error2",
+                                "value": "^.{1,30}$"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "surname",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.surname",
+                        "hint": "personalInfo.data.surname.example",
+                        "inputType": "text",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.surname.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "errorMessage": "personalInfo.data.surname.error2",
+                                "value": "^.{1,30}$"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "email",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.email",
+                        "inputType": "text",
+                        "hint": "personalInfo.data.email.example",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.email.error1"
+                            },
+                            {
+                                "errorMessage": "personalInfo.data.email.error2",
+                                "type": "PATTERN",
+                                "value": "^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "phone",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.phone",
+                        "inputType": "text",
+                        "hint": "personalInfo.data.phone.example",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.phone.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "value": "^\\+?[0-9]*$",
+                                "errorMessage": "personalInfo.data.phone.error2"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "role",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.role",
+                        "hint": "personalInfo.data.role.hint",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.role.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "value": "^\\+?[a-zA-Z ]*$",
+                                "errorMessage": "personalInfo.data.role.error2"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "documentType",
+                        "type": "DROPDOWN",
+                        "label": "personalInfo.data.documentType",
+                        "options": [
+                            {
+                                "label": "personalInfo.data.documentType.first",
+                                "value": 1
+                            },
+                            {
+                                "label": "personalInfo.data.documentType.second",
+                                "value": 2
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.documentType.error1"
+                            }
+                        ],
+                        "$logic": {
+                            "onChange": {
+                                "$source": "$.userInputState.personalInfo.personalData.documentType",
+                                "$fn": {
+                                    "field": "documentId",
+                                    "value": ""
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": "documentId",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.documentId",
+                        "hint": "personalInfo.data.documentId.hint",
+                        "inputType": "text",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.documentId.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "value": "^\\+?[a-zA-Z0-9]*$",
+                                "errorMessage": "personalInfo.data.documentId.error2"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "secondPerson",
+                        "type": "CHECKBOX",
+                        "label": "personalInfo.second.person.label",
+                        "labelPosition": "right",
+                        "switcher": true
+                    },
+                    {
+                        "id": "secondPersonName",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.name",
+                        "inputType": "text",
+                        "hint": "personalInfo.data.name.example",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.name.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "errorMessage": "personalInfo.data.name.error2",
+                                "value": "^.{1,30}$"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "secondPersonSurname",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.surname",
+                        "hint": "personalInfo.data.surname.example",
+                        "inputType": "text",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.surname.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "errorMessage": "personalInfo.data.surname.error2",
+                                "value": "^.{1,30}$"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "secondPersonEmail",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.email",
+                        "inputType": "text",
+                        "hint": "personalInfo.data.email.example",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.email.error1"
+                            },
+                            {
+                                "errorMessage": "personalInfo.data.email.error2",
+                                "type": "PATTERN",
+                                "value": "^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "secondPersonPhone",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.phone",
+                        "inputType": "text",
+                        "hint": "personalInfo.data.phone.example",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.phone.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "value": "^\\+?[0-9]*$",
+                                "errorMessage": "personalInfo.data.phone.error2"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "secondPersonRole",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.role",
+                        "hint": "personalInfo.data.role.hint",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.role.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "value": "^\\+?[a-zA-Z ]*$",
+                                "errorMessage": "personalInfo.data.role.error2"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "secondPersonDocumentType",
+                        "type": "DROPDOWN",
+                        "label": "personalInfo.data.documentType",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "options": [
+                            {
+                                "label": "personalInfo.data.documentType.first",
+                                "value": 1
+                            },
+                            {
+                                "label": "personalInfo.data.documentType.second",
+                                "value": 2
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.documentType.error1"
+                            }
+                        ],
+                        "$logic": {
+                            "onChange": {
+                                "$source": "$.userInputState.personalInfo.personalData.documentType",
+                                "$fn": {
+                                    "field": "documentId",
+                                    "value": ""
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": "secondPersonDocumentId",
+                        "type": "INPUT",
+                        "label": "personalInfo.data.documentId",
+                        "hint": "personalInfo.data.documentId.hint",
+                        "inputType": "text",
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['personalData']['secondPerson']",
+                                "operator": "!==",
+                                "value2Expression": "true"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.data.documentId.error1"
+                            },
+                            {
+                                "type": "PATTERN",
+                                "value": "^\\+?[a-zA-Z0-9]*$",
+                                "errorMessage": "personalInfo.data.documentId.error2"
+                            }
+                        ]
+                    }
+                ],
+                "closeLabel": "personalInfo.next.accordion"
+            },
+            {
+                "id": "contractDetails",
+                "title": "personalInfo.contract.title",
+                "layout": "ONE_COLUMN",
+                "items": [
+                    {
+                        "type": "PARAGRAPH",
+                        "id": "contract_paragraph",
+                        "label": "personalInfo.contract.paragraph",
+                        "copytextOption": "small"
+                    },
+                    {
+                        "id": "startDate",
+                        "type": "DATE",
+                        "label": "personalInfo.contract.startDate",
+                        "displayFormat": "DD/MM/YYYY",
+                        "parseFormat": "DD/MM/YYYY",
+                        "hint": "utils.date.hint",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.contract.company.startDate.error1"
+                            },
+                            {
+                                "type": "DAYS_FROM_TODAY_LOWER_LIMIT",
+                                "value": 0,
+                                "errorMessage": "personalInfo.contract.company.startDate.error2"
+                            },
+                            {
+                                "type": "DAYS_FROM_TODAY_UPPER_LIMIT",
+                                "value": 90,
+                                "errorMessage": "personalInfo.contract.company.startDate.error2"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "dueDate",
+                        "type": "DROPDOWN",
+                        "label": "personalInfo.contract.dueDate",
+                        "value": 1,
+                        "options": [
+                            {
+                                "label": "january",
+                                "value": 1
+                            },
+                            {
+                                "label": "february",
+                                "value": 2
+                            },
+                            {
+                                "label": "march",
+                                "value": 3
+                            },
+                            {
+                                "label": "april",
+                                "value": 4
+                            },
+                            {
+                                "label": "may",
+                                "value": 5
+                            },
+                            {
+                                "label": "june",
+                                "value": 6
+                            },
+                            {
+                                "label": "july",
+                                "value": 7
+                            },
+                            {
+                                "label": "august",
+                                "value": 8
+                            },
+                            {
+                                "label": "september",
+                                "value": 9
+                            },
+                            {
+                                "label": "october",
+                                "value": 10
+                            },
+                            {
+                                "label": "november",
+                                "value": 11
+                            },
+                            {
+                                "label": "december",
+                                "value": 12
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    }
+                ],
+                "closeLabel": "personalInfo.next.accordion"
+            },
+            {
+                "id": "payment",
+                "title": "personalInfo.payment.title",
+                "layout": "ONE_COLUMN",
+                "items": [
+                    {
+                        "type": "PARAGRAPH",
+                        "id": "payment_frequency_title",
+                        "label": "personalInfo.payment.frequency.title",
+                        "copytextOption": "small"
+                    },
+                    {
+                        "type": "TOGGLE",
+                        "id": "frequency",
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "PARAGRAPH",
+                        "id": "payment_paymentType_title",
+                        "label": "personalInfo.payment.type.title",
+                        "copytextOption": "small"
+                    },
+                    {
+                        "type": "TOGGLE",
+                        "id": "paymentType",
+                        "data": [
+                            {
+                                "title": "personalInfo.payment.paymentType.direct",
+                                "value": "direct"
+                            },
+                            {
+                                "title": "personalInfo.payment.paymentType.visa",
+                                "value": "visa"
+                            },
+                            {
+                                "title": "personalInfo.payment.paymentType.paypal",
+                                "value": "paypal"
+                            }
+                        ],
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "SEPARATOR",
+                        "separatorType": "SPACE",
+                        "size": 40,
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['payment']['paymentType']",
+                                "operator": "!==",
+                                "value2Expression": "direct"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "INPUT",
+                        "id": "accountHolder",
+                        "label": "personalInfo.payment.accountHolder",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.payment.accounHolder.error"
+                            }
+                        ],
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['payment']['paymentType']",
+                                "operator": "!==",
+                                "value2Expression": "direct"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "INPUT",
+                        "id": "iban",
+                        "label": "personalInfo.payment.iban",
+                        "validators": [
+                            {
+                                "type": "REQUIRED",
+                                "errorMessage": "personalInfo.payment.iban.error"
+                            }
+                        ],
+                        "hideComponentConditions": [
+                            {
+                                "value1Expression": "$.userInputState['personalInfo']['payment']['paymentType']",
+                                "operator": "!==",
+                                "value2Expression": "direct"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "SEPARATOR",
+                        "separatorType": "SPACE",
+                        "size": 40
+                    }
+                ],
+                "closeLabel": "personalInfo.next.accordion"
+            },
+            {
+                "id": "consent",
+                "title": "personalInfo.consent.title",
+                "layout": "ONE_COLUMN",
+                "items": [
+                    {
+                        "type": "CHECKBOX",
+                        "id": "legal",
+                        "label": {
+                            "text": "personalInfo.consent.legal.title",
+                            "links": [
+                                {
+                                    "link": "https://www.allianz.at/firmenkunden/allianz-business-cyber/schutz-selbstaendige/dokumente/vereinbarung-zur-form-von-erklaerungen.pdf",
+                                    "label": "personalInfo.consent.legal.link1",
+                                    "target": "-blank"
+                                },
+                                {
+                                    "link": "https://www.allianz.at/firmenkunden/allianz-business-cyber/schutz-selbstaendige/dokumente/vereinbarung-zur-form-von-erklaerungen.pdf",
+                                    "label": "personalInfo.consent.legal.link2",
+                                    "target": "-blank"
+                                }
+                            ]
+                        },
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CHECKBOX",
+                        "id": "electronic",
+                        "label": {
+                            "text": "personalInfo.consent.electronic.title",
+                            "links": [
+                                {
+                                    "link": "https://www.allianz.at/firmenkunden/allianz-business-cyber/schutz-selbstaendige/dokumente/vereinbarung-zur-form-von-erklaerungen.pdf",
+                                    "label": "personalInfo.consent.electronic.link1",
+                                    "target": "-blank"
+                                }
+                            ]
+                        },
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CHECKBOX",
+                        "id": "contractual",
+                        "label": "personalInfo.consent.contractual.title",
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CHECKBOX",
+                        "id": "risks",
+                        "label": "personalInfo.consent.risks.title",
+                        "validators": [
+                            {
+                                "type": "REQUIRED"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

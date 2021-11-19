@@ -1,0 +1,230 @@
+{
+  "pageId": "packageSelection",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "headerConfig": {
+    "id": "packageSelection",
+    "title": "packageSelection.title",
+    "linkText": "header.more.info.link",
+    "users": [
+      "agent",
+      "broker"
+    ]
+  },
+  "bubbleConfig": {
+    "id": "packageSelectionDirect",
+    "linkText": "bubble.more.info.link",
+    "message": "packageSelection.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": [
+      "direct"
+    ]
+  },
+  "priceFooter": {
+    "packageLabel": "priceFooter.packageName",
+    "visibleUpFrequency": "monthly",
+    "visibleDownFrequency": "annually"
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 1,
+    "currentProgress": 0.5,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "packageSelectionPage": {
+    "packageSelection": {
+      "additionalCoverage": "packageSelection.additionalCoverage"
+    },
+    "packageSelectionSwitchersHeader": "packageSelectionSwitchers.header",
+    "packageMoreInformationLinkLabel": "packageSelection.moreInformation.link",
+    "packageAdditionalCoverageButtonAdd": "packageAdditionalCoverage.add.button",
+    "packageAdditionalCoverageButtonAdded": "packageAdditionalCoverage.added.button",
+    "euro": "packageSelectionEuro",
+    "packageSelectionStoredValues": "$.packagesSelection",
+    "additionalCoverageStoredValues": "$.additionalCoverage",
+    "switchersStoredValues": "$.switchers",
+    "additionalCoverageLabels": {
+      "labels": [
+        {
+          "id": "cost1",
+          "label": "packageSelectionAdditionalCoverage.cost1.label"
+        },
+        {
+          "id": "cost2",
+          "label": "packageSelectionAdditionalCoverage.cost2.label"
+        }
+      ]
+    },
+    "switchersConfig": [
+      {
+        "id": "switch1",
+        "label": "packageSelectionSwitchers.switch1.title",
+        "smeInfoIconConfig": {
+          "xtraCustomInfoIconModalConfig": {
+            "infoText": "packageSelectionSwitchers.switch1.infoText",
+            "componentToDisplay": "modal"
+          }
+        }
+      },
+      {
+        "id": "switch2",
+        "label": "packageSelectionSwitchers.switch2.title",
+        "smeInfoIconConfig": {
+          "xtraCustomInfoIconModalConfig": {
+            "infoText": "packageSelectionSwitchers.switch2.infoText",
+            "componentToDisplay": "modal"
+          }
+        }
+      },
+      {
+        "id": "switch3",
+        "label": "packageSelectionSwitchers.switch3.title",
+        "smeInfoIconConfig": {
+          "xtraCustomInfoIconModalConfig": {
+            "infoText": "packageSelectionSwitchers.switch3.infoText",
+            "componentToDisplay": "modal"
+          }
+        }
+      }
+    ],
+    "productTableConfig": {
+      "sticky": true,
+      "frequencyPayment": "utils.monthly",
+      "frequencyPaymentType": "monthly",
+      "additionalTitle": "packageSelection.item.additionalTitle",
+      "icons": [
+        {
+          "id": "default",
+          "icon": "product-mouse"
+        },
+        {
+          "id": "cover1",
+          "icon": "product-house-fire"
+        },
+        {
+          "id": "cover2",
+          "icon": "product-important-info"
+        },
+        {
+          "id": "cover4",
+          "icon": "product-balance-scale"
+        },
+        {
+          "id": "cover5",
+          "icon": "product-battery"
+        },
+        {
+          "id": "cover6",
+          "icon": "product-info-sheet"
+        },
+        {
+          "id": "cover7",
+          "icon": "product-watering-can"
+        },
+        {
+          "id": "cover8",
+          "icon": "product-broken-glass"
+        },
+        {
+          "id": "cover9",
+          "icon": "product-thief"
+        },
+        {
+          "id": "cover10",
+          "icon": "product-stars-sky-galaxy"
+        },
+        {
+          "id": "cover11",
+          "icon": "product-repair"
+        },
+        {
+          "id": "cover12",
+          "icon": "product-social-media-facebook-messenger"
+        },
+        {
+          "id": "cover13",
+          "icon": "product-shield-hand"
+        },
+        {
+          "id": "cost1",
+          "icon": "product-balance-scale"
+        }
+      ],
+      "emptyHeader": {
+        "colors": {
+          "background": "white"
+        }
+      },
+      "header": {
+        "colors": {
+          "background": "#E6F4F6",
+          "recommendedBackground": "#E6F4F6",
+          "selectedBackground": "#336b5e"
+        },
+        "textColors": {
+          "background": "#5b5b5b",
+          "selectedBackground": "#ffffff",
+          "recommendedBackground": "#5b5b5b"
+        },
+        "button": {
+          "title": "packageSelection.unselected.state",
+          "selectedTitle": "packageSelection.selected.state",
+          "selectedClear": true
+        }
+      },
+      "invalidIcon": "minus",
+      "validCell": {
+        "background": "white",
+        "selectedBackground": "white",
+        "recommendedBackground": "white"
+      },
+      "invalidCell": {
+        "background": "#ececec",
+        "selectedBackground": "#ececec",
+        "recommendedBackground": "transparent"
+      }
+    },
+    "navigation": {
+      "users": ["agent","broker"],
+      "navigationId": "packaSelectionToRiskNavigation",
+      "imageSrc": "./assets/risk_assessment.svg",
+      "width": "67%",
+      "maxWidth": "352px",
+      "hideComponentConditions": [
+        {
+          "value1Expression": "$.userInputState['businessInformation']['mainActivity']",
+          "operator": "===",
+          "value2Expression": "undefined"
+        }
+      ]
+    },
+    "download": {
+      "users": ["agent","broker"],
+      "label": "packageSelection.message.download",
+      "icon": "download",
+      "config": {
+        "dataMapping": {
+          "contractId": "V2A7A312CCA3C22"
+        },
+        "url": "documents/offer/policy",
+        "action": "downloadOfferGET"
+      }
+    },
+    "discountConfig": {
+      "allowedUsers": [
+        "agent"
+      ],
+      "titleLabel": "packageSelection.discount.title",
+      "calculateLabel": "packageSelection.discount.calculate",
+      "discountLabel": "packageSelection.discount.discountLabel",
+      "bonusLabel": "packageSelection.discount.bonusLabel"
+    }
+  }
+}

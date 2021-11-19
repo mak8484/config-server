@@ -1,0 +1,178 @@
+{
+  "pageId": "activities",
+  "hideNextButton": false,
+  "hideBackButton": true,
+  "bubbleConfig": {
+    "id":"activitiesDirect",
+    "linkText":"bubble.more.info.link",
+    "message": "activities.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": ["direct"]
+
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0.16,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "PARAGRAPH",
+            "id": "main_activity_title",
+            "label": "activities.main.title",
+            "copytextOption": "small"
+          },
+          {
+            "type": "DD_TAG_LIST",
+            "id": "main_activity",
+            "source": "$['activitiesArray']",
+            "title": "activities.main.title",
+            "minTags": 1,
+            "autoOpen": false,
+            "errorMsgNoMatch": "activities.noMatch",
+            "required": true,
+            "dropdownsList": [
+              {
+                "id": "mainActivity",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": true
+              }
+            ],
+            "validators": [
+              {
+                "type": "REQUIRED",
+                "errorMessage": "This field is required"
+              }
+            ]
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "more_activities",
+            "label": "activities.checkbox.more",
+            "labelPosition": "right",
+            "switcher": true
+          },
+          {
+            "type": "SEPARATOR",
+            "separatorType": "LINE"
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "secondary_activity_title",
+            "label": "activities.secondary.title",
+            "copytextOption": "small",
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['activities']['more_activities']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          },
+          {
+            "type": "DD_TAG_LIST",
+            "id": "secondary_activity",
+            "source": "$['activitiesArray']",
+            "title": "businessConfirmationPage.subActivity.title",
+            "minTags": 0,
+            "autoOpen": false,
+            "errorMsgNoMatch": "activities.noMatch",
+            "required": false,
+            "canRepeatSelection": false,
+            "dropdownsList": [
+              {
+                "id": "subActivity_1",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_2",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_3",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_4",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_5",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_6",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_7",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_8",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              },
+              {
+                "id": "subActivity_9",
+                "filterDropdownPlaceholder": "activities.placeHolder",
+                "dropdownShowFilter": true,
+                "dropdownLabel": "activities.select",
+                "required": false
+              }
+            ],
+            "hideComponentConditions": [
+              {
+                "value1Expression": "$.userInputState['activities']['more_activities']",
+                "operator": "!==",
+                "value2Expression": "true"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+

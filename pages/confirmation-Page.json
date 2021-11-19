@@ -1,0 +1,37 @@
+{
+    "pageId": "confirmation",
+    "hideNextButton": true,
+    "hideBackButton": true,
+    "confirmationPage": {
+        "agent": ["confirmation_message", "download"],
+        "broker": ["confirmation_message", "download"],
+        "direct": ["confirmation_bubble_message", "download"],
+        "templateMapping": {
+            "confirmation_bubble_message": {
+                "type": "BUBBLE",
+                "contents": {
+                    "message": "confirmation.message.dr",
+                    "color": "#3DA556",
+                    "img": "./assets/consultant.svg",
+                    "type": "green"
+                }
+            },
+            "confirmation_message": {
+                "type": "NO_BUBBLE",
+                "message": "confirmation.message.agbr"
+            },
+            "download": {
+                "type": "ACTION",
+                "label": "confirmation.message.download",
+                "icon": "download",
+                "config": {
+                    "dataMapping": {
+                        "contractId": "V2A7A312CCA3C22"
+                    },
+                    "url": "documents/offer/policy",
+                    "action": "downloadOfferGET"
+                }
+            }
+        }
+    }
+}

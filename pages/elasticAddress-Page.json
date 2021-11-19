@@ -1,0 +1,53 @@
+{
+  "pageId": "elasticAddress",
+  "hideNextButton": false,
+  "hideBackButton": false,
+  "bubbleConfig": {
+    "id":"activitiesDirect",
+    "linkText":"bubble.more.info.link",
+    "message": "address.bubble",
+    "color": "#C3E8E7",
+    "img": "./assets/consultant.svg",
+    "users": ["direct"]
+  },
+  "stepperConfig": {
+    "totalSteps": 4,
+    "currentStepIndex": 0,
+    "currentProgress": 0.2,
+    "currentStepLabel": "stepper.currentStepLabel",
+    "stepsLabels": [
+      "stepper.companyStep",
+      "stepper.packageStep",
+      "stepper.conclusionStep",
+      "stepper.confirmationStep"
+    ]
+  },
+  "basicDynamicFormPage": {
+    "forms": [
+      {
+        "layout": "ONE_COLUMN",
+        "items": [
+          {
+            "type": "SEPARATOR",
+            "separatorType": "SPACE"
+          },
+          {
+            "type": "ELASTIC_ADDRESS",
+            "id": "elasticAddress",
+            "source": "$['elasticAddress']",
+            "title": "addressPage.title",
+            "label": "addressPage.input.label",
+            "example": "addressPage.input.example",
+            "required": true,
+            "requiredMessage": "addressPage.address.mandatory",
+            "requiredFields": [{
+              "field": "streetNumber",
+              "errorMessage": "addressPage.address.houseNumber.error"
+            }]
+          }
+        ]
+      }
+    ]
+  }
+}
+
